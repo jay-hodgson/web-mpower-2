@@ -1,9 +1,9 @@
 // Modified bootstrap loader, to get custom our variables
 
+// Core variables and mixins
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
-@import "custom";
 @import "~bootstrap/scss/print";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/type";

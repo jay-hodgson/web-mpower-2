@@ -64,7 +64,7 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
-var uri = 'http://localhost:' + port
+var uri = 'http://localhost:' + port // change name to https for secure connection
 
 var _resolve
 var readyPromise = new Promise(resolve => {
@@ -83,6 +83,19 @@ devMiddleware.waitUntilValid(() => {
 
 var server = app.listen(port)
 
+// UNCOMMENT TO RUN ON HTTPS
+// var https = require('https');
+// var fs = require('fs');
+
+// var options = {
+//   key: fs.readFileSync('~/.local-host-ssl/ssl/server.key'),
+//   cert: fs.readFileSync('~/.local-host-ssl/ssl/server.crt')
+//   }
+
+//var server = https.createServer(options, app).listen(port);
+// UNCOMMENT TO RUN ON HTTPS
+
+// modified 
 module.exports = {
   ready: readyPromise,
   close: () => {

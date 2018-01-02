@@ -1,101 +1,114 @@
 <template>
   <div id="app">
 
-    <nav class="navbar navbar-fixed-top navbar-light">
-      <div class="navbar-header">
-        <div class="row">
-          <div class="col-12 text-center text-md-left col-md-4">
-            <!-- making the name a hyperlink is for dev purposes.
-            so that getting to main page is easy, will replace or change
-            at a later time -->
-            <h1><a href="#"> mPower </a></h1>
-          </div>
+    <p v-if="!loggedIn">You are logged {{ loggedIn ? 'in' : 'out' }}</p>
+    <form @submit.prevent="login" v-if="!loggedIn">
+      <v-flex class="col-12">
+          <v-text-field name="input-1" label="enter email" placeholder=" email" id="testing" type="text"  auto-grow  v-model="email">
+          </v-text-field>
+        </v-flex>
+        
+      <v-flex class="col-12">
+          <v-text-field name="input-1" label="enter password" placeholder="password" id="testing" type="text"  auto-grow  v-model="password">
+          </v-text-field>
+        </v-flex>
 
-          <div class="col-md-8 text-md-right text-center">
-            <img src="./images/check.png" class="img-fluid check" alt="image of a check marked circle"></img>
-            <img src="./images/survey.svg" class="board"></img>
-            <img src="./images/ic_lock_black_48px.svg"></img>
-            <img src="./images/ic_lock_black_48px.svg"></img>
-            <img src="./images/ic_lock_black_48px.svg"></img>
-          </div>
-        </div>
-      </div>
-    </nav>
+      <br>
+      <v-btn v-on:click="login ()" style="width: 100px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit">login</v-btn>
+      <p v-if="error" class="error">Bad login information</p>
+    </form>
+    <v-btn v-on:click="login ()" v-if="(this.$router.currentRoute.fullPath === '/' || this.$router.currentRoute.fullPath === '/NullPage/') && loggedIn" style="width: 120px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> Home Page</v-btn>
 
-    <router-view class="router container-fluid"></router-view>
-    <!--- TODO: must update to make sure application is only single page -->
-
-    <footer class="footer">
-      <h2> Copyright 2017 SageBionetworks</h2>
-    </footer>
+    <template>
+      <router-view></router-view>
+    </template>
 
   </div>
 </template>
 
-<!--<style src="./style_guide.css"></style>-->
 
-<style lang="scss">
-  @import 'css/bootstrap/bootstrap';
-
-  .router {
-    margin-top: 50px;
-  }
-
-  nav {
-    box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
-    img {
-      border-radius: 50%;
-      background-color: rgba(65, 73, 90, 0.1);
-      margin-left: 2px;
-      margin-right: 2px;
-      height: 45px;
-      width: 45px;
+<script>
+import auth from './auth/auth'
+export default {
+  data () {
+    return {
+      loggedIn: auth.loggedIn(),
+      email: '',
+      password: '',
+      error: false,
+      study: '',
+      type: '',
+      wasClicked: false,
+      HTTP: null,
+      userId: null,
+      loginInfo: null
+    }
+  },
+  methods: {
+    login () {
+      auth.login(this.email, this.password, loggedIn => {
+        this.wasClicked = true
+        this.count = this.count + 1
+        if (!loggedIn) {
+          this.error = true
+        } else {
+          this.error = false
+          this.$router.replace(this.$route.query.redirect || '/NullPage/Website/YourStory')
+        }
+      })
+    },
+    signIn () {
+      this.axios.post('https://webservices.sagebridge.org/v3/auth/signIn',
+        {
+          /* eslint-disable */
+          email: this.email,
+          password: this.password,
+          study: this.study,
+          type: this.type
+          /* eslint-enable */
+        }
+      )
+        .then((response) => {
+          console.log(response.data)
+        })
+        .catch(error => {
+          this.loginInfo = JSON.parse(JSON.stringify(error)).response.data
+          var sessionToken = this.loginInfo.sessionToken
+          this.userId = this.loginInfo.id
+          this.HTTP = this.createBaseHTTP(sessionToken)
+        })
+    },
+    createBaseHTTP (sessionToken) {
+      return this.axios.create({
+        baseURL: 'https://webservices.sagebridge.org/',
+        headers: {
+          'Bridge-Session': sessionToken
+        }
+      })
+    },
+    self () {
+      this.HTTP.get('/v3/participants/self',
+        {}
+        // studyId: 'parkinson-android',
+        // userId: this.userId
+      ).then(response => {
+        console.log(response.data)
+      })
+    }
+  },
+  created () {
+    auth.onChange = loggedIn => {
+      this.loggedIn = loggedIn
     }
   }
+}
+</script>
 
-  select, input {
-    border-style: none none solid none !important;
-    &:focus {
-      /*box-shadow: 0px 1px 0px #5cb3fd;*/
-      -webkit-box-shadow: 0px 0px 29px 3px rgba(92,179,253,0.63);
-      -moz-box-shadow: 0px 0px 29px 3px rgba(92,179,253,0.63);
-      box-shadow: 0px 0px 29px 3px rgba(92,179,253,0.63);
-      /*background-color: yellow !important;*/
-    }
+<style scoped>
+  
+  label > input#email, label >  input#password {
+    color: blue;
   }
 
-  input {
-    text-align: center;
-  }
 
-  circle {
-    fill: lightgray;
-    stroke-width: 5;
-    box-shadow: 10px 10px 10px #888888;
-  }
-
-  button {
-    @media (max-width: 767px) {
-      margin-left: 30% !important;
-      width: 40%;
-      bottom: 20px;
-      position: fixed;
-      z-index: 1000;
-    }
-
-    border-radius: 5px;
-    background-color: #31117D;
-    border: thin;
-    color: white;
-    padding: 15px 32px;
-    text-transform: uppercase;
-  }
-
-  footer {
-    display: none;
-  }
-
-  .lead {
-    color: #3b4a63;
-  }
 </style>

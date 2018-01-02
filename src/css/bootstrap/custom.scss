@@ -1,15 +1,921 @@
 // see @import "~bootstrap/scss/variables";
+@import './bootstrap';
 
-$brand-primary: #5B34B6;
-$body-color: #5B34B6;
-$link-color: #5B34B6;
+// $brand-primary: #5B34B6;
+// $body-color: #5B34B6;
+// $link-color: #5B34B6;
 
-$font-size-base: 1rem * 1.5; // Assumes the browser default, typically `16px`
+$font-family: 'Lato';
+$font-size-base: 1rem * 2.5; // Assumes the browser default, typically `16px`
 $font-size-lg:   1.25rem * 1.5;
 $font-size-sm:   .875rem * 1.5;
 $font-size-xs:   .75rem * 1.5;
-
 $font-weight-normal: bold;
-
 $lead-font-size:   $font-size-base;
 $lead-font-weight: 600;
+
+.fitContent  {
+  height: fit-content;
+}
+.application.theme--light {
+  background: white;
+}
+
+.appelication--wrap {
+  min-height: 25vh;
+}
+
+.application {
+  display: -webkit-box !important;
+}
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+.francisco {
+  font-family: 'San Francisco';
+}
+
+label {
+  @extend .defaultBlue;
+  font-size: $font-size-base * 0.75 !important;
+}
+
+p {
+  font-family: 'Roboto','sans-serif' !important;
+}
+
+span#notAdvice {
+    font-size: $font-size-base * 0.4 !important;
+}
+
+input {
+  font-size: $font-size-base * 0.85 !important;
+  margin-bottom: 3px !important;
+}
+
+.fadeBackground {
+  background-image: -webkit-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be) !important;
+  background-image: -moz-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be) !important;
+  background-image: -o-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be) !important;
+  background-image: linear-gradient(54deg, #473b7b, #3584a7 76%, #30d2be) !important;
+}
+
+.consentImg {
+  min-width: 80px;
+  height: 104px;
+}
+    
+nav.web {
+  z-index: 1000 !important;
+  background-color: white;
+  width: 100%;
+  height: 80px;
+  box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
+  &.fixed-bottom {
+    background-image: -webkit-linear-gradient(357deg, #473b7b, #3584a7 76%, #30d2be);
+    background-image: -moz-linear-gradient(357deg, #473b7b, #3584a7 76%, #30d2be);
+    background-image: -o-linear-gradient(357deg, #473b7b, #3584a7 76%, #30d2be);
+    background-image: linear-gradient(87deg, #473b7b, #3584a7 76%, #30d2be);      color: white;
+    height: 60px;
+  }
+}
+
+.routerWebMargin {
+  padding-top: 100px;
+}
+
+.whiteBackground {
+  background-color: white !important; 
+}
+.routerBtn > div.btn__content::before {
+  background-color: white !important;
+}
+
+.zeroOpacity > div.btn__content::before {
+    opacity: 0 !important;
+}
+
+// TEXT UTILITIES Across all sizes//
+
+.baseFontSize {
+  font-size: $font-size-base;
+}
+
+// End //
+
+.darkPurpleText {
+    color: #5b34b6;
+}
+
+.joinButton > div.btn__content {
+    font-size: $font-size-base * 0.7 !important;
+}
+
+.fittedImg {
+  width: 380px;
+}
+
+button.lowOpacity {
+  opacity: 0.25 !important;
+}
+
+.handCursor {
+  cursor: pointer;
+}
+
+.backToHome {
+  background-color: inherit !important;
+  max-width: 35px; 
+  max-height: 35px; 
+} 
+
+.default {
+  color: #3b4a63;
+}
+
+.navyBlue {
+  background-color: #3a539b !important;
+}
+
+.mediumFontSize > div.btn__content {
+  @extend .mediumFontSize;
+}
+
+.lightGrayText {
+  color: #4a4a4a;
+}
+
+.mediumGray {
+  background-color: #dadfe1 !important;
+}
+
+.grayBackground {
+  background-color: rgba(238, 238, 238, 0.5);
+}
+
+.clickableLink {
+  text-decoration: underline;
+  color: #39529B !important;
+  font-weight: bold;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px; 
+  margin-right: 0px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.radio > label {
+  color: rgba(58, 83, 155, 0.87) !important;
+}
+
+.flexDisplay {
+  display: flex;
+}
+
+.inputColor {
+  color: rgba(58, 83, 155, 0.87);
+}
+
+.radio.lightGrayText {
+  @extend .lightGrayText;
+}
+
+.material-icons.icon.icon--radio {
+  color: #1bb191 !important;
+}
+
+div.radio {
+  padding: 2px;
+}
+
+div.customCheck {
+  color: #1bb191;
+}
+
+.customCheck > label{
+  margin-left: 10px;
+}
+
+.controller {
+  z-index: 2001 !important;
+  height: 70px;
+  border-radius: 10px;
+  width: 200px;
+  background-color: #3a539b !important;
+}
+
+.navButton {
+  z-index: 2001 !important;
+  height: 50px;
+  border-radius: 10px;
+  width: 150px;
+  background-color: #3a539b !important;
+}
+
+div.customCheck>label {
+  font-size: $font-size-base * 0.7 !important;
+  padding-left: 20px;
+  color: rgba(58, 83, 155, 0.87) !important;
+  min-height: 40px;
+}
+
+div.customCheck>div.input-group__details {
+  display: none; // padding-top: 25px;
+}
+
+.fixedPosition {
+  position: fixed;
+}
+
+.helpButton {
+  bottom: 0px;
+  right: 0px;
+  position: fixed;
+  z-index: 10000;
+  height: 50px;
+}
+
+.topLevel {
+  z-index: 1000;
+}
+
+.material-icons {
+  font-size: $font-size-base * 1.2;
+}
+
+.alert > div > .material-icons {
+  font-size: $font-size-base * 0.7;
+  margin-right: 02px;
+}
+
+.customAlign {
+  justify-content: inherit;
+}
+
+.defaultBlue {
+  color: #3a539b !important;
+}
+
+.text--normal {
+  text-transform: none;
+}
+
+.application--light .input-group input, .application--light .input-group textarea, .input-group__selections__comma, input, label {
+  color: #3a539b !important;
+}
+
+.logo {
+  height: 40px;
+  width: 42px;
+  margin-left: 3%;
+  margin-right: 2%;
+  margin-top: 8px;
+}
+
+.highlighter {
+  background-color: rgba(255, 218, 138, 0.3);
+}
+
+.darkBlue {
+  background-color: #5c6c88 !important;
+}
+
+i.custom-purple {
+  color: #31117D !important;
+}
+
+.robot {
+  font-family: 'Roboto' !important;
+}
+
+.lato {
+  font-family: 'Lato', sans-serif !important;
+}
+
+div.btn__content {
+  @extend .francisco;
+}
+
+.awesome {
+  font-family: FontAwesome !important;
+}
+
+.headerText {
+  font-weight: 400;
+  color: white;
+  font-size: $font-size-base * 0.9 !important;
+  padding-top: 6px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  &#help {
+    font-size: $font-size-base * 0.5 !important;
+  }
+}
+
+.border {
+  @extend img;
+  opacity: 0.9;
+  padding-left: 5px !important;
+  padding-top: 5px !important;
+  padding-right: 15px !important;
+  margin-left: 25px !important;
+}
+
+.border.small {
+  padding-left: 5px !important;
+  padding-top: 0px !important;
+  margin-left: 6% !important;
+}
+
+div.radio.noLabel > label{
+  display: none !important;
+}
+
+div.noLabel {
+  max-width: 45px !important;
+}
+
+div.input-group__hint {
+  font-size: $font-size-base * 0.45 !important;
+}
+
+.customCenterAlign {
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column; 
+}
+
+input#testing,
+div#placeField, div#phoneNumber {
+  font-size: $font-size-base * 0.7 !important;
+  @extend .defaultBlue;
+}
+
+div.input-group__selections__comma {
+  @extend .defaultBlue;
+}
+
+.overlayBackground {
+  background-color: rgba(74, 74, 74, 0.9);  
+}
+
+.white--text input::placeholder  {
+  color: white !important;
+  @extend .mediumFontSize;
+}
+
+.default input::placeholder  {
+  color: #3a539b !important;
+  @extend .mediumFontSize;
+}
+
+.centerVertical {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+.dark-lead {
+  color: #4A4A4A !important;
+}
+
+.eightPercentOpacity {
+  opacity: 0.8;
+}
+
+div[role=radio] > label {
+  padding-left: 20px;
+  padding-top: 2px;
+  margin-bottom: 10px;
+  min-height: 40px;
+}
+
+div[role=radio].wrapLabel > label {
+  white-space: normal;
+  min-height: 180px !important;
+  min-width: 90% !important;
+}
+
+.greenText {
+  color: #68BF60;
+}
+
+.btn__content:before {
+  background-color: #F1F0F5 !important;
+}
+
+.green {
+  background-color: #4caf50 !important;
+  width: 100% !important;
+  opacity: 1 !important;
+}
+
+.lightPurple {
+  color: #473B7B !important;
+  background-color: #F1F0F5 !important;
+}
+
+.darkPurple {
+  color: white !important;
+  background-color: #473B7B !important;
+}
+
+.lower {
+  text-transform: none;
+}
+
+.input-group__selections__comma {
+  @extend .defaultBlue;
+}
+
+label .application--light .input-group input, .application--light .input-group textarea {
+  @extend .defaultBlue;
+}
+
+nav.onboarding {
+  color: white !important;
+  background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);
+  box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
+  // height: 72px; // below is used for aligning the element in the middle vertically
+  justify-content: center;
+  top: 0px;
+  position: fixed !important;
+  z-index: 1000 !important;
+  background-color: white;
+  width: 100%;
+}
+
+.centerVertically {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-orient: vertical;
+}
+
+.border {
+  border-radius: 50%; // background-color: rgba(65, 73, 90, 0.1);
+  background-color: whitesmoke;
+  top: 50% !important; // padding: 8px;
+  padding-top: 3px;
+  padding-right: 13px;
+  height: 55px;
+  width: 55px;
+}
+
+nav.onboarding * img {
+  border-radius: 50%; // background-color: rgba(65, 73, 90, 0.1);
+  background-color: whitesmoke;
+  margin-left: 4px;
+  margin-right: 4px;
+  top: 50% !important;
+  height: 55px;
+  width: 55px;
+  &.e {
+    box-shadow: 0 0 12px 0 #D5D5D5;
+  }
+}
+
+input {
+  text-align: center;
+}
+
+.custom-input {
+  display: inline !important;
+}
+
+.footer {
+  display: none;
+}
+
+.btn__content:before {
+  background-color: #F1F0F5 !important;
+}
+
+.round {
+  font-weight: bold;
+  border-radius: 100px !important;
+  text-align: center !important;
+  box-shadow: none; // font-family: "San Francisco Text" !important;
+}
+
+.center {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lead {
+  color: #3b4a63;
+  font-weight: normal;
+}
+
+.lightLead {
+  color: #6C7A89; 
+}
+
+div[role=radio].input-group:hover {
+  background-color: rgba(59,74,99,0.1) !important;
+}
+
+label.customCenterAlign:focus {
+  outline: none;
+}
+button.fullWidth:focus {
+  outline: none;
+}
+
+div.flexDisplay:hover {
+  background-color: rgba(59,74,99,0.1) !important;
+}
+
+.stencilBorderTop {
+  border-top: solid;
+  border-width: 1px;
+  border-color: rgba(0,0,0,0.1);
+}
+.stencilBorder {
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgba(0,0,0,0.1);
+}
+.stencilBorderBottom {
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgba(0,0,0,0.1);
+}
+
+.large {
+  height: 50px !important;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.centerAlign {
+  margin: auto;
+  margin-left: 10px;
+  padding-left: 0px;
+  border-radius: 8px;
+  background-color: #eeeeee;
+}
+
+.leftAuto {
+  margin-left: 10px !important;
+  padding-left: 0px;
+}
+
+.anchorBottom {
+  position: fixed !important;
+  bottom: 0px;
+  width: 100%;
+  background-color: #fafafa;
+  z-index: 10000;
+  box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.12);
+}
+
+.customProgress {
+  margin-left: 10px;
+  margin-top: 50px;
+  border-radius: 8px;  
+  background-color: #68c060;
+  width: 60%;
+  height: 10px;
+}
+
+.fillParent {
+  width: inherit;
+  height: inherit;
+}
+
+.fillParentRouter {
+  @extend .fillParent;
+  min-height: 300px;
+} 
+
+ button.baseFontSize > div.btn__content {
+   font-size: $font-size-base !important;
+ }
+ 
+.document {
+  height: 500px;
+}
+
+input.showSelectedCheckbox[type=checkbox] {
+  display:none;
+}
+    
+// styling for custom checkboxes and radio boxes-- this took a lot of time to get right.. //
+input.showSelectedCheckbox[type=checkbox] +  label span {
+  display:inline-block;
+  background:url("../../images/dropdown-checkbox-blank.png") no-repeat;
+  height: 41px;
+  width: 41px;
+}
+    
+input.showSelectedCheckbox[type=checkbox]:checked +  label span {
+  display:inline-block;
+  background:url("../../images/dropdown-checkbox-filled.png") no-repeat;
+  height: 41px;
+  width: 41px;
+}
+
+input.showSelectedRadio[type=radio] {
+  display:none;
+}
+
+input.showSelectedRadio[type=radio] +  label span {
+  display:inline-block;
+  background:url("../../images/radio-button.png") no-repeat;
+  height: 50px;
+  width: 50px;
+}
+    
+input.showSelectedRadio[type=radio]:checked +  label span {
+  display:inline-block;
+  background:url("../../images/selected-radio-button.png") no-repeat;
+  height: 50px;
+  width: 50px;
+}
+// end styling
+
+// Begin theming for mobile //
+@include media-breakpoint-down(sm) { 
+  nav.onboarding {
+    height: 72px;
+  }
+  .aboveNav {
+    bottom: 80px;
+  }
+
+  #notAdvice {
+    font-size: $font-size-base * 0.3 !important;
+  }
+
+  div.btn__content {
+    font-size: $font-size-base * 0.28 !important;
+  }
+  
+  .smallFontSize > div.btn__content {
+    font-size: $font-size-base * 0.45 !important;
+  }
+  
+  div.customCheck>label, div.radio > label {
+    font-size: $font-size-base * 0.6 !important;
+  }
+  
+  .controller {
+    height: 44px;
+    width: 100px;
+  }
+  
+  .navButton {
+    height: 22px;
+    width: 50px;
+  }
+  
+  #question {
+    display: block;
+    margin-left: 100px !important;
+  }
+
+  
+  input#testing,
+  input#placeField {
+    text-align: center !important;
+  }
+  
+  .list__tile__title {
+    font-size: $font-size-base * .5 !important;
+  }
+  
+  input#comfortable {
+    text-align: center !important;
+  }
+  
+  .input-group__selections__comma {
+    font-size: $font-size-base * 0.5 !important;
+  }
+  
+  p {
+    color: #31117D;
+    font-size: $font-size-base * 0.6 !important;
+  }  
+  
+  span.chip,
+  div {
+    font-size: $font-size-base * 0.60 !important;
+  }
+  
+  nav * img {
+    height: 30px !important;
+    width: 30px !important;
+  }
+  
+  .border {
+    padding-top: 3px;
+    padding-right: 13px;
+    height: 30px !important;
+    width: 30px !important;
+  }
+  
+  div.hideOnSmall {
+    display: none !important;
+  }
+
+  // TEXT UTILITIES SMALL //
+  
+  .xsmallFontSize {
+    font-size: $font-size-base * 0.4;
+  }
+
+  .smallFontSize {
+    font-size: $font-size-base * 0.35 !important;
+  }
+
+  .tinyFontSize {
+    font-size: $font-size-base * 0.45 !important;
+  }
+  
+  .mediumFontSize {
+    font-size: $font-size-base * 0.6 !important;
+  }
+ 
+  // END TEXT UTILITIES SMALL //
+  
+  div.wrapLabel > label {
+    min-height: 60px !important;
+    white-space: normal;
+  }
+
+  button.clickableLink > div.btn__content {
+      font-size: $font-size-base * 0.60 !important;
+      padding: 0px;
+  }
+
+  nav.web.fixed-bottom {
+    height: 150px;
+    position: relative !important;
+  }
+
+  // Styling on consent doc //
+  .customHeightFrame {      
+    height: 200px !important;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+    
+  .popOutDimensions {
+    margin-top: 5%;
+    height: 70% !important;
+    width: 100% !important;
+    overflow-y: scroll;
+    & > iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .customRowHeight {
+    height: 60px;
+  }
+
+  .mask {
+    border: solid 4px rgba(108, 122, 137, 0.3);    
+  }
+ 
+  .customProgress {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #68c060;
+    width: 100%;
+    height: 10px;
+  }
+
+  .customNavButton > button {
+    min-width: 0px !important;
+    margin: auto;
+    margin-top: 5px;
+    padding: 1px;
+    min-height: 50px;
+    min-width: 55px;
+    width: 70px  !important;
+    border-radius: 10px;
+  }
+  // Styling on consent doc //
+
+  .anchorBottom {
+    height: 60px;
+  } 
+
+}
+
+
+// styling specifc to desktop
+@include media-breakpoint-up(sm) {
+  nav.onboarding {
+    height: 90px;
+  }
+
+  .anchorBottom {
+    height: 80px;
+  }
+
+  div.hideOnLarge {
+     display: none !important;
+   }
+
+   
+   button.clickableLink > div.btn__content {
+     padding: 0px !important;
+     font-size: $font-size-base * 0.70 !important;
+    }
+    
+    p {
+      color: #31117D;
+      font-size: $font-size-base !important;
+    }
+    
+    
+    span.chip,
+    div {
+      font-size: $font-size-base * 0.70 !important;
+    }
+    
+    div.btn__content {
+      font-size: $font-size-base * 0.40 !important;
+    }
+
+  // BEGIN TEXT UTILITIES LARGE // 
+  .mediumFontSize {
+    font-size: $font-size-base * 0.7 !important;
+  }
+
+  .smallFontSize {
+    font-size: $font-size-base * 0.6 !important;
+  }  
+  
+  .tinyFontSize {
+    font-size: $font-size-base * 0.6 !important;
+  }
+
+  .xsmallFontSize {
+    font-size: $font-size-base * 0.5 !important;
+  }
+    
+
+  .smallFontSize > div.btn__content {
+    font-size: $font-size-base * 0.60 !important;
+  }
+
+  // END TEXT UTILITIES LARGE //
+  .ml-6 {
+    margin-left: 16.66% !important;
+  }
+
+ .alertWidth {
+    width: 30%;
+  }
+
+  .aboveNav {
+    bottom: 115px;
+  }
+
+  .customNavButton>button {
+    height: 50px;
+    width: inherit;
+    margin-top: 15px;
+    border-radius: 16px;
+  }
+
+  .mask {
+    border: solid 10px rgba(108, 122, 137, 0.3);
+  }
+
+  .customHeightFrame {
+    height: 450px !important;
+  }
+
+  .popOutDimensions {
+    height: 65%;
+    width: 70%;
+    margin-left: 15%;
+    text-align: center;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    & > iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+} 

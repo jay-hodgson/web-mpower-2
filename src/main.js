@@ -3,6 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/index'
+import Vuetify from 'vuetify'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+// register globally
+var vueScrollTo = require('vue-scrollto')
+Vue.use(vueScrollTo)
+Vue.use(VueAxios, axios)
+Vue.use(Vuetify)
 
 Vue.config.productionTip = false
 
