@@ -3,27 +3,14 @@
         <p class="text-center baseFontSize"> About the study </p>
         <div class="row">
             <div class="mx-auto col-sm-8">
-            <p class="mx-auto default smallFontSize">
-                The elevateMS study, developed in collaboration by Sage Bionetworks (nonprofit) and Novartis
-                Pharmaceuticals Corporation, monitors wellbeing and changes in selected symptoms of MS such 
-                as dexterity, balance or gait.
-
-                The app lets you record your own story of living with or without active symptoms and allows you to securely share information with researchers.
-                Sage Bionetworks developed the free elevateMS app to be a research tool that may also help you track your symptoms whenever you want. 
-                It is about you in real life. You are in charge.
-
-                <br>
-                <br>
-                So long as you are 18 years old or older, live in the U.S.
-                and have a personal iPhone (model 5 or newer with iOS 8 or later), then you can join elevateMS. You do not need to have MS to join this study 
-                and make a difference in the lives of people affected by MS.
-            </p>    
+                <p class="mx-auto default smallFontSize">
+                    The elevateMS study, developed in collaboration by Sage Bionetworks (nonprofit) and Novartis Pharmaceuticals Corporation, monitors wellbeing and changes in selected symptoms of MS such as dexterity, balance or gait. The app lets you record your own story of living with or without active symptoms and allows you to securely share information with researchers. Sage Bionetworks developed the free elevateMS app to be a research tool that may also help you track your symptoms whenever you want. It is about you in real life. You are in charge. 
+                </p>
+                <p class="mx-auto default smallFontSize" style="margin-bottom: 5rem">
+                    So long as you are 18 years old or older, live in the U.S. and have a personal iPhone (model 5 or newer with iOS 8 or later), then you can join elevateMS. You do not need to have MS to join this study and make a difference in the lives of people affected by MS. 
+                </p>
             </div>
         </div>
-
-        <br>
-        <br>
-
         <div class="row grayBackground">
 
             <div class="col-lg-3 mx-auto col-4 mr-2 mt-md-5 pt-md-5 mx-lg-print">
@@ -55,8 +42,8 @@
 
             </div>
 
-            <div class="ml-lg-0 mr-0 col-6 pr-lg-0 col-lg-auto mx-auto  p-md-5">
-                <img class="img-fluid scaledPhone" src="../../images/dark-blue-smartphone.png"> </img>
+            <div class="ml-lg-0 mr-0 col-6 pr-lg-0 col-lg-auto mx-auto p-md-5">
+                <img class="img-fluid scaledPhone" src="../../images/dark-blue-smartphone.png">
             </div>
 
             <div class="col-lg-4 ml-lg-0  mt-md-5 pt-md-5 mx-auto">

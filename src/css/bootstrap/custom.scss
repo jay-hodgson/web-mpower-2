@@ -7,9 +7,9 @@
 
 $font-family: 'Lato';
 $font-size-base: 1rem * 2.5; // Assumes the browser default, typically `16px`
-$font-size-lg:   1.25rem * 1.5;
-$font-size-sm:   .875rem * 1.5;
-$font-size-xs:   .75rem * 1.5;
+$font-size-lg:   1.25rem * 2.5;
+$font-size-sm:   .875rem * 2.5;
+$font-size-xs:   .75rem * 2.5;
 $font-weight-normal: bold;
 $lead-font-size:   $font-size-base;
 $lead-font-weight: 600;
@@ -19,10 +19,6 @@ $lead-font-weight: 600;
 }
 .application.theme--light {
   background: white;
-}
-
-.appelication--wrap {
-  min-height: 25vh;
 }
 
 .application {
@@ -103,6 +99,9 @@ nav.web {
 
 .baseFontSize {
   font-size: $font-size-base;
+}
+.lgFontSize {
+  font-size: $font-size-lg;
 }
 
 // End //
@@ -918,4 +917,12 @@ input.showSelectedRadio[type=radio]:checked +  label span {
       height: 100%;
     }
   }
-} 
+}
+
+nav a:hover {
+  text-decoration: none;
+  font-weight: normal!important;
+}
+nav a.router-link-active {
+  font-weight: bold!important;
+}
