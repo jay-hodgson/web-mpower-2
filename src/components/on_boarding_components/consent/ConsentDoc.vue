@@ -1,10 +1,9 @@
 <template>
   <v-app>
 
-    <div class="row" style="height: 400px;">
-
+    <div class="row">
       <div v-if="showConsentDoc" class='customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-2 mr-md-4 order-2'>
-         <iframe id="iFrame" ref="frame" src="/#/NullPage/ConsentDocText"
+         <iframe id="iFrame" ref="frame" src="/#/ConsentDocText"
         class='fillParent  mask'>
         </iframe> 
       </div>
@@ -12,18 +11,17 @@
         <!-- modal to show up if user clicks the expand button -->
        <v-dialog v-if="showOverlay" max-width="90%" v-model="showOverlay" scrollable>
         <v-card height="400px ">
-            <iframe id="overlayFrame" ref="frame" src="/#/NullPage/ConsentDocText"
+            <iframe id="overlayFrame" ref="frame" src="/#/ConsentDocText"
             class='fillParent'>
             </iframe>
         </v-card>
        </v-dialog>
 
 
-      <div class="col-md-8 col-lg-6  mt-2 mx-auto" v-bind:class="{'order-1': showConsentDoc }" >
-        <router-view style="height: -webkit-fill-available;" class="whiteBackground fillParentRouter consentView router container-fluid"> </router-view>
+      <div style="outline: 1px solid red" class="col-md-8 col-lg-6  mt-2 mx-auto" v-bind:class="{'order-1': showConsentDoc }" >
+        <router-view class="whiteBackground fillParentRouter consentView router container-fluid"></router-view>
         <div class="row mt-md-5 m-md-3">
             <div class="ml-5 smallFontSize">  
-              <!-- button that needs to be fixed is below, the styling of the router-view tag is throwing things off -->
               <a v-on:click="showConsentDoc = !showConsentDoc" class="defaultBlue font-weight-bold ">
                 <u> See Consent Document with this section </u>
               </a>
@@ -156,9 +154,9 @@ export default {
       // this statement checks whether or not the iframe modal is popped out or not
       if (!this.iframe && document.getElementById('iFrame')) {
         this.iframe = document.getElementById('iFrame').contentWindow
-        this.iframe.postMessage(message, window.origin + '/#/NullPage/ConsentDocText')
+        this.iframe.postMessage(message, window.origin + '/#/ConsentDocText')
       } else if (this.iframe) {
-        this.iframe.postMessage(message, window.origin + '/#/NullPage/ConsentDocText')
+        this.iframe.postMessage(message, window.origin + '/#/ConsentDocText')
       }
     },
     recieveMessage: function (event) {

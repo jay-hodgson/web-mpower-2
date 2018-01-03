@@ -30,10 +30,6 @@ export default {
     this.onChange(false)
   },
 
-  loggedIn () {
-    return !!localStorage.token
-  },
-
   onChange () {}
 }
 

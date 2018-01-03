@@ -9,22 +9,32 @@
           </div>
 
             <div class="col-2 col-sm-auto ml-1 mr-2 p-0 ">
+              <!-- router link would know when it is selected -->
+              <router-link :to="{name: 'YourStory'}" class="routerBtn m-0 p-0 text-capitalize default smallFontSize">Your Story</router-link>
+              <!--
               <v-btn :to="{name: 'YourStory'}" flat class="routerBtn m-0 p-0 text-capitalize default smallFontSize">
                 Your Story
               </v-btn>
+              -->
             </div>
 
             <div class="col-2 col-sm-auto ml-4 mr-2 p-0 ">
+              <router-link :to="{name: 'About'}" class="routerBtn m-0 p-0 text-capitalize default smallFontSize">About</router-link>
+              <!--
               <v-btn :to="{name: 'About'}" flat class="routerBtn m-0 p-0 text-capitalize default smallFontSize">
                 About
               </v-btn>
+              -->
             </div>
 
             
             <div class="col-2 col-sm-auto ml-2 mr-2 p-0 ">
+              <router-link :to="{name: 'Team'}" class="routerBtn m-0 p-0 text-capitalize default smallFontSize">Team</router-link>
+              <!--
               <v-btn :to="{name: 'Team'}" flat class="routerBtn m-0 p-0 text-capitalize default smallFontSize" >
                 Team
               </v-btn>
+              -->
             </div>
 
             <div class="col-2 col-sm-auto ml-2 mr-2 pl-2 ml-md-auto">
@@ -36,10 +46,7 @@
           </div>
 
         </div>
-
-      </div>  
-      </div>
-    </nav>
+      </nav>
   
     <router-view class="whiteBackground router routerWebMargin container-fluid"></router-view>
 

@@ -41,27 +41,27 @@
             </div>
         </div>
 
-        <div class="row mt-5 grayBackground">
+        <div class="row  pt-5 pb-5 grayBackground">
 
             <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
                 <img class="pl-lg-5 img-fluid fittedImg" src="../../images/scientists-icon.png">
             </div>
 
-            <div class="mx-auto mt-0  p-4 col-12 col-lg-6 order-2 order-lg-2">
+            <div class="mx-auto p-4 col-12 col-lg-6 order-2 order-lg-2">
                 <p class="darkPurpleText baseFontSize"> Scientists Make Discoveries</p>
-                <p class="smallFontSize default">
+                <p class="mediumFontSize default">
                     When you use the app you contribute to research on MS. By combining the information from many people who are using the app, researchers expect to find patterns. The information you provide through the elevateMS app gets encrypted on the phone to protect your privacy. As you participate over time, you help create a powerful dataset that may lead to scientific breakthrough and to new ways to help people with MS improve their well being. You do not need to have MS to participate. This study will last about one year. We’d like you to participate for three consecutive months or longer if you can.
                 </p>
             </div>
 
         </div>
 
-        <div class="row">
+        <div class="row pt-5 pb-5">
             <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
                 <img class="pl-lg-5 img-fluid fittedImg" src="../../images/partner-icon.png">
             </div>
 
-            <div class="mx-auto mt-0 pt-0  col-12 col-lg-6 order-2 order-lg-2 mt-5">
+            <div class="mx-auto col-12 col-lg-6 order-2 order-lg-2">
                 <p class="darkPurpleText baseFontSize"> Interested in becoming a partner?</p>
                 <p class="mediumFontSize default">
                     Join the Synapse community. Some text about how you will get the data.

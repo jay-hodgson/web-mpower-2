@@ -69,11 +69,10 @@
 
 
 <script>
-import auth from '@/auth/auth'
+// import auth from '@/auth/auth'
 export default {
   data () {
     return {
-      loggedIn: auth.loggedIn(),
       email: '',
       password: '',
       error: false,
@@ -90,31 +89,6 @@ export default {
     }
   },
   methods: {
-    signIn () {
-      this.axios.post('https://webservices.sagebridge.org/v3/auth/signIn',
-        {
-          /* eslint-disable */
-          email: this.email,
-          password: this.password,
-          study: this.study,
-          type: this.type
-          /* eslint-enable */
-        }
-      )
-        .then((response) => {
-          console.log(response.data)
-        })
-        .catch(error => {
-          console.log('eror being made')
-          this.loginInfo = JSON.parse(JSON.stringify(error)).response.data
-          console.log('')
-          console.log(this.loginInfo)
-          console.log('')
-          var sessionToken = this.loginInfo.sessionToken
-          this.userId = this.loginInfo.id
-          this.HTTP = this.createBaseHTTP(sessionToken)
-        })
-    },
     createBaseHTTP (sessionToken) {
       return this.axios.create({
         baseURL: 'https://webservices.sagebridge.org/',
@@ -125,13 +99,6 @@ export default {
     },
     getSelf () {
       this.HTTP.get('/v3/participants/self',
-        {}
-      ).then(response => {
-        console.log(response.data)
-      })
-    },
-    signOut () {
-      this.HTTP.get('/v3/auth/signOut',
         {}
       ).then(response => {
         console.log(response.data)
@@ -163,9 +130,6 @@ export default {
     }
   },
   created () {
-    auth.onChange = loggedIn => {
-      this.loggedIn = loggedIn
-    }
   }
 }
 </script>
