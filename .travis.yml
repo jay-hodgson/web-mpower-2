@@ -1,7 +1,6 @@
 language: node_js
 node_js:
-  - 7
-
+    - "7.2.1"
 # Selenium-fixes, see: https://github.com/dwyl/learn-nightwatch/issues/8#issuecomment-264734792
 dist: trusty
 sudo: required
@@ -15,31 +14,34 @@ before_install:
  - sudo dpkg -i google-chrome*.deb
 before_script:
   - jdk_switcher use oraclejdk8
-# End Selenium-fixes
-
 after_success:
   - npm run build
 
 deploy:
-  - provider: s3
-    acl: public_read
-    access_key_id: $AWS_ACCESS_KEY_ID
-    secret_access_key: $AWS_SECRET_ACCESS_KEY
-    bucket: $AWS_S3_BUCKET
-    upload-dir: $TRAVIS_BRANCH
-    skip_cleanup: true
-    local_dir: dist
-    on:
-      all_branches: true
-  - provider: s3
-    acl: public_read
-    access_key_id: $AWS_ACCESS_KEY_ID
-    secret_access_key: $AWS_SECRET_ACCESS_KEY
-    bucket: $AWS_S3_BUCKET
-    skip_cleanup: true
-    local_dir: dist
-    on:
-      branch: master
+    - provider: s3
+      access_key_id: ${$AWS_ACCESS_KEY_ID}
+      secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+      bucket: "mpower.sagebridge.org"
+      skip_cleanup: true
+      acl: public_read
+      detect_encoding: false
+      endpoint: mpower.sagebridge.org.s3-website-us-east-1.amazonaws.com
+      region: "us-east-1"
+      local_dir: dist
+      on:
+          branch: develop
+    - provider: s3
+      access_key_id: ${$AWS_ACCESS_KEY_ID}
+      secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+      bucket: "parkinsonmpower.org"
+      skip_cleanup: true
+      acl: public_read
+      detect_encoding: false
+      endpoint: parkinsonmpower.org.s3-website-us-east-1.amazonaws.com
+      region: "us-east-1"
+      local_dir: dist
+      on:
+          branch: release
 cache:
   directories:
     - "node_modules"
