@@ -28,10 +28,7 @@
         </div>
   
         <div class="row whiteBackground">
-            <!-- <iframe ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" height="500px" class="col-12 mask">
-            </iframe> -->
-            <iframe ref="frame" src="/#/NullPage/ConsentDocText" height="500px" class="col-12 mask">
-            </iframe>
+            <iframe ref="frame" src="/#/ConsentDocText" height="500px" class="col-12 mask"></iframe>
         </div>
 
 

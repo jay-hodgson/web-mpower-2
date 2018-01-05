@@ -41,33 +41,17 @@ import ConsentThirteen from '@/components/on_boarding_components/consent/Consent
 import ConsentDocText from '@/components/on_boarding_components/consent/ConsentDocText.vue'
 
 import Sign from '@/components/on_boarding_components/sign/Sign.vue'
-
+import NotFound from '@/components/NotFound.vue'
 import ConsentDoc from '@/components/on_boarding_components/consent/ConsentDoc.vue'
 import Registration from '@/components/on_boarding_components/registration/Registration'
 import RegistrationMobile from '@/components/on_boarding_components/registration/RegistrationMobile'
 import RegistrationLinkSent from '@/components/on_boarding_components/registration/RegistrationLinkSent'
-import NullPage from '@/components/NullPage'
-
-import auth from '../auth/auth'
 
 Vue.use(Router)
 
 // below works only if in history mode
 const scrollBehavior = (to, from, savedPosition) => {
-  const position = {}
-  return { position }
-}
-
-// handles authentication
-function requireAuth (to, from, next) {
-  if (!auth.loggedIn()) {
-    next({
-      path: '/NullPage/',
-      query: { redirect: to.fullPath }
-    })
-  } else {
-    next()
-  }
+  return { x: 0, y: 0 }
 }
 
 export default new Router({
@@ -75,223 +59,216 @@ export default new Router({
   scrollBehavior: scrollBehavior,
   routes: [
     {
-      path: '/NullPage',
-      component: NullPage,
-      beforeEnter: requireAuth,
+      path: '/',
+      redirect: {name: 'YourStory'}
+    },
+    {
+      path: '/ConsentDocText',
+      component: ConsentDocText,
+      name: 'ConsentDocText'
+    },
+    {
+      path: '/Website',
+      component: Website,
       children: [
         {
-          path: 'ConsentDocText',
-          component: ConsentDocText,
-          name: 'ConsentDocText'
+          path: 'YourStory',
+          name: 'YourStory',
+          component: YourStory
         },
         {
-          path: 'Website',
-          component: Website,
-          children: [
-            {
-              path: 'YourStory',
-              name: 'YourStory',
-              component: YourStory
-
-            },
-            {
-              path: 'About',
-              name: 'About',
-              component: About
-            },
-            {
-              path: 'Team',
-              name: 'Team',
-              component: Team
-            },
-            {
-              path: 'Privacy',
-              name: 'Privacy',
-              component: Privacy
-            },
-            {
-              path: 'Contact',
-              name: 'Contact',
-              component: Contact
-            },
-            {
-              path: 'FAQ',
-              name: 'FAQ',
-              component: FAQ
-            }
-          ]
+          path: 'About',
+          name: 'About',
+          component: About
         },
         {
-          path: 'OnBoarding',
-          component: OnBoarding,
-          children: [
-            {
-              path: 'SinglePageEligibility',
-              name: 'SinglePageEligibility',
-              component: SinglePageEligibility
-            },
-            {
-              path: 'Ineligible',
-              name: 'Ineligible',
-              component: Ineligible
-            },
-            {
-              path: 'Vows',
-              name: 'Vows',
-              component: Vows
-            },
-            {
-              path: 'OverviewEligibility',
-              name: 'OverviewEligibility',
-              component: OverviewEligibility
-            },
-            {
-              path: 'Congratulations',
-              name: 'Congratulations',
-              component: Congratulations
-            },
-            {
-              path: 'QuestionView',
-              name: 'QuestionView',
-              component: QuestionView,
-              children: [
-                {
-                  path: 'QuestionOne',
-                  name: 'QuestionOne',
-                  component: QuestionOne
-                },
-                {
-                  path: 'QuestionTwo',
-                  name: 'QuestionTwo',
-                  component: QuestionTwo
-                },
-                {
-                  path: 'QuestionThree',
-                  name: 'QuestionThree',
-                  component: QuestionThree
-                },
-                {
-                  path: 'QuestionFour',
-                  name: 'QuestionFour',
-                  component: QuestionFour
-                },
-                {
-                  path: 'QuestionFive',
-                  name: 'QuestionFive',
-                  component: QuestionFive
-                }
-              ]
-            },
-            {
-              path: 'RetakeQuiz',
-              name: 'RetakeQuiz',
-              component: RetakeQuiz
-            },
-            {
-              path: 'ConsentDoc',
-              name: 'ConsentDoc',
-              components: {
-                default: ConsentDoc,
-                d: ConsentDocText
-              },
-              children: [
-                {
-                  path: 'ConsentOne',
-                  name: 'ConsentOne',
-                  component: ConsentOne
-                },
-                {
-                  path: 'ConsentTwo',
-                  name: 'ConsentTwo',
-                  component: ConsentTwo
-                },
-                {
-                  path: 'ConsentThree',
-                  name: 'ConsentThree',
-                  component: ConsentThree
-                },
-                {
-                  path: 'ConsentFour',
-                  name: 'ConsentFour',
-                  component: ConsentFour
-                },
-                {
-                  path: 'ConsentFive',
-                  name: 'ConsentFive',
-                  component: ConsentFive
-                },
-                {
-                  path: 'ConsentSix',
-                  name: 'ConsentSix',
-                  component: ConsentSix
-                },
-                {
-                  path: 'ConsentSeven',
-                  name: 'ConsentSeven',
-                  component: ConsentSeven
-                },
-                {
-                  path: 'ConsentEight',
-                  name: 'ConsentEight',
-                  component: ConsentEight
-                },
-                {
-                  path: 'ConsentNine',
-                  name: 'ConsentNine',
-                  component: ConsentNine
-                },
-                {
-                  path: 'ConsentTen',
-                  name: 'ConsentTen',
-                  component: ConsentTen
-                },
-                {
-                  path: 'ConsentEleven',
-                  name: 'ConsentEleven',
-                  component: ConsentEleven
-                },
-                {
-                  path: 'ConsentTwelve',
-                  name: 'ConsentTwelve',
-                  component: ConsentTwelve
-                },
-                {
-                  path: 'ConsentThirteen',
-                  name: 'ConsentThirteen',
-                  component: ConsentThirteen
-                }
-              ]
-            },
-            {
-              path: 'Sign',
-              name: 'Sign',
-              component: Sign
-            },
-            {
-              path: 'Registration',
-              name: 'Registration',
-              component: Registration
-            },
-            {
-              path: 'RegistrationMobile',
-              name: 'RegistrationMobile',
-              component: RegistrationMobile
-            },
-            {
-              path: 'RegistrationLinkSent',
-              name: 'RegistrationLinkSent',
-              component: RegistrationLinkSent
-            }
-          ]
+          path: 'Team',
+          name: 'Team',
+          component: Team
+        },
+        {
+          path: 'Privacy',
+          name: 'Privacy',
+          component: Privacy
+        },
+        {
+          path: 'Contact',
+          name: 'Contact',
+          component: Contact
+        },
+        {
+          path: 'FAQ',
+          name: 'FAQ',
+          component: FAQ
         }
       ]
     },
     {
-      path: '/NullPage',
-      beforeEnter (to, from, next) {
-        auth.logout()
-        next('/NullPage')
-      }
+      path: '/OnBoarding',
+      component: OnBoarding,
+      children: [
+        {
+          path: 'SinglePageEligibility',
+          name: 'SinglePageEligibility',
+          component: SinglePageEligibility
+        },
+        {
+          path: 'Ineligible',
+          name: 'Ineligible',
+          component: Ineligible
+        },
+        {
+          path: 'Vows',
+          name: 'Vows',
+          component: Vows
+        },
+        {
+          path: 'OverviewEligibility',
+          name: 'OverviewEligibility',
+          component: OverviewEligibility
+        },
+        {
+          path: 'Congratulations',
+          name: 'Congratulations',
+          component: Congratulations
+        },
+        {
+          path: 'Quiz',
+          name: 'QuestionView',
+          component: QuestionView,
+          children: [
+            {
+              path: '01',
+              name: 'QuestionOne',
+              component: QuestionOne
+            },
+            {
+              path: '02',
+              name: 'QuestionTwo',
+              component: QuestionTwo
+            },
+            {
+              path: '03',
+              name: 'QuestionThree',
+              component: QuestionThree
+            },
+            {
+              path: '04',
+              name: 'QuestionFour',
+              component: QuestionFour
+            },
+            {
+              path: '05',
+              name: 'QuestionFive',
+              component: QuestionFive
+            }
+          ]
+        },
+        {
+          path: '/RetakeQuiz',
+          name: 'RetakeQuiz',
+          component: RetakeQuiz
+        },
+        {
+          path: '/ConsentDoc',
+          name: 'ConsentDoc',
+          components: {
+            default: ConsentDoc,
+            d: ConsentDocText
+          },
+          children: [
+            {
+              path: '01',
+              name: 'ConsentOne',
+              component: ConsentOne
+            },
+            {
+              path: '02',
+              name: 'ConsentTwo',
+              component: ConsentTwo
+            },
+            {
+              path: '03',
+              name: 'ConsentThree',
+              component: ConsentThree
+            },
+            {
+              path: '04',
+              name: 'ConsentFour',
+              component: ConsentFour
+            },
+            {
+              path: '05',
+              name: 'ConsentFive',
+              component: ConsentFive
+            },
+            {
+              path: '06',
+              name: 'ConsentSix',
+              component: ConsentSix
+            },
+            {
+              path: '07',
+              name: 'ConsentSeven',
+              component: ConsentSeven
+            },
+            {
+              path: '08',
+              name: 'ConsentEight',
+              component: ConsentEight
+            },
+            {
+              path: '09',
+              name: 'ConsentNine',
+              component: ConsentNine
+            },
+            {
+              path: '10',
+              name: 'ConsentTen',
+              component: ConsentTen
+            },
+            {
+              path: '11',
+              name: 'ConsentEleven',
+              component: ConsentEleven
+            },
+            {
+              path: '12',
+              name: 'ConsentTwelve',
+              component: ConsentTwelve
+            },
+            {
+              path: '13',
+              name: 'ConsentThirteen',
+              component: ConsentThirteen
+            }
+          ]
+        },
+        {
+          path: '/Sign',
+          name: 'Sign',
+          component: Sign
+        },
+        {
+          path: '/Registration',
+          name: 'Registration',
+          component: Registration
+        },
+        {
+          path: '/RegistrationMobile',
+          name: 'RegistrationMobile',
+          component: RegistrationMobile
+        },
+        {
+          path: '/RegistrationLinkSent',
+          name: 'RegistrationLinkSent',
+          component: RegistrationLinkSent
+        }
+      ]
+    },
+    {
+      path: '*',
+      component: NotFound
     }
   ]
 })
