@@ -1,6 +1,6 @@
 # mpower2
 
-> mPower 2
+[![Build Status](https://travis-ci.org/Sage-Bionetworks/web-mpower-2.svg?branch=develop)](https://travis-ci.org/Sage-Bionetworks/web-mpower-2)
 
 ## Build Setup
 
