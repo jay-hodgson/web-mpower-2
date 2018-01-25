@@ -10,8 +10,7 @@
 }
 
 html, body {
-  /*font-size: calc(16px + (22-16) * (100vw - 400px)/(800-400));*/
-  font-size: calc(16px + (8-16) * (100vw - 400px)/(800-400));
+  font-size: calc(12px + 1vw);
   padding: 0;
   margin: 0;
   font-family: 'Lato', sans-serif;
@@ -171,7 +170,6 @@ li {
     -webkit-overflow-scrolling: touch;
     padding: 1.5rem 0;
   }
-
 @media screen and (max-width: 50em) {
   .image.container {
     flex-direction: column;
