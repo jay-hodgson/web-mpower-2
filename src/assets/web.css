@@ -1,0 +1,184 @@
+@import '../../node_modules/vue-mdc-adapter/dist/radio/radio.min.css';
+@import '../../node_modules/vue-mdc-adapter/dist/textfield/textfield.min.css';
+@import '../../node_modules/vue-mdc-adapter/dist/select/select.min.css';
+@import '../../node_modules/vue-mdc-adapter/dist/snackbar/snackbar.min.css';
+
+/* margins on this are goofy for some reason. */
+.mdc-snackbar {
+  background-color: #B22222;
+  padding: .5rem 0 .5rem .5rem;
+}
+
+html, body {
+  /*font-size: calc(16px + (22-16) * (100vw - 400px)/(800-400));*/
+  font-size: calc(16px + (8-16) * (100vw - 400px)/(800-400));
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-image: none;
+}
+html.consent {
+  background-image: linear-gradient(57deg, #473b7b, #3584a7 76%, #30d2be);
+  background-attachment: fixed;
+}
+a, a:visited {
+  color: #3b4a63;
+  text-decoration: none;
+}
+p a {
+  text-decoration: underline;
+}
+h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  color: #31117d;
+}
+h2 {
+  font-weight: normal;
+  color: #31117d;
+  text-align: center;
+  margin: 0;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+}
+h3 {
+  font-weight: normal;
+  color: #31117d;
+  margin: 0;
+  margin-bottom: .25rem;
+}
+p {
+  line-height: 1.5;
+  color: #4a4a4a;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+blockquote {
+  margin-left: 1rem;
+  margin-right: 0;
+  font-size: .8rem;
+}
+button {
+  border: none;
+}
+
+section:nth-child(odd) {
+  width: 100%;
+  background-color: rgba(238, 238, 238, 0.3);
+}
+.container {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: .5rem 1.5rem;
+}
+  .image.container {
+    max-width: 42rem;
+    display: flex;
+    align-items: center;
+  }
+    .image.container .image img {
+      height: 15rem;
+      width: 15rem;
+      margin: 1.5rem;
+    }
+    .image.container .image-holder img {
+      width: 13rem; 
+      display: block;
+      margin: 1.5rem; 
+      margin-right: 2rem;
+    }
+    .image.container .text h2 {
+      margin: 0;
+      font-weight: normal;
+      color: #31117d;
+    }
+    .image.container .text p {
+      margin-top: .25rem;
+    }
+.video {
+  margin: 2rem 0;
+}
+img {
+  width: 100%;
+}
+a.join-button {
+  background-color: #3a539b;
+  border-radius: 4px;
+  border: none;
+  color: white!important; /* boo */
+  display: inline-block;
+  margin: .2rem 0;
+  padding: .4rem 1.6rem;
+  text-decoration: none;
+}
+.grayscale {
+  opacity: .4;
+}
+
+/* Layout of general HTML content */
+ul {
+  margin: 0;
+  padding: 0 0 0 1rem;
+}
+table {
+  width: 100%;
+}
+td {
+  vertical-align: top;
+}
+ul {
+  margin-bottom: 1rem;
+}
+li {
+  margin-top: .75rem;
+  margin-bottom: .75rem;
+}
+/* Consent as displayed in a viewer that can be maximized to view. */
+.maximized {
+  position: absolute; 
+  top: 0px; 
+  left: 0px; 
+  right: 0px; 
+  bottom: 0px; 
+  z-index: 2; 
+  background-color: white;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.opener {
+  background: transparent url(http://via.placeholder.com/96x96) center center; 
+  background-size: contain;
+  bottom: 0;
+  cursor: pointer;
+  height: 2rem;
+  position: absolute; 
+  right: 0;
+  width: 2rem; 
+  z-index: 1;
+}
+
+/* DOCKED LAYOUT (header annd footer at top and bottom of viewport, center scrolls) */
+.docked-layout {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+  .docked-layout section {
+    flex: 1;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding: 1.5rem 0;
+  }
+
+@media screen and (max-width: 50em) {
+  .image.container {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 80em) {
+  html, body {
+    font-size: 25px;
+  }
+}

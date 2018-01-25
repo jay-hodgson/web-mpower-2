@@ -1,45 +1,15 @@
 <template>
-  <div id="app">
-    <template>
-      <router-view></router-view>
-    </template>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
+import store from './components/onboarding_store';
+
 export default {
-  data () {
-    return {
-      error: false,
-      study: '',
-      type: '',
-      wasClicked: false,
-      HTTP: null,
-      userId: null,
-      loginInfo: null
-    }
-  },
-  methods: {
-    createBaseHTTP (sessionToken) {
-      return this.axios.create({
-        baseURL: 'https://webservices.sagebridge.org/',
-        headers: {
-          'Bridge-Session': sessionToken
-        }
-      })
-    },
-    self () {
-      this.HTTP.get('/v3/participants/self',
-        {}
-        // studyId: 'parkinson-android',
-        // userId: this.userId
-      ).then(response => {
-        console.log(response.data)
-      })
-    }
-  }
+  name: 'App',
+  store
 }
 </script>
 
-<style scoped>
+<style>
 </style>
