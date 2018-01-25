@@ -10,6 +10,3 @@ export default {
   store
 }
 </script>
-
-<style>
-</style>
