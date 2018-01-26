@@ -145,16 +145,23 @@ li {
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
 }
-.opener {
-  background: transparent url(http://via.placeholder.com/96x96) center center; 
-  background-size: contain;
+.min-max-control {
   bottom: 0;
   cursor: pointer;
-  height: 2rem;
   position: absolute; 
   right: 0;
-  width: 2rem; 
+  width: 1.5rem; 
+  height: 1.5rem;
   z-index: 1;
+  border-radius: 2px;
+}
+.opener {
+  background: transparent url(/static/images/Maximize.png) center center; 
+  background-size: contain;
+}
+.closer {
+  background: transparent url(/static/images/Minimize.png) center center; 
+  background-size: contain;
 }
 
 /* DOCKED LAYOUT (header annd footer at top and bottom of viewport, center scrolls) */

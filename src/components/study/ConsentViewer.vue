@@ -206,7 +206,7 @@
 
     </div>
     <div class="consent-max">
-      <div @mousedown="toggleMax" class="opener"></div>
+      <div @mousedown="toggleMax" class="min-max-control opener"></div>
     </div>
   </div>
 </template>
@@ -238,7 +238,8 @@ export default {
       var div = document.createElement("div")
       div.classList.add("maximized")
       var toggle = document.createElement('div')
-      toggle.classList.add("opener")
+      toggle.classList.add("min-max-control")
+      toggle.classList.add("closer")
       toggle.addEventListener("mousedown", function() {
         div.parentNode.removeChild(div)
       }, false);
