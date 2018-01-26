@@ -77,7 +77,7 @@ footer > div:last-child {
 button {
   font-size: 1rem;
   margin: 0;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 2rem;
   text-align: center;
   border-radius: 0.4rem;
   background-color: #3b4a63;

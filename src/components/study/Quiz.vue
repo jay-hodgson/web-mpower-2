@@ -69,13 +69,12 @@
 <script>
 import MainNav from './MainNav.vue'
 import Footer from './Footer.vue'
-import store from '../onboarding_store'
+import Store from '../store'
 import RadioButton from './RadioButton'
 
 export default {
   name: 'StudyQuiz',
   components: { MainNav, Footer, RadioButton },
-  store: store,
   data() {
     return {
       step: 1,
@@ -113,7 +112,7 @@ export default {
         this.$store.setAnswers(this.answers)
         this.$router.push('/study/retake-quiz')
       } else {
-        this.$store.setCurrentStep(3)
+        this.$store.setCurrentStep(Store.QUIZ_DONE)
         this.$router.push('/study/overview')
       }
     }
@@ -127,7 +126,7 @@ export default {
 }
 .question > label {
   color: #6c7a89;
-  font-size: .6rem;
+  font-size: .7rem;
 }
 .question > h3 {
   color: #3b4a63;

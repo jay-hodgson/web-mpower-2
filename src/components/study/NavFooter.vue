@@ -7,15 +7,10 @@
 <script>
 export default {
   name: "NavFooter",
-  props: {
-      label: String,
-      step: Number,
-      path: String
-  },
+  props: ['label'],
   methods: {
     exec() {
-      this.$store.setCurrentStep(this.step)
-      this.$router.push(this.path)
+      this.$emit('click')
     }
   }
 };

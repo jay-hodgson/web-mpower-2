@@ -58,28 +58,30 @@
         </div>
       </div>
     </section>
-    <NavFooter :step="step" path="/study/quiz" label="Retake quiz"></NavFooter>
+    <NavFooter label="Retake quiz" @click="navigate"></NavFooter>
   </div>
 </template>
 
 <script>
 import MainNav from './MainNav.vue'
 import NavFooter from './NavFooter.vue'
-import store from '../onboarding_store';
+import Store from '../store'
 
 export default {
   name: 'StudyRetakeQuiz',
   components: { MainNav, NavFooter },
-  store: store,
-  data() {
-    return {
-      showBack: false,
-      step: 3
-    }
+  created() {
+    // due to failure, we're back to consent. When they are done reviewing, 
+    // then we advance them to consent being done again.
+    this.$store.setCurrentStep(Store.ELIGIBILITY_DONE)
   },
   methods: {
     isError: function(tag) {
       return this.$store.getAnswers()[tag] === 'wrong'
+    },
+    navigate() {
+      this.$store.setCurrentStep(Store.CONSENT_DONE)
+      this.$router.push('/study/quiz')
     }
   }
 }
