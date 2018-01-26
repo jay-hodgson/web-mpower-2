@@ -12,10 +12,10 @@
       </div>
 
       <div class="share-icons">
-        <img src="http://via.placeholder.com/96x96">
-        <img src="http://via.placeholder.com/96x96">
-        <img src="http://via.placeholder.com/96x96">
-        <img src="http://via.placeholder.com/96x96">
+        <a href=""><img src="/static/images/Sharing_Email.png"></a>
+        <a href=""><img src="/static/images/Sharing_Facebook.png"></a>
+        <a href=""><img src="/static/images/Sharing_SMS.png"></a>
+        <a href=""><img src="/static/images/Sharing_Twitter.png"></a>
       </div>
 
       <div class="back-button">
@@ -80,13 +80,15 @@ nav > div {
   text-align: center;
 }
 .share-icons {
-  margin: 0 auto;
+  margin: 0 15%;
   display: flex;
   justify-content: space-around;
 }
   .share-icons img {
     width: 11vw;
     height: 11vw;
+    max-width: 68px;
+    max-height: 68px;
   }
 .back-button {
   margin-top: 5rem;

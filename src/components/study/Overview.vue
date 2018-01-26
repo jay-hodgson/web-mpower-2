@@ -29,8 +29,7 @@
       </div>
       <router-link to="/study/eligibility" class="step" 
         v-bind:class="{ done: currentStep > Store.UNSTARTED, current: currentStep === Store.UNSTARTED }">
-        <div class="icon eligibility">
-        </div>
+        <div class="icon eligibility"></div>
         <div class="content">
           <h3>Eligibility</h3>
           <p>Let’s see if you are eligible for the Parkinsons Disease study.<br>2 minutes</p>
@@ -41,8 +40,7 @@
 
       <router-link to="/study/consent" class="step" 
         v-bind:class="{ done: currentStep > Store.ELIGIBILITY_DONE,  current: currentStep === Store.ELIGIBILITY_DONE }">
-        <div class="icon consent">
-        </div>
+        <div class="icon consent"></div>
         <div class="content">
           <h3>Consent</h3>
           <p>Learn about the study and the risks and benefits of joining.<br>5 minutes</p>
@@ -53,8 +51,7 @@
       
       <router-link to="/study/quiz" class="step" 
         v-bind:class="{ done: currentStep > Store.CONSENT_DONE, current: currentStep === Store.CONSENT_DONE }">
-        <div class="icon quiz">
-        </div>
+        <div class="icon quiz"></div>
         <div class="content">
           <h3>Quiz</h3>
           <p>Make sure you know important facts about the study.<br>5 minutes</p>
@@ -65,8 +62,7 @@
 
       <router-link to="/study/sign" class="step" 
         v-bind:class="{ done: currentStep > Store.QUIZ_DONE, current: currentStep === Store.QUIZ_DONE }">
-        <div class="icon sign">
-        </div>
+        <div class="icon sign"></div>
         <div class="content">
           <h3>Sign</h3>
           <p>Sign the consent document.<br>2 minutes</p>
@@ -77,8 +73,7 @@
 
       <router-link to="/study/registration" class="step" 
         v-bind:class="{ done: currentStep > Store.SIGN_DONE, current: currentStep === Store.SIGN_DONE }">
-        <div class="icon registration">
-        </div>
+        <div class="icon registration"></div>
         <div class="content">
           <h3>Install the App</h3>
           <p>Add your phone number so you can join the study!<br>1 minute</p>
@@ -150,7 +145,7 @@ nav > div {
     background-image: url(/static/images/sign-consent-icon.png);
   }
   .registration {
-    background-image: url(http://via.placeholder.com/88x75);
+    background-image: url(/static/images/InstallApp.png);
   }
 .container {
   padding-bottom: 3rem;
