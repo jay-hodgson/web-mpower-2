@@ -21,12 +21,11 @@
 <script>
 import ConsentViewer from './ConsentViewer.vue'
 import MainNav from './MainNav.vue'
-import store from '../onboarding_store'
+import Store from '../store'
 
 export default {
   name: 'StudySign',
   components: { ConsentViewer, MainNav },
-  store: store,
   data() {
     return {
       name: ''
@@ -39,12 +38,12 @@ export default {
   },
   methods: {
     cancel: function() {
-      this.$store.setCurrentStep(0)
+      this.$store.setCurrentStep(Store.UNSTARTED)
       this.$router.push('/study/overview')
     },
     accept: function() {
       this.$store.setName(this.name);
-      this.$store.setCurrentStep(4)
+      this.$store.setCurrentStep(Store.SIGN_DONE)
       this.$router.push('/study/overview')
     }
   }

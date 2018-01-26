@@ -3,7 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from './components/onboarding_store'
+import Store from './components/store'
+
+var store = new Store();
 
 // polyfill for smooth scrolling behavior
 window.__forceSmoothScrollPolyfill__ = true;
@@ -12,7 +14,7 @@ require('smoothscroll-polyfill').polyfill();
 import VueMDCAdapter from 'vue-mdc-adapter'
 Vue.use(VueMDCAdapter)
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
 Vue.mixin( {
   beforeCreate() {
     const options = this.$options;
@@ -43,6 +45,7 @@ router.beforeEach((to, from, next) => {
 new Vue({
   el: '#app',
   router,
+  store: store,
   components: { App },
   template: '<App/>'
 })

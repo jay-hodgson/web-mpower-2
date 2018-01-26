@@ -22,12 +22,10 @@
 
 <script>
 import MainNav from "./MainNav.vue";
-import store from "../onboarding_store";
 
 export default {
   name: "Done",
   components: { MainNav },
-  store: store,
   data() {
     return {
 			phone: this.$store.getPhone()

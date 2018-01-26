@@ -67,7 +67,7 @@
 <script>
 import MainNav from './MainNav.vue'
 import Footer from './Footer.vue'
-import store from '../onboarding_store';
+import Store from '../store';
 
 const NOW = new Date();
 const MONTHS = ['January','February','March','April','May','June','July','August',
@@ -105,7 +105,6 @@ function is18YearsAgo(birthdate) {
 export default {
   name: 'StudyEligibility',
   components: { MainNav, Footer },
-  store: store,
   data() {
     return {
       dateControlSupported: dateControlSupported,
@@ -165,7 +164,7 @@ export default {
         this.$router.push('/study/ineligible')
       } else {
         this.$store.setBirthdate(this.birthdate)
-        this.$store.setCurrentStep(1)
+        this.$store.setCurrentStep(Store.ELIGIBILITY_DONE)
         this.$router.push('/study/overview')
       }
     },

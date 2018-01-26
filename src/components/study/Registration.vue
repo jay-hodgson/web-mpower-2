@@ -22,21 +22,20 @@
 
 <script>
 import MainNav from './MainNav.vue'
-import store from '../onboarding_store'
+import store from '../store'
 import axios from 'axios';
 
 export default {
   name: 'StudyRegistration',
   components: { MainNav },
-  store: store,
   data() {
     return {
       phone: ''
     }
-  },
+  }/*,
   beforeMount() {
-    this.$store.setCurrentStep(4)
-  },
+    this.$store.setCurrentStep(Store.SIGN_DONE)
+  }*/,
   mounted() {
     var input = this.$refs.phoneField.$refs.input
     input.type = "tel"

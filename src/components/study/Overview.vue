@@ -6,31 +6,30 @@
     </nav>    
     <div class="container">
       <div class="intro">
-        <template v-if="currentStep === 0">
+        <template v-if="currentStep === Store.UNSTARTED">
           <h2>Welcome to mPower!</h2>
           <p>mPower is a study to track the symptoms of Parkinson’s Disease over time. Here you can learn about the study and decide if you want to join! Let’s get started.</p>
         </template>
-        <template v-if="currentStep === 1">
+        <template v-if="currentStep === Store.ELIGIBILITY_DONE">
           <h2>Congratulations, you’re eligible!</h2>
           <p>Now that we have found out that you are eligible, let’s move on to the next step. Your next step will be Consent where you’ll learn some more about the study.</p>
         </template>
-        <template v-if="currentStep === 2">
+        <template v-if="currentStep === Store.CONSENT_DONE">
           <h2>Thanks for walking through consent!</h2>
-          <p>Next we will ask you 3 questions. They will tell you if we did a good job explaining the study.</p>
+          <p>Next we will ask you 5 questions. They will tell you if we did a good job explaining the study.</p>
         </template>
-        <template v-if="currentStep === 3">
+        <template v-if="currentStep === Store.QUIZ_DONE">
           <h2>Great job!</h2>
           <p>You’ve passed the quiz, now let’s review the consent document that you looked at one more time before we can register you for the study.</p>
         </template>
-        <template v-if="currentStep === 4">
+        <template v-if="currentStep === Store.SIGN_DONE">
           <h2>Install the app!</h2>
           <p>Register your phone so you can download and install the app.</p>
         </template>
       </div>
       <router-link to="/study/eligibility" class="step" 
-        v-bind:class="{ done: currentStep > 0, current: currentStep == 0 }">
-        <div class="icon">
-          <img src="/static/images/eligibility-icon.png">
+        v-bind:class="{ done: currentStep > Store.UNSTARTED, current: currentStep === Store.UNSTARTED }">
+        <div class="icon eligibility">
         </div>
         <div class="content">
           <h3>Eligibility</h3>
@@ -41,9 +40,8 @@
       </router-link>
 
       <router-link to="/study/consent" class="step" 
-        v-bind:class="{ done: currentStep > 1,  current: currentStep == 1 }">
-        <div class="icon">
-          <img src="/static/images/consent-icon.png">
+        v-bind:class="{ done: currentStep > Store.ELIGIBILITY_DONE,  current: currentStep === Store.ELIGIBILITY_DONE }">
+        <div class="icon consent">
         </div>
         <div class="content">
           <h3>Consent</h3>
@@ -54,9 +52,8 @@
       </router-link>
       
       <router-link to="/study/quiz" class="step" 
-        v-bind:class="{ done: currentStep > 2, current: currentStep == 2 }">
-        <div class="icon">
-          <img src="/static/images/quiz-onboarding-icon.png">
+        v-bind:class="{ done: currentStep > Store.CONSENT_DONE, current: currentStep === Store.CONSENT_DONE }">
+        <div class="icon quiz">
         </div>
         <div class="content">
           <h3>Quiz</h3>
@@ -67,9 +64,8 @@
       </router-link>
 
       <router-link to="/study/sign" class="step" 
-        v-bind:class="{ done: currentStep > 3, current: currentStep == 3 }">
-        <div class="icon">
-          <img src="/static/images/sign-consent-icon.png">
+        v-bind:class="{ done: currentStep > Store.QUIZ_DONE, current: currentStep === Store.QUIZ_DONE }">
+        <div class="icon sign">
         </div>
         <div class="content">
           <h3>Sign</h3>
@@ -80,9 +76,8 @@
       </router-link>
 
       <router-link to="/study/registration" class="step" 
-        v-bind:class="{ done: currentStep > 4, current: currentStep == 4 }">
-        <div class="icon">
-          <img class="registration" src="http://via.placeholder.com/88x75">
+        v-bind:class="{ done: currentStep > Store.SIGN_DONE, current: currentStep === Store.SIGN_DONE }">
+        <div class="icon registration">
         </div>
         <div class="content">
           <h3>Install the App</h3>
@@ -97,21 +92,21 @@
 
 <script>
 import MainNav from './MainNav.vue'
-import store from '../onboarding_store';
+import Store from '../store';
 
 export default {
   name: 'StudyOverview',
   components: { MainNav },
-  store: store,
   created() {
     if (this.$route.query.start) {
-      this.$store.setCurrentStep(0)
+      this.$store.setCurrentStep(Store.UNSTARTED)
     }
     this.currentStep = this.$store.getCurrentStep()
   },
   data() {
     return {
-      currentStep: null
+      currentStep: null,
+      Store: Store
     }
   }
 }
@@ -135,9 +130,30 @@ nav > div {
   padding: .25rem 1rem;
 }
 .icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 8vw; /* height is 0.85222 of width */
+  min-width: 3rem;
+  align-self: stretch;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center 20%;
+}
+  .eligibility {
+    background-image: url(/static/images/eligibility-icon.png);
+  }
+  .consent {
+    background-image: url(/static/images/consent-icon.png);
+  }
+  .quiz {
+    background-image: url(/static/images/quiz-onboarding-icon.png);
+  }
+  .sign {
+    background-image: url(/static/images/sign-consent-icon.png);
+  }
+  .registration {
+    background-image: url(http://via.placeholder.com/88x75);
+  }
+.container {
+  padding-bottom: 3rem;
 }
 .intro {
   padding: 0 0 1.5rem 0;
@@ -155,7 +171,7 @@ nav > div {
 .step {
   display: flex;
   align-items: center;
-  background-color: rgba(255,255,255,.8);
+  background-color: rgba(255,255,255,.6);
   border-radius: .75rem;
   color: #473b7b;
   padding: .5rem;
@@ -164,10 +180,6 @@ nav > div {
 .content {
   flex: 1;
   padding: .25rem;
-}
-.icon {
-  width: 6rem; /* height is 0.85222 of width */
-  height: 5.1rem;
 }
   .content h3 {
     font-size: 1rem;

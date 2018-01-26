@@ -4,11 +4,11 @@
       <router-link v-show="showBack" to="/study/overview">{{title}}</router-link>
     </div>
     <div class="center">
-      <span class="eligibility icon" v-bind:class="{ grayscale: currentStep > 0 }"></span>
-      <span class="consent icon" v-bind:class="{ grayscale: currentStep > 1 }"></span>
-      <span class="quiz icon" v-bind:class="{ grayscale: currentStep > 2 }"></span>
-      <span class="sign icon" v-bind:class="{ grayscale: currentStep > 3 }"></span>
-      <span class="registration icon" v-bind:class="{ grayscale: currentStep > 4 }"></span>
+      <span class="eligibility icon" v-bind:class="{ grayscale: currentStep > Store.UNSTARTED }"></span>
+      <span class="consent icon" v-bind:class="{ grayscale: currentStep > Store.ELIGIBILITY_DONE }"></span>
+      <span class="quiz icon" v-bind:class="{ grayscale: currentStep > Store.CONSENT_DONE }"></span>
+      <span class="sign icon" v-bind:class="{ grayscale: currentStep > Store.QUIZ_DONE }"></span>
+      <span class="registration icon" v-bind:class="{ grayscale: currentStep > Store.SIGN_DONE }"></span>
     </div>
     <div class="right">
       <router-link to="/study/help" class="full help-link">Need Help?</router-link>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import store from "../onboarding_store";
+import Store from "../store";
 
 export default {
   name: "MainNav",
@@ -33,7 +33,8 @@ export default {
   },
   data() {
     return {
-      currentStep: 0
+      currentStep: Store.UNSTARTED,
+      Store: Store
     };
   },
   created() {
@@ -127,7 +128,7 @@ nav {
     display: none;
   }
 .grayscale {
-  opacity: 0.6;
+  opacity: 0.4;
   filter: gray;
   filter: grayscale(1);
 }

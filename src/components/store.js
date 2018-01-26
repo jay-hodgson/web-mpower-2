@@ -6,10 +6,10 @@ const PHONE = 'phone'
 const OS = 'os'
 
 function loadString(key) {
-  return localStorage.getItem(key);
+  return localStorage.getItem(key)
 }
 function saveString(key, string) {
-  localStorage.setItem(key, string);
+  localStorage.setItem(key, string)
 }
 function loadObj(key) {
   return JSON.parse(loadString(key))
@@ -21,7 +21,14 @@ function loadInt(key) {
   return parseInt(loadString(key))
 }
 
-class OnboardingStore {
+class Store {
+  static UNSTARTED = 0
+  static ELIGIBILITY_DONE = 1
+  static CONSENT_DONE = 2
+  static QUIZ_DONE = 3
+  static SIGN_DONE = 4
+  static REGISTER_DONE = 5
+
   clearAll() {
     localStorage.removeItem(ANSWERS)
     localStorage.removeItem(BIRTHDATE)
@@ -70,4 +77,4 @@ class OnboardingStore {
     this.setCurrentStep(this.getCurrentStep() + 1)
   }
 };
-export default new OnboardingStore()
+export default Store
