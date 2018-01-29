@@ -26,11 +26,13 @@ Vue.mixin( {
 })
 
 router.beforeEach((to, from, next) => {
+  next();
+  /*
   if (to.meta.step === undefined) {
     next();
   } else if (to.meta.step === store.getCurrentStep()) {
     next();
-  }
+  }*/
 });
 
 const SCREENS_W_BGS = ["/study/overview", "/study/retake-quiz", "/study/ineligible", "/study/done"];

@@ -30,6 +30,7 @@
         <div class="question" v-show="step === 3">
           <label>QUESTION {{step}}</label>
           <h3>If I decide to share my data with qualified researchers and then I change my mind, can my data be deleted from their studies?</h3>
+
           <RadioButton @change="updateQuizState"  name="deletable" value="wrong">
             Yes
           </RadioButton>
@@ -41,6 +42,7 @@
         <div class="question" v-show="step === 4">
           <label>QUESTION {{step}}</label>
           <h3>The survey questions may be stressful for some people.</h3>
+
           <RadioButton @change="updateQuizState"  name="stressful" value="right">
             Yes
           </RadioButton>
@@ -52,6 +54,7 @@
         <div class="question" v-show="step === 5">
           <label>QUESTION {{step}}</label>
           <h3>I can pause / resume participating at any time.</h3>
+
           <RadioButton @change="updateQuizState"  name="pausable" value="right">
             Yes
           </RadioButton>
@@ -107,8 +110,8 @@ export default {
       }
     },
     doSubmit() {
-      var errors = Object.values(this.answers).some((answer) => answer === 'wrong')
-      if (errors) {
+      var hasErrors = Object.values(this.answers).some((answer) => answer === 'wrong')
+      if (hasErrors) {
         this.$store.setAnswers(this.answers)
         this.$router.push('/study/retake-quiz')
       } else {
@@ -121,9 +124,6 @@ export default {
 </script>
 
 <style scoped>
-.radio-label {
-  color: #6c7a89!important;
-}
 .question > label {
   color: #6c7a89;
   font-size: .7rem;
