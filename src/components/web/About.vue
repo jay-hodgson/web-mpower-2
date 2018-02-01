@@ -13,7 +13,7 @@
     <section>
       <div class="image container">
         <div class="image">
-          <img src="http://via.placeholder.com/1052x1052">
+          <img src="/static/images/EligibilityAndConsent.svg">
         </div>
         <div class="text">
           <h3>Eligibility & consent</h3>
