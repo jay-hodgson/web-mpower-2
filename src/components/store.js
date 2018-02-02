@@ -5,20 +5,22 @@ const NAME = 'name'
 const PHONE = 'phone'
 const OS = 'os'
 
+var DATA = {};
+
 function loadString(key) {
-  return localStorage.getItem(key)
+  return DATA[key]
 }
 function saveString(key, string) {
-  localStorage.setItem(key, string)
+  DATA[key] = string
 }
 function loadObj(key) {
-  return JSON.parse(loadString(key))
+  return DATA[key]
 }
 function saveObj(key, object) {
-  return saveString(key, JSON.stringify(object))
+  DATA[key] = object
 }
 function loadInt(key) {
-  return parseInt(loadString(key))
+  return DATA[key]
 }
 
 class Store {
@@ -30,12 +32,7 @@ class Store {
   static REGISTER_DONE = 5
 
   clearAll() {
-    localStorage.removeItem(ANSWERS)
-    localStorage.removeItem(BIRTHDATE)
-    localStorage.removeItem(CURRENT_STEP)
-    localStorage.removeItem(NAME)
-    localStorage.removeItem(PHONE)
-    localStorage.removeItem(OS)
+    DATA = {}
   }
   getPhone() {
     return loadString(PHONE) || ''
