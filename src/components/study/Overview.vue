@@ -128,24 +128,28 @@ nav > div {
   width: 8vw; /* height is 0.85222 of width */
   min-width: 3rem;
   align-self: stretch;
-  background-size: contain;
   background-repeat: no-repeat;
-  background-position: center 20%;
+  background-size: contain;
+  background-position: center top;
+  margin: .6rem .25rem;
 }
+  .icon.sign {
+    margin: .8rem .25rem;
+  }
   .eligibility {
-    background-image: url(/static/images/eligibility-icon.png);
+    background-image: url(/static/images/Eligibility2.svg);
   }
   .consent {
-    background-image: url(/static/images/consent-icon.png);
+    background-image: url(/static/images/Consent2.svg);
   }
   .quiz {
-    background-image: url(/static/images/quiz-onboarding-icon.png);
+    background-image: url(/static/images/Quiz2.svg);
   }
   .sign {
-    background-image: url(/static/images/sign-consent-icon.png);
+    background-image: url(/static/images/Sign2.svg);
   }
   .registration {
-    background-image: url(/static/images/InstallApp.png);
+    background-image: url(/static/images/Install-R.svg);
   }
 .container {
   padding-bottom: 3rem;
