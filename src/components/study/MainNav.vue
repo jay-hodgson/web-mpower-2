@@ -85,27 +85,30 @@ nav {
   height: 2rem;
   margin: 1vw 0 1vw 1vw;
   border-radius: 50%;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
 }
   .eligibility {
-    background: white url(/static/images/eligibility-icon.png) center no-repeat;
-    background-size: 90% 80%;
+    background-image: url(/static/images/Eligibility2.svg);
+    background-size: 90%;
+    background-position: center 43%;
   }
   .consent {
-    background: white url(/static/images/consent-icon.png) center no-repeat;
-    background-size: 100% 80%;
+    background-image: url(/static/images/Consent2.svg);
+    background-size: 40%;
   }
   .quiz {
-    background: white url(/static/images/quiz-onboarding-icon.png) center
-      no-repeat;
-    background-size: 100% 90%;
+    background-image: url(/static/images/Quiz2.svg);
+    background-size: 50%;
   }
   .sign {
-    background: white url(/static/images/sign-consent-icon.png) center no-repeat;
-    background-size: 100% 90%;
+    background-image: url(/static/images/Sign2.svg);
+    background-size: 55%;
   }
   .registration {
-    background: white url(/static/images/number-icon.png) center no-repeat;
-    background-size: 100% 90%;
+    background-image: url(/static/images/Install-R.svg);
+    background-size: 35%;
   }
 .help-link {
   color: #3b4a63;
