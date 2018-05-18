@@ -63,9 +63,9 @@ export default {
       
       this.$store.setPhone(this.phone)
       axios.post('https://webservices.sagebridge.org/v3/itp', {
-        studyId: 'parkinson',
+        studyId: 'sage-mpower-2',
         phone: {number: this.phone, regionCode: 'US'},
-        subpopGuid: 'parkinson',
+        subpopGuid: 'sage-mpower-2',
         osNName: osName,
         consentSignature: {
           name: this.$store.getName(),
