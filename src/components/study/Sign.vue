@@ -70,7 +70,6 @@ export default {
       this.accept();
     },
     accept: function() {
-      window.alert("This view thinks it is embedded: " + this.isEmbedded);
       if (this.isEmbedded) {
         var obj = {'name': this.name, 'scope': this.scope};
         if (window.consentsToResearch) {
