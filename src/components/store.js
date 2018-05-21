@@ -1,9 +1,9 @@
 const ANSWERS = 'answers'
-const BIRTHDATE = 'birthdate'
 const CURRENT_STEP = 'currentStep'
 const NAME = 'name'
 const PHONE = 'phone'
 const OS = 'os'
+const SCOPE = 'scope'
 
 var DATA = {};
 
@@ -34,6 +34,12 @@ class Store {
   clearAll() {
     DATA = {}
   }
+  getSharingScope() {
+    return loadString(SCOPE) || ''
+  }
+  setSharingScope(scope) {
+    saveString(SCOPE, scope)
+  }
   getPhone() {
     return loadString(PHONE) || ''
   }
@@ -63,12 +69,6 @@ class Store {
   }
   setCurrentStep(step) {
     saveObj(CURRENT_STEP, step)
-  }
-  getBirthdate() {
-    return loadString(BIRTHDATE) || ''
-  }
-  setBirthdate(birthdate) {
-    saveString(BIRTHDATE, birthdate)
   }
   advanceCurrentStep() {
     this.setCurrentStep(this.getCurrentStep() + 1)

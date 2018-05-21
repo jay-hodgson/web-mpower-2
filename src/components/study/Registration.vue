@@ -66,11 +66,10 @@ export default {
         studyId: 'sage-mpower-2',
         phone: {number: this.phone, regionCode: 'US'},
         subpopGuid: 'sage-mpower-2',
-        osNName: osName,
+        osName: osName,
         consentSignature: {
           name: this.$store.getName(),
-          birthdate: this.$store.getBirthdate(),
-          scope: 'sponsors_and_partners'
+          scope: this.$store.getSharingScope()
         }
       }).then(() => {
         this.$router.push("/study/done")

@@ -5,18 +5,18 @@
       <input class="mdc-radio__native-control" @change="sendEvent"
         type="radio" :id="id" :value="value" :name="name">
       <div class="mdc-radio__background">
-        <div class="mdc-radio__outer-circle"></div>
-        <div class="mdc-radio__inner-circle"></div>
+        <div class="mdc-radio__outer-circle" :style="{borderColor: color}"></div>
+        <div class="mdc-radio__inner-circle" :style="{backgroundColor: color}"></div>
       </div>
     </div>
-    <label :id="labelId" :for="id"><slot></slot></label>
+    <label :id="labelId" :for="id" :style="{color: color}"><slot></slot></label>
   </div>
 </template>
 
 <script>
 export default {
   name: 'RadioButton',
-  props: ['name','value'],
+  props: ['name','value','color'],
   data() {
     return {
       element: ''

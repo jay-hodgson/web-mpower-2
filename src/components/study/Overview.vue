@@ -72,7 +72,7 @@
       </router-link>
 
       <router-link to="/study/registration" class="step" 
-        v-bind:class="{ done: currentStep > Store.SIGN_DONE, current: currentStep === Store.SIGN_DONE }">
+        v-if="!isEmbedded" v-bind:class="{ done: currentStep > Store.SIGN_DONE, current: currentStep === Store.SIGN_DONE }">
         <div class="icon registration"></div>
         <div class="content">
           <h3>Install the App</h3>
@@ -102,6 +102,11 @@ export default {
     return {
       currentStep: null,
       Store: Store
+    }
+  },
+  computed: {
+    isEmbedded() {
+      return !!(window.consentsToResearch || window.location.search === '?embedded');
     }
   }
 }
