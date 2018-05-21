@@ -5,14 +5,25 @@
       <ConsentViewer/>
     </section>
     <footer>
-      <h1>Please review and sign the consent document</h1>
-      <p>By signing your name, you have indicated that you have read and fully agree with the consent form given below. This is the document which you just went through in the consent and quiz process.</p>
-
-      <input v-model="name" placeholder="Please type your full name here">
-
+      <div class="slider">
+        <div class="slider-element animated" :class="{'slideOutLeft': showSharing}">
+          <h1>Please review and sign the consent document</h1>
+          <p>By signing your name, you have indicated that you have read and fully agree with the consent form given below. This is the document which you just went through in the consent and quiz process.</p>
+          <input v-model="name" placeholder="Please type your full name here">
+        </div>
+        <div class="slider-element slider-offscreen animated" :class="{'slideInRight': showSharing}">
+          <h1>How widely can we share your data with other researchers?</h1>
+          <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners" color="white">
+            Sponsors and Partners
+          </RadioButton>
+          <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers" color="white">
+            All Qualified Researchers
+          </RadioButton>
+        </div>
+      </div>
       <div class="buttons">
         <a href="#" @click="cancel">DISAGREE</a>
-        <button :disabled="canSubmit" @click="accept">ACCEPT</button>
+        <button :disabled="canSubmit" @click="advance">ACCEPT</button>
       </div>
     </footer>
   </div>
@@ -22,18 +33,28 @@
 import ConsentViewer from './ConsentViewer.vue'
 import MainNav from './MainNav.vue'
 import Store from '../store'
+import RadioButton from './RadioButton'
 
 export default {
   name: 'StudySign',
-  components: { ConsentViewer, MainNav },
+  components: { ConsentViewer, MainNav, RadioButton },
   data() {
     return {
-      name: ''
+      name: '',
+      showSharing: false,
+      scope: ''
     }
   },
   computed: {
     canSubmit: function() {
-      return this.name.length === 0;
+      if (!this.showSharing) {
+        return this.name.length === 0;
+      } else {
+        return this.scope === '';
+      }
+    },
+    isEmbedded: function() {
+      return !!(window.consentsToResearch || window.document.consentsToResearch);
     }
   },
   methods: {
@@ -41,10 +62,31 @@ export default {
       this.$store.setCurrentStep(Store.UNSTARTED)
       this.$router.push('/study/overview')
     },
+    advance: function() {
+      if (!this.showSharing) {
+        this.showSharing = true;
+        return;
+      }
+      this.accept();
+    },
     accept: function() {
-      this.$store.setName(this.name);
-      this.$store.setCurrentStep(Store.SIGN_DONE)
-      this.$router.push('/study/overview')
+      window.alert("This view thinks it is embedded: " + this.isEmbedded);
+      if (this.isEmbedded) {
+        var obj = {'name': this.name, 'scope': this.scope};
+        if (window.consentsToResearch) {
+          window.consentsToResearch(obj)
+        } else if (window.document.consentsToResearch) {
+          window.document.consentsToResearch(obj)
+        }
+      } else {
+        this.$store.setName(this.name)
+        this.$store.setSharingScope(this.scope)
+        this.$store.setCurrentStep(Store.SIGN_DONE)
+        this.$router.push('/study/overview')
+      }
+    },
+    updateSharing: function(name, value) {
+      this.scope = value;
     }
   }
 }
@@ -119,5 +161,24 @@ footer {
   }
   footer button:disabled {
     background-color: rgba(255,255,255,0.65);
+  }
+  .slider {
+    height: 130px; 
+    position: relative;
+    overflow:hidden;
+  }
+  .slider-element {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+  }
+  .slider-offscreen {
+    transform: translate(100vw,0); 
+    text-align: center; 
+    display:flex; 
+    flex-direction: column; 
+    align-items: center;
   }
 </style>

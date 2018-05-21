@@ -163,7 +163,6 @@ export default {
       if (!validAge || !validResidence || !validComfort ) {
         this.$router.push('/study/ineligible')
       } else {
-        this.$store.setBirthdate(this.birthdate)
         this.$store.setCurrentStep(Store.ELIGIBILITY_DONE)
         this.$router.push('/study/overview')
       }
