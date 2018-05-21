@@ -46,9 +46,6 @@ export default {
     }
   },
   computed: {
-    canAdvance: function() {
-      
-    },
     canSubmit: function() {
       if (!this.showSharing) {
         return this.name.length === 0;
