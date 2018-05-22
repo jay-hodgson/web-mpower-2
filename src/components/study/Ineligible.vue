@@ -12,10 +12,10 @@
       </div>
 
       <div class="share-icons">
-        <a href=""><img src="/static/images/Sharing_Email.png"></a>
-        <a href=""><img src="/static/images/Sharing_Facebook.png"></a>
-        <a href=""><img src="/static/images/Sharing_SMS.png"></a>
-        <a href=""><img src="/static/images/Sharing_Twitter.png"></a>
+        <a href=""><img src="/static/images/Facebook-Circle.svg"></a>
+        <a href=""><img src="/static/images/Twitter-Circle.svg"></a>
+        <a href=""><img src="/static/images/Sms-Circle.svg"></a>
+        <a href=""><img src="/static/images/Email-Circle.svg"></a>
       </div>
 
       <div class="back-button">
@@ -89,6 +89,12 @@ nav > div {
     height: 11vw;
     max-width: 68px;
     max-height: 68px;
+  }
+  .share-icons img {
+    filter: brightness(97%);
+  }
+  .share-icons a:hover img, .share-icons a:active img {
+    filter: brightness(103%);
   }
 .back-button {
   margin-top: 5rem;
