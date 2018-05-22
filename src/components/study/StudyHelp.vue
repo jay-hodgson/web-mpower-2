@@ -1,10 +1,12 @@
 <template>
-  <div>
+  <div class="docked-layout">
     <MainNav/>
-    <div class="container">
-      <h2>Help</h2>
-      <p>This is the help page.</p>
-    </div>
+    <section>
+      <div class="container">
+        <h2>Help</h2>
+        <p>This is the help page.</p>
+      </div>
+    </section>
     <Footer/>
   </div>
 </template>
