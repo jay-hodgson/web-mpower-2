@@ -5,13 +5,13 @@
       <div class="container">
         <h3>Let’s find out if you’re eligible</h3>
 
-        <div class="question" v-if="step === 1">
+        <div class="question" v-if="step >= 1">
           <span>I am </span>
-          <mdc-textfield style="width:3rem" v-model="age" label="Age"/>
+          <mdc-textfield style="width:3rem" v-model="age" type="tel" label="Age"/>
           <span>years old</span>
         </div>
 
-        <div class="question" v-if="step === 2">
+        <div class="question" v-if="step >= 2">
           <span>I live </span>
           <div class="mdc-select">
             <select dense v-model="residence" class="mdc-select__surface">
@@ -21,7 +21,7 @@
           </div>
         </div>
 
-        <div class="question" v-if="step === 3">
+        <div class="question" v-if="step >= 3">
           <span>I </span>
           <div class="mdc-select">
             <select dense v-model="comfort" class="mdc-select__surface">
@@ -36,7 +36,7 @@
       </div>
     </section>
 
-    <Footer :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled" 
+    <Footer v-freeze :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled" 
       @back="doBack" @next="doNext" @submit="doSubmit"/>
   </div>
 </template>
@@ -109,10 +109,11 @@ h3 {
   display: flex;
   align-items: baseline;
   justify-content: center;
+  margin-bottom: 1.5rem;
 }
   .question > * {
     padding: 0 .25rem;
-    margin-bottom: .5rem;
+    margin-bottom: .25rem;
   }
 select {
   background-color: transparent;

@@ -4,7 +4,7 @@
       <div>2018 mPower</div>
       <router-link to="/privacy-policy">PRIVACY POLICY</router-link>
       <div>|</div>
-      <router-link to="/terms-of-service">TERMS OF SERVICE</router-link>
+      <router-link to="/license">LICENSE</router-link>
       <div>|</div>
       <router-link to="/faq">FAQ</router-link>
       <div>|</div>

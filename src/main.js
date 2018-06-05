@@ -25,13 +25,22 @@ Vue.mixin( {
   }
 })
 
+Vue.directive('freeze', {
+  inserted: function (el) {
+    el.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      if (e.target.nodeName === "A" || e.target.nodeName === "BUTTON") {
+        e.target.click();
+      }
+    })
+  }
+})
+
 router.beforeEach((to, from, next) => {
   if (to.meta.step === undefined) {
     next()
   } else if (to.meta.step === store.getCurrentStep()) {
     next()
-  } else {
-    document.location = '/study/intro';
   }
 });
 

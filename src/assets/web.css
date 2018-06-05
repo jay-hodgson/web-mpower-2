@@ -120,8 +120,9 @@ img {
 }
 
 /* Layout of general HTML content */
-ul {
+ol, ul {
   margin: 0;
+  margin-bottom: 1rem;
   padding: 0 0 0 1rem;
 }
 table {
@@ -129,9 +130,6 @@ table {
 }
 td {
   vertical-align: top;
-}
-ul {
-  margin-bottom: 1rem;
 }
 li {
   margin-top: .75rem;

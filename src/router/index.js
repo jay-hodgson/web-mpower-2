@@ -41,7 +41,7 @@ export default new Router({
 
     // Secondary pages
     {path: '/privacy-policy', component: PrivacyPolicy},
-    {path: '/terms-of-service', component: TermsOfService},
+    {path: '/license', component: TermsOfService},
     {path: '/faq', component: FAQ},
     {path: '/contact', component: Contact},
 

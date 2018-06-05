@@ -22,69 +22,67 @@
           <p v-if="step === 5">The mPower app does not connect to your doctor or health care provider. It does allow you to track your symptoms and triggers.</p>
         </div>
       </div>
-      <div class="container">
-        <div class="question" v-show="step === 1">
-          <label>QUESTION {{step}}</label>
-          <h3>What is the purpose of this study?</h3>
+      <div class="question" v-show="step === 1">
+        <label>QUESTION {{step}}</label>
+        <h3>What is the purpose of this study?</h3>
 
-          <RadioButton @change="updateQuizState" name="purpose" value="right">
-            Understand the fluctuations of Parkinson’s disease symptoms
-          </RadioButton>
-          <RadioButton @change="updateQuizState"  name="purpose" value="wrong">
-            Give medical advice and diagnose people with Parkinson’s disease
-          </RadioButton>
-        </div>
+        <RadioButton @change="updateQuizState" name="purpose" value="right">
+          Understand the fluctuations of Parkinson’s disease symptoms
+        </RadioButton>
+        <RadioButton @change="updateQuizState"  name="purpose" value="wrong">
+          Give medical advice and diagnose people with Parkinson’s disease
+        </RadioButton>
+      </div>
 
-        <div class="question" v-show="step === 2">
-          <label>QUESTION {{step}}</label>
-          <h3>Will my name be stored with my study data?</h3>
+      <div class="question" v-show="step === 2">
+        <label>QUESTION {{step}}</label>
+        <h3>Will my name be stored with my study data?</h3>
 
-          <RadioButton @change="updateQuizState"  name="anon" value="wrong">
-            Yes
-          </RadioButton>
-          <RadioButton @change="updateQuizState"  name="anon" value="right">
-            No
-          </RadioButton>
-        </div>
-        
-        <div class="question" v-show="step === 3">
-          <label>QUESTION {{step}}</label>
-          <h3>If I decide to share my data with qualified researchers and then I change my mind, can my data be deleted from their studies?</h3>
+        <RadioButton @change="updateQuizState"  name="anon" value="wrong">
+          Yes
+        </RadioButton>
+        <RadioButton @change="updateQuizState"  name="anon" value="right">
+          No
+        </RadioButton>
+      </div>
+      
+      <div class="question" v-show="step === 3">
+        <label>QUESTION {{step}}</label>
+        <h3>If I decide to share my data with qualified researchers and then I change my mind, can my data be deleted from their studies?</h3>
 
-          <RadioButton @change="updateQuizState"  name="deletable" value="wrong">
-            Yes
-          </RadioButton>
-          <RadioButton @change="updateQuizState"  name="deletable" value="right">
-            No
-          </RadioButton>
-        </div>
+        <RadioButton @change="updateQuizState"  name="deletable" value="wrong">
+          Yes
+        </RadioButton>
+        <RadioButton @change="updateQuizState"  name="deletable" value="right">
+          No
+        </RadioButton>
+      </div>
 
-        <div class="question" v-show="step === 4">
-          <label>QUESTION {{step}}</label>
-          <h3>For some people, seeing their data may be stressful.</h3>
+      <div class="question" v-show="step === 4">
+        <label>QUESTION {{step}}</label>
+        <h3>For some people, seeing their data may be stressful.</h3>
 
-          <RadioButton @change="updateQuizState"  name="stressful" value="right">
-            Yes
-          </RadioButton>
-          <RadioButton @change="updateQuizState"  name="stressful" value="wrong">
-            No
-          </RadioButton>
-        </div>
+        <RadioButton @change="updateQuizState"  name="stressful" value="right">
+          Yes
+        </RadioButton>
+        <RadioButton @change="updateQuizState"  name="stressful" value="wrong">
+          No
+        </RadioButton>
+      </div>
 
-        <div class="question" v-show="step === 5">
-          <label>QUESTION {{step}}</label>
-          <h3>With the mPower app I will be able to:</h3>
+      <div class="question" v-show="step === 5">
+        <label>QUESTION {{step}}</label>
+        <h3>With the mPower app I will be able to:</h3>
 
-          <RadioButton @change="updateQuizState"  name="pausable" value="right">
-            Track my symptoms and triggers
-          </RadioButton>
-          <RadioButton @change="updateQuizState"  name="pausable" value="wrong">
-            Schedule an appointment with my doctor
-          </RadioButton>
-        </div>
+        <RadioButton @change="updateQuizState"  name="pausable" value="right">
+          Track my symptoms and triggers
+        </RadioButton>
+        <RadioButton @change="updateQuizState"  name="pausable" value="wrong">
+          Schedule an appointment with my doctor
+        </RadioButton>
       </div>
     </section>
-    <Footer ref="footer" :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled"
+    <Footer v-freeze ref="footer" :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled"
       :doNotAdvanceOnSubmit="true" v-on:back="doBack" v-on:next="doNext" v-on:submit="doSubmit" 
       v-on:animateSubmitDone="doAnimateSubmitDone"/>
   </div>
@@ -135,11 +133,15 @@ export default {
           this.step += 1
         }
       } else if (this.answer === 'wrong') {
-        this.showSuccess = false
-        this.showFailure = true
+        setTimeout(() => {
+          this.showSuccess = false
+          this.showFailure = true
+        }, 20);
       } else {
-        this.showSuccess = true
-        this.showFailure = false
+        setTimeout(() => {
+          this.showSuccess = true
+          this.showFailure = false
+        }, 20);
       }
     },
     doSubmit() {
@@ -166,7 +168,7 @@ section {
   padding-top: 0;
 }
 .question {
-  padding-top: 1.5rem;
+  padding: 1.5rem 1.5rem .5rem 1.5rem;
 }
 .question > label {
   color: #6c7a89;
@@ -176,10 +178,9 @@ section {
 }
 .question > h3 {
   color: #3b4a63;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .radio-holder {
-  margin-bottom: 1rem!important;
   display: block;
 }
 .success, .failure {
@@ -187,7 +188,7 @@ section {
 }
   .success div, .failure div {
     max-width: 30rem;
-    margin: 0 auto;
+    margin: 0 auto; 
     padding: .5rem 1.5rem;
   }
   .success {

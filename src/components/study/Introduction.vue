@@ -3,7 +3,7 @@
     <nav class="basic">
       <div>About mPower</div>
     </nav>
-    <section>
+    <section v-freeze>
       <div class="container">
         <div class="screen" v-show="step === 1">
           <img src="/static/images/v3/about%20the%20study.svg">
