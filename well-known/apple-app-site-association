@@ -1,0 +1,13 @@
+{  
+   "applinks":{  
+      "details":[  
+         {  
+            "appID":"KA9Z8R6M6K.org.sagebionetworks.mPower2",
+            "paths":[ "/app/", "/app/*" ]
+         }
+      ],
+      "apps":[  
+
+      ]
+   }
+}

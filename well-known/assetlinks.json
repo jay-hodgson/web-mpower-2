@@ -1,0 +1,14 @@
+[  
+    {  
+       "target":{  
+          "namespace":"android_app",
+          "package_name":"org.sagebionetworks.mpower",
+          "sha256_cert_fingerprints":[  
+             ""
+          ]
+       },
+       "relation":[  
+          "delegate_permission/common.handle_all_urls"
+       ]
+    }
+]

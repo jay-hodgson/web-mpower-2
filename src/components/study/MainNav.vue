@@ -2,15 +2,18 @@
   <nav>
     <div class="left">
       <router-link v-show="showBack" to="/study/overview">{{title}}</router-link>
+      <span v-if="!showBack">{{title}}</span>
     </div>
-    <div class="center">
+    <div class="center" v-if="showSteps">
       <span class="eligibility icon" v-bind:class="{ grayscale: currentStep > Store.UNSTARTED }"></span>
       <span class="consent icon" v-bind:class="{ grayscale: currentStep > Store.ELIGIBILITY_DONE }"></span>
       <span class="quiz icon" v-bind:class="{ grayscale: currentStep > Store.CONSENT_DONE }"></span>
       <span class="sign icon" v-bind:class="{ grayscale: currentStep > Store.QUIZ_DONE }"></span>
       <span class="registration icon" v-bind:class="{ grayscale: currentStep > Store.SIGN_DONE }"></span>
     </div>
-    <div class="right">
+    <div class="center" v-else>
+    </div>
+    <div class="right" v-if="showHelp">
       <router-link to="/study/help" class="full help-link">Need Help?</router-link>
       <router-link to="/study/help" class="short help-link">?</router-link>
     </div>
@@ -29,6 +32,14 @@ export default {
     showBack: {
       type: Boolean,
       default: true
+    },
+    showSteps: {
+      type: Boolean,
+      default: true
+    },
+    showHelp: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -45,40 +56,39 @@ export default {
 
 <style scoped>
 nav {
-  background-image: linear-gradient(
-    86deg,
-    #473b7b,
-    #3584a7 76%,
-    hsl(173, 64%, 51%)
-  );
+  background-image: linear-gradient(90deg, #332069 0%, #907FBA 100%);
   background-blend-mode: multiply;
-  box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
+  background-color: rgba(0,0,0,.1);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   color: white;
 }
-.left a {
-  background: transparent url(/static/images/back-to-home-arrow.png) 3vw center
-    no-repeat;
-  background-size: 3vw 5.16vw;
-  padding-left: 8vw;
+.left a, .left span {
+  margin: 1rem;
   color: white;
-  font-size: 4.5vw;
   display: block;
 }
 .center {
   display: flex;
   flex: 1;
   justify-content: flex-end;
+  border-right: 1px solid silver;
+  padding-right: 0.6rem;
 }
 .right {
-  border-left: 1px solid white;
   display: flex;
   margin: 0.6rem;
-  padding-left: 0.6rem;
 }
-
+.left a {
+  padding-left: 7vw;
+  background: transparent url(/static/images/v3/Back.svg) 3vw center
+    no-repeat;
+  background-size: 3vw 5.16vw;
+}
+.left span {
+  margin-left: 1rem;
+}
 .icon {
   display: block;
   width: 2rem;
@@ -90,25 +100,26 @@ nav {
   background-position: center;
 }
   .eligibility {
-    background-image: url(/static/images/Eligibility2.svg);
-    background-size: 90%;
+    background-image: url(/static/images/v3/Eligibility.svg);
+    background-size: 55%;
     background-position: center 43%;
   }
   .consent {
-    background-image: url(/static/images/Consent2.svg);
+    background-image: url(/static/images/v3/Consent.svg);
     background-size: 40%;
   }
   .quiz {
-    background-image: url(/static/images/Quiz2.svg);
+    background-image: url(/static/images/v3/Comprehension.svg);
     background-size: 50%;
   }
   .sign {
-    background-image: url(/static/images/Sign2.svg);
+    background-image: url(/static/images/v3/Sign%20consent.svg);
     background-size: 55%;
   }
   .registration {
-    background-image: url(/static/images/Install-R.svg);
-    background-size: 35%;
+    background-image: url(/static/images/v3/Register.svg);
+    background-position: 68% center;
+    background-size: 50%;
   }
 .help-link {
   color: #3b4a63;

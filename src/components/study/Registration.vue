@@ -5,7 +5,7 @@
       <p>Enter your mobile phone number and select your phone type to receive your download link for the app:</p>
 
       <p style="text-align: center">
-        <mdc-textfield ref="phoneField" v-model="phone" label="(###) ###-####"/>
+        <mdc-textfield ref="phoneField" v-model="phone" label="(###) ###-####" type="tel" pattern="[0-9]*"/>
       </p>
       <div class="buttons">
         <a @click="apple">
@@ -32,10 +32,7 @@ export default {
     return {
       phone: ''
     }
-  }/*,
-  beforeMount() {
-    this.$store.setCurrentStep(Store.SIGN_DONE)
-  }*/,
+  },
   mounted() {
     var input = this.$refs.phoneField.$refs.input
     input.type = "tel"
@@ -60,11 +57,12 @@ export default {
     },
     post: function(osName) {
       var snackbar = this.$refs.snackbar
-      
+      var phoneFormatted = this.phone.replace(/[^\d]/g,'')
+
       this.$store.setPhone(this.phone)
       axios.post('https://webservices.sagebridge.org/v3/itp', {
         studyId: 'sage-mpower-2',
-        phone: {number: this.phone, regionCode: 'US'},
+        phone: {number: phoneFormatted, regionCode: 'US'},
         subpopGuid: 'sage-mpower-2',
         osName: osName,
         consentSignature: {

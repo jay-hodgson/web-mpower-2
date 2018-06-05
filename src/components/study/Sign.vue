@@ -22,8 +22,8 @@
         </div>
       </div>
       <div class="buttons">
-        <a href="#" @click="cancel">DISAGREE</a>
-        <button :disabled="canSubmit" @click="advance">ACCEPT</button>
+        <a href="/" @click="cancel">Disagree</a>
+        <button class="join-button" :disabled="canSubmit" @click="advance">ACCEPT</button>
       </div>
     </footer>
   </div>
@@ -105,7 +105,8 @@ section {
   padding: 0;
 }
 footer {
-  background-image: linear-gradient(86deg, #473b7b, #3584a7 76%, hsl(173, 64%, 51%));
+  background-image: linear-gradient(90deg, #332069, #907FBA);
+  background-attachment: fixed;
   padding: 1rem 0;
 
 }
@@ -150,16 +151,13 @@ footer {
     font-size: .9rem;
   }
   footer button {
-    color: #3a539b;
-    background-color: white;
-    border-radius: 4px;
-    border: none;
+    color: #332069;
     padding: .7rem 2rem;
-    text-decoration: none;
+    cursor: pointer;
     font-weight: bold;
   }
   footer button:disabled {
-    background-color: rgba(255,255,255,0.65);
+    opacity: .8;
   }
   .slider {
     height: 130px; 

@@ -15,6 +15,7 @@
       <p>In order to access the Parkinson mPower App functionalities, we ask you to create an account through the Parkinson mPower App. To create an account, you must provide a username, a password and your email address. If you wish, you can also provide your name and birth date. We will inform you of the purposes for which we are collecting, processing, using, and sharing your personal data and we will obtain your consent through an informed consent document and process. You must affirmatively consent to participate in the Study prior to creating your account. To provide your informed consent, you will be asked to provide your first and last name, as well as your signature.</p>
 
       <h3>Information We Collect</h3>
+      <!-- TODO this is blanked out in the v3 design...
       <p>In addition to the data we collect in registration for the Study, we collect the following through the Parkinson mPower App and the Study:</p>
 
       <p><b>Data Imports</b><br>
@@ -31,7 +32,7 @@
 
       <p><b>Other Information</b>
       You Provide to Us. We also receive other information, including personal data that you may provide to us, such as comments or questions you provide to us.</p>
-
+      -->
       <h3>How we use information</h3>
       <p>Except as described in this privacy policy, we will not sell, rent, lease, give away, disclose or share your contact information, and will not disclose your information that we collect through the Parkinson mPower App and the Study to third parties without your consent. We may provide contact or coded study information to third parties if you consent to us doing so, as well as in the following circumstances:</p>
 
@@ -84,6 +85,33 @@
       <p>You can withdraw any consent you have provided to us for the processing of your personal data at any time and free of charge. Please note that if you withdraw from the Study, we will stop collecting new data from you, but the coded study data that you have already provided will already have been distributed and will not be able to be destroyed or deleted.</p>
 
       <p>If you have questions about your rights and choices in relation to your personal data, or would like to request additional information, please contact <a href="mailto:privacypolicy@sagebase.org">privacypolicy@sagebase.org</a>.</p>
+
+      <h3>Cross-Border Transfer of Your Information</h3>
+
+      <p>We may transfer your personal data to countries outside of your country of residence which may have different personal data protection laws than the country in which you initially provided the information. In doing so, we comply with applicable legal requirements pertaining to the transfer of personal data to other countries and will protect that information as described in this Privacy Policy.</p>
+
+      <p>Although you may access the Parkinson mPower App or participate in the study from a location outside of the United States, any personal data collected by us in connection with the Parkinson mPower App or the study may be transferred to, processed, and stored within the United States. Also, we may transfer your data from the United States to other countries or regions in connection with storage and processing of data, fulfilling your requests, and operating the Parkinson mPower App and the Study.</p>
+
+      <p>By using the Parkinson mPower App or participating in the Study, you will be asked to consent to the transfer of your personal data, including your health information and location data, to countries outside of your country of residence, including to the United States.</p>
+
+      <h3>Changes to Our Privacy Policy</h3>
+
+      <p>We may change this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. In the event that any changes to this privacy policy materially alter your rights or obligations under this privacy policy, we will make reasonable efforts to notify you of the change. For example, we may send a message to your email address, if we have one on file, or generate a pop-up or similar notification when you access the Parkinson mPower App or the Study for the first time after such material changes are made. Your continued use of the Parkinson mPower App or the Study after the revised privacy policy has become effective indicates that you have read, understood and agreed to the then-current version of this privacy policy.</p>
+
+      <h3>Contact</h3>
+
+      <p>If you have any questions, comments or requests regarding this privacy policy or our processing of your information, please contact:</p>
+
+      <p><a href="mailto:privacypolicy@sagebase.org">privacypolicy@sagebase.org</a></p>
+
+      <p>Sage Bionetworks
+      1100 Fairview Avenue North
+      Seattle, WA. 98109
+      United States</p>
+
+      <h3>Updates</h3>
+      
+      <p>We may update our Privacy Policy from time to time to clarify how we collect, process, store, use and disclose information. We want to be as transparent as possible about the changes we make to our Privacy Policy.</p>
     </div>
     <Footer/>
   </div>
