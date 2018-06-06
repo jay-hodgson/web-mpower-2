@@ -5,8 +5,8 @@
       <div class="consent-viewer-holder">
         <ConsentViewer :highlight-id="highlightId"/>
       </div>
-      <div class="summary">
-        <div v-if="step === 1">
+      <div ref="summary" class="summary">
+        <div v-show="step === 1">
           <!-- regular images were not appearing correctly, object is a weird tag to use, but it works. -->
           <object data="/static/images/Comprehension.svg" type="image/svg+xml"></object>
           <h3>What is involved</h3>
@@ -19,7 +19,7 @@
           </ul>
           <p>We would like you to participate for 2 years but you can participate as long as you like. </p>
         </div>
-        <div v-if="step === 2">
+        <div v-show="step === 2">
           <object data="/static/images/Privacy.svg" type="image/svg+xml"></object>
           <h3>Data Collection, Storage & Privacy</h3>
           <ul>
@@ -29,7 +29,7 @@
             <li>We store the coded study data on a secure cloud server. </li>
           </ul>
         </div>
-        <div v-if="step === 3">
+        <div v-show="step === 3">
           <object data="/static/images/Data%20use%20and%20trends.svg" type="image/svg+xml"></object>
           <h3>Data Use & Trends</h3>
           <ul>
@@ -39,7 +39,7 @@
             <li>We will use the study data to look for patterns. These patterns may help us better understand the symptoms of PD.</li>
           </ul>
         </div>
-        <div v-if="step === 4">
+        <div v-show="step === 4">
           <object data="/static/images/future%20research.svg" type="image/svg+xml"></object>
           <h3>Sharing for Future Research</h3>
           <ul>
@@ -48,7 +48,7 @@
             <li>Once we have shared your data with other researchers we cannot withdraw it.</li>
           </ul>
         </div>
-        <div v-if="step === 5">
+        <div v-show="step === 5">
           <object data="/static/images/Risks.svg" type="image/svg+xml"></object>
           <h3>Potential Risks</h3>
           <ul>
@@ -59,7 +59,7 @@
             <li>There may be other risks to participating that we do not know about yet.</li>
           </ul>
         </div>
-        <div v-if="step === 6">
+        <div v-show="step === 6">
           <object data="/static/images/Benefits.svg" type="image/svg+xml"></object>
           <h3>Potential Benefits</h3>
           <ul>
@@ -68,7 +68,7 @@
             <li>You may help researchers better understand Parkinson’s Disease. This may help future generations. </li>
           </ul>
         </div>
-        <div v-if="step === 7">
+        <div v-show="step === 7">
           <object data="/static/images/Issues%20to%20consider.svg" type="image/svg+xml"></object>
           <h3>Issues to Consider</h3>
           <ul>
@@ -78,7 +78,7 @@
             <li>The risk of injury is low in this study. You will not be compensated for injury.</li>
           </ul>
         </div>
-        <div v-if="step === 8">
+        <div v-show="step === 8">
           <object data="/static/images/Not%20medical%20care.svg" type="image/svg+xml"></object>
           <h3>NOT medical care</h3>
           <ul>
@@ -88,7 +88,7 @@
             <li>Contact your health provider if you have questions or concerns related to your health, or if you need medical care.</li>
           </ul>
         </div>
-        <div v-if="step === 9">
+        <div v-show="step === 9">
           <object data="/static/images/Leave.svg" type="image/svg+xml"></object>
           <h3>Leaving the Study</h3>
           <ul>
@@ -98,7 +98,7 @@
             <li>Your study data from before your withdrawal will continue to be used in the study. It will not be destroyed or deleted.</li>
           </ul>
         </div>
-        <div v-if="step === 10">
+        <div v-show="step === 10">
           <object data="/static/images/contact.svg" type="image/svg+xml"></object>
           <h3>Contact</h3>
           <ul>
@@ -163,6 +163,7 @@ export default {
     doNext() {
       if (this.step < this.totalSteps) {
         this.scrollTo(1)
+        this.$refs.summary.scrollTo(0,0)
       }
     },
     doSubmit() {
@@ -228,8 +229,10 @@ section {
     overflow-y: auto;
   }
   .summary img, .summary object {
-    height: 7rem;
-    width: 100%;
+    height: 5rem;
+    width: 5rem;
+    display: block;
+    margin: 0 auto;
     float: none;
   }
   .summary h3 {

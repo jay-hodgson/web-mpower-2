@@ -239,7 +239,7 @@ export default {
 }
 .consent-doc {
   padding: 0;
-  font-size: .7rem;
+  font-size: 1rem;
   height: 100%;
   overflow-y: scroll;
 }
