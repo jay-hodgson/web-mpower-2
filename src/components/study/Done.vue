@@ -1,12 +1,12 @@
 <template>
   <div>
-    <nav>
-      <div>Welcome</div>
+    <nav class="basic">
+      <div>Register</div>
 			<router-link to="/study/help">Need help?</router-link>
     </nav>
     <div class="container">
 			<div class="intro">
-				<img src="/static/images/sms-mobile-phone-icon-onboarding.png">
+				<img src="/static/images/Register.svg" style="transform: translateX(17%)">
 				<h2>The link is on its way to your mobile phone! </h2>
 
 				<p>We sent the link via a SMS to {{phone}}.<br>
@@ -35,34 +35,6 @@ export default {
 </script>
 
 <style scoped>
-nav {
-  color: white;
-  background-image: linear-gradient(
-    86deg,
-    #473b7b,
-    #3584a7 76%,
-    hsl(173, 64%, 51%)
-  );
-  background-blend-mode: multiply;
-
-  display: flex;
-  overflow: hidden;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 1rem;
-}
-  nav a {
-    margin: .5rem 2rem;
-    background-color: white;
-    padding: .4rem 1rem;
-    border-radius: 1rem;
-    font-size: .7rem;
-  }
-nav > div {
-  height: 2.2rem;
-  line-height: 2.2rem;
-  padding: 0.25rem 1rem;
-}
 img {
 	max-width: 30%; 
 	display: block; 
@@ -89,7 +61,6 @@ img {
   text-align: center;
 }
   .back-button a {
-    background-color: white;
     border-radius: 6px;
     padding: 1rem 3rem;
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="docked-layout">
-    <MainNav/>
+    <MainNav title="mPower 2.0 Help" :showSteps="false" :showHelp="false"/>
     <section>
       <div class="container">
         <h2>Help</h2>

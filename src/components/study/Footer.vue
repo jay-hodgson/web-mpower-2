@@ -15,7 +15,13 @@
 <script>
 export default {
   name: "StudyFooter",
-  props: ["step", "totalSteps", "nextEnabled","submitLabel"],
+  props: {
+    step: Number,
+    totalSteps: Number,
+    nextEnabled: Boolean,
+    submitLabel: String,
+    doNotAdvanceOnSubmit: Boolean
+  },
   computed: {
     meterWidth: function() {
       return (this.step-1) / this.totalSteps * 100 + "%";
@@ -32,10 +38,16 @@ export default {
       this.$emit("next");
     },
     submit() {
-      this.$refs.progress.style.width = "100%";
-      setTimeout(() => {
+      if (this.doNotAdvanceOnSubmit !== true) {
+        this.$refs.progress.style.width = "100%";
+        setTimeout(() => this.$emit("submit"), 300);
+      } else {
         this.$emit("submit");
-      }, 300);
+      }
+    },
+    animateSubmit() {
+        this.$refs.progress.style.width = "100%";
+        setTimeout(() => this.$emit("animateSubmitDone"), 300);
     }
   }
 };
@@ -68,7 +80,7 @@ footer > div:first-child {
   height: 10px;
   transition: width 0.25s linear;
   border-radius: 0.25rem;
-  background-color: #68bf60;
+  background-color: #5A478F;
 }
 
 footer > div:last-child {
@@ -79,9 +91,8 @@ button {
   margin: 0;
   padding: 0.25rem 2rem;
   text-align: center;
-  border-radius: 0.4rem;
-  background-color: #3b4a63;
-  color: white;
+  border-radius: 100px;
+  background-color: #F5B33C;
   transition: opacity 0.1s linear;
 }
 button:disabled {

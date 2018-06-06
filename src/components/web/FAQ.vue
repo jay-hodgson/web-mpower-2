@@ -56,7 +56,7 @@
       Go to the iTunes store and download mPower (link). Log in by entering your smartphone number and tap on “request magic link” button. New information will be added to your existing study information.</p>
 
       <p><b>My question isn’t answered here. Can I talk to someone?</b><br>
-      Yes,  we are happy to answer your questions by phone (number) or email (address).</p>
+      Yes, we are happy to answer your questions by phone (number) or email (address).</p>
     </div>
     <Footer/>
   </div>

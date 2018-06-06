@@ -25,6 +25,17 @@ Vue.mixin( {
   }
 })
 
+Vue.directive('freeze', {
+  inserted: function (el) {
+    el.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      if (e.target.nodeName === "A" || e.target.nodeName === "BUTTON") {
+        e.target.click();
+      }
+    })
+  }
+})
+
 router.beforeEach((to, from, next) => {
   if (to.meta.step === undefined) {
     next()
@@ -33,7 +44,7 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-const SCREENS_W_BGS = ["/study/overview", "/study/retake-quiz", "/study/ineligible", "/study/done"];
+const SCREENS_W_BGS = ["/study/intro", "/study/overview", "/study/retake-quiz", "/study/ineligible", "/study/done"];
 
 router.beforeEach((to, from, next) => {
   document.documentElement.classList.toggle("consent", 

@@ -10,6 +10,7 @@ import PrivacyPolicy from '@/components/web/PrivacyPolicy'
 import TermsOfService from '@/components/web/TermsOfService'
 import FAQ from '@/components/web/FAQ'
 import Contact from '@/components/web/Contact'
+import Uninstalled from '@/components/web/Uninstalled'
 
 /* I love Vue router. Lazy loading the onboarding screens is this simple. */
 const StudyOverview = () => import(/* webpackChunkName: "study" */ '@/components/study/Overview')
@@ -22,10 +23,12 @@ const StudyHelp = () => import(/* webpackChunkName: "study" */ '@/components/stu
 const StudyRetakeQuiz = () => import(/* webpackChunkName: "study" */ '@/components/study/StudyRetakeQuiz')
 const StudyIneligible = () => import(/* webpackChunkName: "study" */ '@/components/study/Ineligible')
 const StudyDone = () => import(/* webpackChunkName: "study" */ '@/components/study/Done')
+const StudyIntroduction = () => import(/* webpackChunkName: "study" */ '@/components/study/Introduction')
 
 Vue.use(Router)
 
 export default new Router({
+  mode: "history",
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
   },
@@ -34,13 +37,15 @@ export default new Router({
     {path: '/your-story', component: YourStory},
     {path: '/about', component: About},
     {path: '/team', component: Team},
+    {path: '/app/*', component: Uninstalled},
 
     // Secondary pages
     {path: '/privacy-policy', component: PrivacyPolicy},
-    {path: '/terms-of-service', component: TermsOfService},
+    {path: '/license', component: TermsOfService},
     {path: '/faq', component: FAQ},
     {path: '/contact', component: Contact},
 
+    {path: '/study/intro', component: StudyIntroduction},
     {path: '/study/overview', component: StudyOverview},
     {path: '/study/eligibility', meta: {step: 0}, component: StudyEligibility},
     {path: '/study/consent', meta: {step: 1}, component: StudyConsent},

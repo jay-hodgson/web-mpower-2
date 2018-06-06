@@ -1,87 +1,87 @@
 <template>
   <div>
-    <nav>
-      <div v-if="currentStep == 0">Welcome</div>
-      <div v-if="currentStep != 0">Overview</div>
-    </nav>    
-    <div class="container">
-      <div class="intro">
-        <template v-if="currentStep === Store.UNSTARTED">
-          <h2>Welcome to mPower!</h2>
-          <p>mPower is a study to track the symptoms of Parkinson’s Disease over time. Here you can learn about the study and decide if you want to join! Let’s get started.</p>
-        </template>
-        <template v-if="currentStep === Store.ELIGIBILITY_DONE">
-          <h2>Congratulations, you’re eligible!</h2>
-          <p>Now that we have found out that you are eligible, let’s move on to the next step. Your next step will be Consent where you’ll learn some more about the study.</p>
-        </template>
-        <template v-if="currentStep === Store.CONSENT_DONE">
-          <h2>Thanks for walking through consent!</h2>
-          <p>Next we will ask you 5 questions. They will tell you if we did a good job explaining the study.</p>
-        </template>
-        <template v-if="currentStep === Store.QUIZ_DONE">
-          <h2>Great job!</h2>
-          <p>You’ve passed the quiz, now let’s review the consent document that you looked at one more time before we can register you for the study.</p>
-        </template>
-        <template v-if="currentStep === Store.SIGN_DONE">
-          <h2>Install the app!</h2>
-          <p>Register your phone so you can download and install the app.</p>
-        </template>
-      </div>
-      <router-link to="/study/eligibility" class="step" 
-        v-bind:class="{ done: currentStep > Store.UNSTARTED, current: currentStep === Store.UNSTARTED }">
-        <div class="icon eligibility"></div>
-        <div class="content">
-          <h3>Eligibility</h3>
-          <p>Let’s see if you are eligible for the Parkinsons Disease study.<br>2 minutes</p>
-        </div>
-        <div class="lock"></div>
-        <div class="start">Start</div>
-      </router-link>
-
-      <router-link to="/study/consent" class="step" 
-        v-bind:class="{ done: currentStep > Store.ELIGIBILITY_DONE,  current: currentStep === Store.ELIGIBILITY_DONE }">
-        <div class="icon consent"></div>
-        <div class="content">
-          <h3>Consent</h3>
-          <p>Learn about the study and the risks and benefits of joining.<br>5 minutes</p>
-        </div>
-        <div class="lock"></div>
-        <div class="start">Start</div>
-      </router-link>
-      
-      <router-link to="/study/quiz" class="step" 
-        v-bind:class="{ done: currentStep > Store.CONSENT_DONE, current: currentStep === Store.CONSENT_DONE }">
-        <div class="icon quiz"></div>
-        <div class="content">
-          <h3>Quiz</h3>
-          <p>Make sure you know important facts about the study.<br>5 minutes</p>
-        </div>
-        <div class="lock"></div>
-        <div class="start">Start</div>
-      </router-link>
-
-      <router-link to="/study/sign" class="step" 
-        v-bind:class="{ done: currentStep > Store.QUIZ_DONE, current: currentStep === Store.QUIZ_DONE }">
-        <div class="icon sign"></div>
-        <div class="content">
-          <h3>Sign</h3>
-          <p>Sign the consent document.<br>2 minutes</p>
-        </div>
-        <div class="lock"></div>
-        <div class="start">Start</div>
-      </router-link>
-
-      <router-link to="/study/registration" class="step" 
-        v-if="!isEmbedded" v-bind:class="{ done: currentStep > Store.SIGN_DONE, current: currentStep === Store.SIGN_DONE }">
-        <div class="icon registration"></div>
-        <div class="content">
-          <h3>Install the App</h3>
-          <p>Add your phone number so you can join the study!<br>1 minute</p>
-        </div>
-        <div class="lock"></div>
-        <div class="start">Start</div>
-      </router-link>
+    <MainNav title="Overview" :showBack="false" :showHelp="true" :showSteps="false"/>
+    <div class="intro">
+      <template v-if="currentStep === Store.UNSTARTED">
+        <h2>Let’s get started!</h2>
+        <p>Now that you have learned what mPower is all about, let’s check to see if you are eligible for the study.</p>
+      </template>
+      <template v-if="currentStep === Store.ELIGIBILITY_DONE">
+        <h2>Congratulations, you’re eligible!</h2>
+        <p>Now that we have found out that you are eligible, let’s move on to the next step. Your next step will be Consent where you’ll learn some more about the study.</p>
+      </template>
+      <template v-if="currentStep === Store.CONSENT_DONE">
+        <h2>Thanks for walking through consent!</h2>
+        <p>Next we will ask you 5 questions. They will tell you if we did a good job explaining the study.</p>
+      </template>
+      <template v-if="currentStep === Store.QUIZ_DONE">
+        <h2>Great job!</h2>
+        <p>You’ve passed the quiz, now let’s review the consent document that you looked at one more time before we can register you for the study.</p>
+      </template>
+      <template v-if="currentStep === Store.SIGN_DONE">
+        <h2>Registration</h2>
+        <p>Register your phone so you can download and install the app.</p>
+      </template>
     </div>
+    <router-link to="/study/eligibility" class="step" 
+      v-bind:class="{ done: currentStep > Store.UNSTARTED, current: currentStep === Store.UNSTARTED }">
+      <div class="icon eligibility"></div>
+      <div class="content">
+        <h3>Eligibility</h3>
+        <p>Let’s see if you are eligible for the Parkinsons Disease study.<br>2 MINUTES</p>
+      </div>
+      <div class="done"></div>
+      <div class="lock"></div>
+      <div class="start">Start</div>
+    </router-link>
+
+    <router-link to="/study/consent" class="step" 
+      v-bind:class="{ done: currentStep > Store.ELIGIBILITY_DONE,  current: currentStep === Store.ELIGIBILITY_DONE }">
+      <div class="icon consent"></div>
+      <div class="content">
+        <h3>Consent</h3>
+        <p>Learn about the study, risks, and benefits of joining.<br>5 MINUTES</p>
+      </div>
+      <div class="done"></div>
+      <div class="lock"></div>
+      <div class="start">Start</div>
+    </router-link>
+    
+    <router-link to="/study/quiz" class="step" 
+      v-bind:class="{ done: currentStep > Store.CONSENT_DONE, current: currentStep === Store.CONSENT_DONE }">
+      <div class="icon quiz"></div>
+      <div class="content">
+        <h3>Quiz</h3>
+        <p>Let’s see what you have learned from the consent document.<br>5 MINUTES</p>
+      </div>
+      <div class="done"></div>
+      <div class="lock"></div>
+      <div class="start">Start</div>
+    </router-link>
+
+    <router-link to="/study/sign" class="step" 
+      v-bind:class="{ done: currentStep > Store.QUIZ_DONE, current: currentStep === Store.QUIZ_DONE }">
+      <div class="icon sign"></div>
+      <div class="content">
+        <h3>Sign</h3>
+        <p>Sign the consent document.<br>2 MINUTES</p>
+      </div>
+      <div class="done"></div>
+      <div class="lock"></div>
+      <div class="start">Start</div>
+    </router-link>
+
+    <router-link to="/study/registration" class="step" 
+      v-if="!isEmbedded" v-bind:class="{ done: currentStep > Store.SIGN_DONE, current: currentStep === Store.SIGN_DONE }">
+      <div class="icon registration"></div>
+      <div class="content">
+        <h3>Registration</h3>
+        <p>Add your phone number so you can join the study!<br>1 MINUTE</p>
+      </div>
+      <div class="done"></div>
+      <div class="lock"></div>
+      <div class="start">Start</div>
+    </router-link>
   </div>
 </template>
 
@@ -113,22 +113,6 @@ export default {
 </script>
 
 <style scoped>
-nav {
-  color: white;
-  background-image: linear-gradient(86deg, #473b7b, #3584a7 76%, hsl(173, 64%, 51%));
-  background-blend-mode: multiply;
-
-  display: flex;
-  overflow: hidden;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 1rem;
-}
-nav > div {
-  height: 2.2rem;
-  line-height: 2.2rem;
-  padding: .25rem 1rem;
-}
 .icon {
   width: 8vw; /* height is 0.85222 of width */
   min-width: 3rem;
@@ -142,25 +126,29 @@ nav > div {
     margin: .8rem .25rem;
   }
   .eligibility {
-    background-image: url(/static/images/Eligibility2.svg);
+    background-image: url(/static/images/Eligibility.svg);
   }
   .consent {
-    background-image: url(/static/images/Consent2.svg);
+    background-image: url(/static/images/Consent.svg);
   }
   .quiz {
-    background-image: url(/static/images/Quiz2.svg);
+    background-image: url(/static/images/Comprehension.svg);
   }
   .sign {
-    background-image: url(/static/images/Sign2.svg);
+    background-image: url(/static/images/Sign%20consent.svg);
   }
   .registration {
-    background-image: url(/static/images/Install-R.svg);
+    background-image: url(/static/images/Register.svg);
   }
 .container {
+  padding: 0;
   padding-bottom: 3rem;
 }
 .intro {
-  padding: 0 0 1.5rem 0;
+  padding: 1rem 1rem 1.5rem 1rem;
+  text-align: center;
+  max-width: 30rem;
+  margin: 0 auto;
 }
 .intro h2, .into h3, .intro p {
   color: white;
@@ -175,12 +163,19 @@ nav > div {
 .step {
   display: flex;
   align-items: center;
-  background-color: rgba(255,255,255,.6);
+  background-color: white;
+  max-width: 30rem;
+
   border-radius: .75rem;
-  color: #473b7b;
   padding: .5rem;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem auto;
 }
+  .step div {
+    opacity: .5;
+  }
+  .step.current div, .step.done div {
+    opacity: 1;
+  }
 .content {
   flex: 1;
   padding: .25rem;
@@ -189,31 +184,34 @@ nav > div {
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: .1rem;
+    color: black;
   }
   .content p {
     font-size: .7rem;
-    line-height: 1.3;
+    line-height: 1.5;
     margin: 0;
-  }
-.done {
-  background-color: #049372;
-  color: white;
-}
-  .done, .done h3, .done p {
-    color: white;
   }
 .current {
   background-color: white;
 }
   .current h3, .current p {
-    color: #4a4a4a;
+    color: #1A1C29;
   }
 .lock {
-  background: transparent url(/static/images/lock-icon-onboarding-overview.png) center no-repeat;
+  background: transparent url(/static/images/Locked.svg) center no-repeat;
   width: 2.5rem;
   height: 2.5rem;
 }
-  .done .lock, .current .lock {
+  .current .lock, .done .lock {
+    display: none;
+  }
+.done .done {
+  background: transparent url(/static/images/done.svg) center no-repeat;
+  background-size: contain;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+  .done .lock, .done .start {
     display: none;
   }
 .start {
@@ -223,5 +221,15 @@ nav > div {
   .current .start {
     display: block;
   }
-
+@media screen and (max-width: 50em) {
+  .intro {
+    padding: 0 1rem;
+  }
+  .step {
+    border-radius: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .25rem;
+  }
+}
 </style>

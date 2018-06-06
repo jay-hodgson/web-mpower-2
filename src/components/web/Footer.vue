@@ -1,10 +1,10 @@
 <template>
   <footer>
     <div>
-      <div>2017 mPower</div>
+      <div>2018 mPower</div>
       <router-link to="/privacy-policy">PRIVACY POLICY</router-link>
       <div>|</div>
-      <router-link to="/terms-of-service">TERMS OF SERVICE</router-link>
+      <router-link to="/license">LICENSE</router-link>
       <div>|</div>
       <router-link to="/faq">FAQ</router-link>
       <div>|</div>
@@ -25,7 +25,7 @@ export default {
 <style scoped>
 footer {
   align-items: baseline;
-  background-image: linear-gradient(87deg, #473b7b, #3584a7 76%, #30d2be);
+  background-color: #5A478F;
   color: white;
   display: flex;
   flex-wrap: wrap;
@@ -36,6 +36,7 @@ footer {
 footer > div {
   display: flex;
   align-items: baseline;
+  text-align: center;
 }
 a {
   color: white;
