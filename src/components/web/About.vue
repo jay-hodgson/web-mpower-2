@@ -36,10 +36,10 @@
             </div>
         </div>
         <div class="center">
-          <img v-if="carouselStep === 1" src="/static/images/v3/eligibility%20and%20consent.svg">
-          <img v-if="carouselStep === 2" src="/static/images/v3/download%20the%20app.svg">
-          <img v-if="carouselStep === 3" src="/static/images/v3/perform%20pd%20activities.svg">
-          <img v-if="carouselStep === 4" src="/static/images/v3/track%20your%20health.svg">
+          <img v-if="carouselStep === 1" src="/static/images/eligibility%20and%20consent.svg">
+          <img v-if="carouselStep === 2" src="/static/images/download%20the%20app.svg">
+          <img v-if="carouselStep === 3" src="/static/images/perform%20pd%20activities.svg">
+          <img v-if="carouselStep === 4" src="/static/images/track%20your%20health.svg">
         </div>
         <div class="right">
           <h3>How the study works</h3>
@@ -66,30 +66,30 @@
         <carousel :per-page="1">
           <slide>
             <div class="slide">
-              <img src="/static/images/v3/eligibility%20and%20consent.svg">
-              <p>Eligibility & consent</p>
-              <p>Once you have received confirmation of your eligibility, we will ask you to do an informed consent process which only takes about 20 minutes.</p>
+              <img style="height: 12rem" src="/static/images/eligibility%20and%20consent.svg">
+              <p style="margin-bottom:0">Eligibility & consent</p>
+              <p style="margin-top: 0; font-size:smaller">Once you have received confirmation of your eligibility, we will ask you to do an informed consent process which only takes about 20 minutes.</p>
             </div>
           </slide>
           <slide>
             <div class="slide">
-              <img src="/static/images/v3/download%20the%20app.svg">
-              <p>Download the app</p>
-              <p>After consenting, you will enter your mobile number to receive a link to download the mPower app for free from either the iOS App Store or the Google Play Store. </p>
+              <img style="height: 12rem" src="/static/images/download%20the%20app.svg">
+              <p style="margin-bottom:0">Download the app</p>
+              <p style="margin-top: 0; font-size:smaller">After consenting, you will enter your mobile number to receive a link to download the mPower app for free from either the iOS App Store or the Google Play Store. </p>
             </div>
           </slide>
           <slide>
             <div class="slide">
-              <img src="/static/images/v3/perform%20pd%20activities.svg">
-              <p>Perform PD activities</p>
-              <p>Throughout the 2 year study, you will be notified every 3 months asking you to complete activities in 2 week bursts. These daily activities will include exercises such as finger tapping, cognitive games, and a one time health survey. </p>
+              <img style="height: 12rem" src="/static/images/perform%20pd%20activities.svg">
+              <p style="margin-bottom:0">Perform PD activities</p>
+              <p style="margin-top: 0; font-size:smaller">Throughout the 2 year study, you will be notified every 3 months asking you to complete activities in 2 week bursts. These daily activities will include exercises such as finger tapping, cognitive games, and a one time health survey. </p>
             </div>
           </slide>
           <slide>
             <div class="slide">
-              <img src="/static/images/v3/track%20your%20health.svg">
-              <p>Track your health</p>
-              <p>Tracking your medication and other factors (e.g. stress, exercise) may provide insight into your symptoms and your activity results. As you use mPower, you can view your past activity to gain insights into your day to day health and lifestyle.</p>
+              <img style="height: 12rem" src="/static/images/track%20your%20health.svg">
+              <p style="margin-bottom:0">Track your health</p>
+              <p style="margin-top: 0; font-size:smaller">Tracking your medication and other factors (e.g. stress, exercise) may provide insight into your symptoms and your activity results. As you use mPower, you can view your past activity to gain insights into your day to day health and lifestyle.</p>
             </div>
           </slide>
         </carousel>
@@ -99,7 +99,7 @@
     <section>
       <div class="image container">
         <div class="image">
-          <img style="margin-bottom: -6px" src="/static/images/v3/scientists%20make%20discoveries.svg">
+          <img style="margin-bottom: -6px" src="/static/images/scientists%20make%20discoveries.svg">
         </div>
         <div class="text">
           <h3>Scientists make discoveries</h3>
@@ -111,7 +111,7 @@
     <section>
       <div class="image container">
         <div class="image">
-          <img style="transform: scale(0.7); padding-bottom: 1rem" src="/static/images/v3/create your story.svg">
+          <img style="transform: scale(0.7); padding-bottom: 1rem" src="/static/images/create your story.svg">
         </div>
         <div class="text">
           <h3>Create your story</h3>

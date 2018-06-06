@@ -7,12 +7,12 @@
 
       <div class="team-members">
         <div class="member">
-            <div class="portrait" style="background-image: url(/static/images/v3/lara-mangravite.jpg); 
+            <div class="portrait" style="background-image: url(/static/images/lara-mangravite.jpg); 
               background-size: 100%; background-repeat: no-repeat; background-position: 0px -20px"></div>
             <div class="name">Lara Mangravite</div>
         </div>
         <div class="member">
-            <div class="portrait" style="background-image: url(/static/images/v3/larsson-omberg.png);
+            <div class="portrait" style="background-image: url(/static/images/larsson-omberg.png);
               background-size: 100%; background-repeat: no-repeat"></div>
             <div class="name">Larsson Omberg</div>
         </div>
@@ -22,7 +22,7 @@
     <section>
       <div class="image container">
         <div class="image">
-          <img src="/static/images/scientists-icon.png">
+          <img src="/static/images/mpower%20data%20and%20analysis.svg">
         </div>
         <div class="text">
           <h3>mPower Data and Analysis</h3>

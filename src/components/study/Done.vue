@@ -6,7 +6,7 @@
     </nav>
     <div class="container">
 			<div class="intro">
-				<img src="/static/images/v3/Register.svg" style="transform: translateX(17%)">
+				<img src="/static/images/Register.svg" style="transform: translateX(17%)">
 				<h2>The link is on its way to your mobile phone! </h2>
 
 				<p>We sent the link via a SMS to {{phone}}.<br>

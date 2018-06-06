@@ -126,19 +126,19 @@ export default {
     margin: .8rem .25rem;
   }
   .eligibility {
-    background-image: url(/static/images/v3/Eligibility.svg);
+    background-image: url(/static/images/Eligibility.svg);
   }
   .consent {
-    background-image: url(/static/images/v3/Consent.svg);
+    background-image: url(/static/images/Consent.svg);
   }
   .quiz {
-    background-image: url(/static/images/v3/Comprehension.svg);
+    background-image: url(/static/images/Comprehension.svg);
   }
   .sign {
-    background-image: url(/static/images/v3/Sign%20consent.svg);
+    background-image: url(/static/images/Sign%20consent.svg);
   }
   .registration {
-    background-image: url(/static/images/v3/Register.svg);
+    background-image: url(/static/images/Register.svg);
   }
 .container {
   padding: 0;
@@ -167,7 +167,6 @@ export default {
   max-width: 30rem;
 
   border-radius: .75rem;
-  color: #473b7b;
   padding: .5rem;
   margin: 0 auto 1rem auto;
 }
@@ -185,6 +184,7 @@ export default {
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: .1rem;
+    color: black;
   }
   .content p {
     font-size: .7rem;
@@ -198,7 +198,7 @@ export default {
     color: #1A1C29;
   }
 .lock {
-  background: transparent url(/static/images/v3/Locked.svg) center no-repeat;
+  background: transparent url(/static/images/Locked.svg) center no-repeat;
   width: 2.5rem;
   height: 2.5rem;
 }
@@ -206,7 +206,7 @@ export default {
     display: none;
   }
 .done .done {
-  background: transparent url(/static/images/v3/done.svg) center no-repeat;
+  background: transparent url(/static/images/done.svg) center no-repeat;
   background-size: contain;
   width: 1.6rem;
   height: 1.6rem;
@@ -227,8 +227,8 @@ export default {
   }
   .step {
     border-radius: 0;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: .25rem;
   }
 }

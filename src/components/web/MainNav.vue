@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="left">
-      <img src="/static/images/v3/logo.svg">
+      <img src="/static/images/logo.svg">
     </div>
     <div class="center">
       <router-link to="/your-story">Your Story</router-link>

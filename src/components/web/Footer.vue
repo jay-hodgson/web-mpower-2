@@ -25,7 +25,6 @@ export default {
 <style scoped>
 footer {
   align-items: baseline;
-  /*background-image: linear-gradient(87deg, #473b7b, #3584a7 76%, #30d2be);*/
   background-color: #5A478F;
   color: white;
   display: flex;
@@ -37,6 +36,7 @@ footer {
 footer > div {
   display: flex;
   align-items: baseline;
+  text-align: center;
 }
 a {
   color: white;

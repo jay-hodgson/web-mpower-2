@@ -7,7 +7,7 @@
 
         <div class="question" v-if="step >= 1">
           <span>I am </span>
-          <mdc-textfield style="width:3rem" v-model="age" type="tel" label="Age"/>
+          <mdc-textfield v-model="age" type="tel" label="Age"/>
           <span>years old</span>
         </div>
 
@@ -107,20 +107,22 @@ h3 {
 }
 .question {
   display: flex;
+  margin-bottom: 1.5rem;
+  flex-direction: row;
   align-items: baseline;
-  justify-content: center;
   margin-bottom: 1.5rem;
 }
   .question > * {
-    padding: 0 .25rem;
-    margin-bottom: .25rem;
+    margin: 0 .25rem;
+    white-space: nowrap;
   }
 select {
   background-color: transparent;
 }
 @media screen and (max-width: 50em) {
   .question {
-    flex-direction: column;
+    margin-right: -1rem;
+    margin-left: -1rem;
   }
   .mdc-select {
     height: 2rem;

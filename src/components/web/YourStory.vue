@@ -5,7 +5,7 @@
     <section style="height: 30vw; min-height: 15rem; background: linear-gradient(#5A478F, #47337D)">
       <div style="
         height: 30vw; min-height: 15rem;
-        background-image: url(/static/images/v3/about%20the%20study.svg);
+        background-image: url(/static/images/about%20the%20study.svg);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -23,7 +23,7 @@
     <section>
       <div class="image container">
         <div class="image">
-          <img style="margin-bottom: -6px" src="/static/images/v3/about%20the%20study.svg">
+          <img style="margin-bottom: -6px" src="/static/images/about%20the%20study.svg">
         </div>
         <div class="text" style="padding-top: 1rem">
           <h3>Understand your PD</h3>
@@ -35,7 +35,7 @@
     <section>
       <div class="image container">
         <div class="image">
-          <img style="padding-top: 1.5rem" src="/static/images/v3/tell%20your%20story.svg">
+          <img style="padding-top: 1.5rem" src="/static/images/tell%20your%20story.svg">
         </div>
         <div class="text">
           <h3>Telling your story</h3>
@@ -47,7 +47,7 @@
     <section>
       <div class="image container">
         <div class="image">
-          <img style="transform: scale(0.7); padding-bottom: 1rem" src="/static/images/v3/create your story.svg">
+          <img style="transform: scale(0.7); padding-bottom: 1rem" src="/static/images/create your story.svg">
         </div>
         <div class="text">
           <h3>Create your story</h3>

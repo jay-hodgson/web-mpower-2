@@ -82,7 +82,7 @@ nav {
 }
 .left a {
   padding-left: 7vw;
-  background: transparent url(/static/images/v3/Back.svg) 3vw center
+  background: transparent url(/static/images/Back.svg) 3vw center
     no-repeat;
   background-size: 3vw 5.16vw;
 }
@@ -100,24 +100,24 @@ nav {
   background-position: center;
 }
   .eligibility {
-    background-image: url(/static/images/v3/Eligibility.svg);
+    background-image: url(/static/images/Eligibility.svg);
     background-size: 55%;
     background-position: center 43%;
   }
   .consent {
-    background-image: url(/static/images/v3/Consent.svg);
+    background-image: url(/static/images/Consent.svg);
     background-size: 40%;
   }
   .quiz {
-    background-image: url(/static/images/v3/Comprehension.svg);
+    background-image: url(/static/images/Comprehension.svg);
     background-size: 50%;
   }
   .sign {
-    background-image: url(/static/images/v3/Sign%20consent.svg);
+    background-image: url(/static/images/Sign%20consent.svg);
     background-size: 55%;
   }
   .registration {
-    background-image: url(/static/images/v3/Register.svg);
+    background-image: url(/static/images/Register.svg);
     background-position: 68% center;
     background-size: 50%;
   }
