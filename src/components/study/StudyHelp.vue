@@ -1,22 +1,19 @@
 <template>
   <div class="docked-layout">
-    <MainNav title="mPower 2.0 Help" :showSteps="false" :showHelp="false"/>
-    <section>
-      <div class="container">
-        <h2>Help</h2>
-        <p>This is the help page.</p>
-      </div>
+    <MainNav title="Back" :show-back="true"/>
+    <section class="smooth-scroller">
+      <FaqContent/>
     </section>
-    <Footer/>
   </div>
 </template>
 
 <script>
 import MainNav from './MainNav.vue';
 import Footer from '../web/Footer.vue';
+import FaqContent from '../web/FaqContent.vue';
 
 export default {
   name: 'StudyHelp',
-  components: { MainNav, Footer },
+  components: { MainNav, Footer, FaqContent }
 }
 </script>

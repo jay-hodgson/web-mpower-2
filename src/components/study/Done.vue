@@ -6,7 +6,7 @@
     </nav>
     <div class="container">
 			<div class="intro">
-				<img src="/static/images/Register.svg" style="transform: translateX(17%)">
+        <BridgeImage src="/static/images/Register.svg" css="transform: translateX(17%)"/>
 				<h2>The link is on its way to your mobile phone! </h2>
 
 				<p>We sent the link via a SMS to {{phone}}.<br>
@@ -21,11 +21,8 @@
 </template>
 
 <script>
-import MainNav from "./MainNav.vue";
-
 export default {
   name: "Done",
-  components: { MainNav },
   data() {
     return {
 			phone: this.$store.getPhone()

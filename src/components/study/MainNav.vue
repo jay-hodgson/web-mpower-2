@@ -1,8 +1,9 @@
 <template>
   <nav>
     <div class="left">
-      <router-link v-show="showBack" to="/study/overview">{{title}}</router-link>
-      <span v-if="!showBack">{{title}}</span>
+      <router-link v-show="backToOverview" to="/study/overview">{{title}}</router-link>
+      <span v-if="!backToOverview && !showBack">{{title}}</span>
+      <span v-if="showBack"><a @click="historyBack">{{title}}</a></span>
     </div>
     <div class="center" v-if="showSteps">
       <span class="eligibility icon" v-bind:class="{ grayscale: currentStep > Store.UNSTARTED }"></span>
@@ -31,15 +32,19 @@ export default {
     },
     showBack: {
       type: Boolean,
-      default: true
+      default: false
     },
     showSteps: {
       type: Boolean,
-      default: true
+      default: false
     },
     showHelp: {
       type: Boolean,
-      default: true
+      default: false
+    },
+    backToOverview: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -50,6 +55,11 @@ export default {
   },
   created() {
     this.currentStep = this.$store.getCurrentStep();
+  },
+  methods: {
+    historyBack: function() {
+      history.back();
+    }
   }
 };
 </script>
@@ -63,9 +73,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   color: white;
+  height: 3rem;
 }
 .left a, .left span {
-  margin: 1rem;
   color: white;
   display: block;
 }
@@ -82,8 +92,7 @@ nav {
 }
 .left a {
   padding-left: 7vw;
-  background: transparent url(/static/images/Back.svg) 3vw center
-    no-repeat;
+  background: transparent url(/static/images/Back.svg) 3vw center no-repeat;
   background-size: 3vw 5.16vw;
 }
 .left span {
@@ -91,9 +100,9 @@ nav {
 }
 .icon {
   display: block;
-  width: 2rem;
-  height: 2rem;
-  margin: 1vw 0 1vw 1vw;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-left: 1vw;
   border-radius: 50%;
   background-color: white;
   background-repeat: no-repeat;
@@ -125,8 +134,8 @@ nav {
   color: #3b4a63;
   background-color: white;
   font-size: 0.7rem;
-  height: 2.2rem;
-  line-height: 2.2rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
   padding: 0 0.5rem;
 }
   .full.help-link {
@@ -134,7 +143,7 @@ nav {
   }
   .short.help-link {
     border-radius: 50%;
-    width: 2.2rem;
+    width: 2.4rem;
     text-align: center;
     padding: 0;
     font-weight: bold;
@@ -155,14 +164,14 @@ nav {
   }
   .icon, .help-link {
     display: block;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.4rem;
+    height: 1.4rem;
     padding: 0;
     border-radius: 50%;
   }
   .short.help-link {
-    width: 1.2rem;
-    line-height: 1.2rem;
+    width: 1.4rem;
+    line-height: 1.4rem;
   }
 }
 @media screen and (min-width: 45em) {

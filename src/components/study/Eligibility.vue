@@ -1,20 +1,20 @@
 <template>
   <div class="docked-layout">
-    <MainNav title="Eligibility"/>
+    <MainNav title="Eligibility" :back-to-overview="true" :show-help="true" :show-steps="true"/>
     <section>
       <div class="container">
         <h3>Let’s find out if you’re eligible</h3>
 
         <div class="question" v-if="step >= 1">
           <span>I am </span>
-          <mdc-textfield v-model="age" type="tel" label="Age"/>
+          <mdc-textfield @blur="advanceTo(2)" v-model="age" type="tel" label="Age"/>
           <span>years old</span>
         </div>
 
         <div class="question" v-if="step >= 2">
           <span>I live </span>
           <div class="mdc-select">
-            <select dense v-model="residence" class="mdc-select__surface">
+            <select @change="advanceTo(3)" dense v-model="residence" class="mdc-select__surface">
               <option :key="state" v-for="state in states">{{state}}</option>
             </select>
             <div class="mdc-select__bottom-line"></div>
@@ -24,7 +24,7 @@
         <div class="question" v-if="step >= 3">
           <span>I </span>
           <div class="mdc-select">
-            <select dense v-model="comfort" class="mdc-select__surface">
+            <select @change="advanceTo(4)" dense v-model="comfort" class="mdc-select__surface">
               <option>Select</option>
               <option>have</option>
               <option>do not have</option>
@@ -35,7 +35,6 @@
         </div>
       </div>
     </section>
-
     <Footer v-freeze :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled" 
       @back="doBack" @next="doNext" @submit="doSubmit"/>
   </div>
@@ -55,8 +54,8 @@ export default {
     return {
       step: 1,
       totalSteps: 3,
-      residence: 'select where',
-      comfort: 'select response',
+      residence: 'Select',
+      comfort: 'Select',
       states: STATES,
       age: ''
     }
@@ -68,13 +67,18 @@ export default {
         return true
       } else if (this.step === 2 && this.residence !== 'Select') {
         return true
-      } else if (this.step === 3 && this.comfort !== 'Select') {
+      } else if (this.step >= 3 && this.comfort !== 'Select') {
         return true
       }
       return false
     }
   },
   methods: {
+    advanceTo(thisStep) {
+      if (thisStep > this.step) {
+        this.step = thisStep;
+      }
+    },
     doBack() {
       this.step -= 1;
     },

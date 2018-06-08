@@ -37,10 +37,12 @@ Vue.directive('freeze', {
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.step === undefined) {
-    next()
-  } else if (to.meta.step === store.getCurrentStep()) {
-    next()
+  if (from.path === '/study/overview') {
+    if (to.meta.step === undefined || to.meta.step === store.getCurrentStep()) {
+      next()
+    }
+  } else {
+    next();
   }
 });
 

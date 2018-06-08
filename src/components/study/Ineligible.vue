@@ -11,15 +11,6 @@
         <!--<p>You can still help by telling others about the study</p>-->
       </div>
 
-      <!--
-      <div class="share-icons">
-        <a href=""><img src="/static/images/Facebook-Circle.svg"></a>
-        <a href=""><img src="/static/images/Twitter-Circle.svg"></a>
-        <a href=""><img src="/static/images/Sms-Circle.svg"></a>
-        <a href=""><img src="/static/images/Email-Circle.svg"></a>
-      </div>
-      -->
-
       <div class="back-button">
         <a href="/">Go back</a>
       </div>

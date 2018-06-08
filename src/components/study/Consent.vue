@@ -1,6 +1,6 @@
 <template>
   <div ref="dockedLayout" class="docked-layout">
-    <MainNav title="Consent" :show-back="!review"/>
+    <MainNav title="Consent" :back-to-overview="true" :show-help="true" :show-steps="true"/>
     <section>
       <div class="consent-viewer-holder">
         <ConsentViewer :highlight-id="highlightId"/>
@@ -109,11 +109,12 @@
         </div>
       </div>
     </section>
-    <NavFooter v-freeze v-if="review" label="Back" @click="backToReview"/>
-    <Footer v-freeze v-else :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled"
+    <Footer v-freeze :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled"
       v-on:back="doBack" v-on:next="doNext" v-on:submit="doSubmit" submit-label="Done"/>
   </div>
+  <!-- <NavFooter v-freeze v-if="review" label="Back" @click="backToReview"/>-->
 </template>
+
 
 <script>
 import ConsentViewer from './ConsentViewer.vue'

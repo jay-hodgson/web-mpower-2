@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="left">
-      <img src="/static/images/logo.svg">
+      <BridgeImage src="/static/images/logo.svg"/>
     </div>
     <div class="center">
       <router-link to="/your-story">Your Story</router-link>
@@ -26,6 +26,7 @@ nav {
   align-items: center;
   justify-content: space-around;
   box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
+  margin-bottom: 2px;
 }
   nav > div {
     padding: 0.3rem;
@@ -63,7 +64,7 @@ a.router-link-active {
     .left img {
       display: block;
       width: 30vw;
-      margin: .5rem auto 0;
+      margin: 0 auto;
     }
   .center {
     display: flex;

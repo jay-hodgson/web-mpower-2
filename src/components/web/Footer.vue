@@ -31,7 +31,7 @@ footer {
   flex-wrap: wrap;
   font-size: .55rem;
   justify-content: space-around;
-  padding: 1rem 0;
+  padding: .25rem .75rem .5rem .75rem;
 }
 footer > div {
   display: flex;
