@@ -107,7 +107,7 @@ section {
   text-align: center;
 }
 .panel {
-  height: 20rem;
+  height: 22rem;
 }
 h3 {
   font-size: 1.3rem;
@@ -128,7 +128,7 @@ img {
   margin: 1rem auto;
 }
 .buttons {
-  margin: 2rem auto 0;
+  margin: 1rem auto 0 auto;
   text-align: center;
 }
   .buttons button {

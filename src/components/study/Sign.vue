@@ -2,7 +2,7 @@
   <div class="docked-layout">
     <MainNav title="Sign" :back-to-overview="true" :show-help="true" :show-steps="true"/>
     <section>
-      <ConsentViewer/>
+      <ConsentSummaryViewer/>
     </section>
     <footer>
       <div class="slider">
@@ -34,14 +34,14 @@
 </template>
 
 <script>
-import ConsentViewer from './ConsentViewer.vue'
+import ConsentSummaryViewer from './ConsentSummaryViewer.vue'
 import MainNav from './MainNav.vue'
 import Store from '../store'
 import RadioButton from './RadioButton'
 
 export default {
   name: 'StudySign',
-  components: { ConsentViewer, MainNav, RadioButton },
+  components: { ConsentSummaryViewer, MainNav, RadioButton },
   data() {
     return {
       name: '',
