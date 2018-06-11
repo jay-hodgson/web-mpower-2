@@ -1,13 +1,14 @@
 <template>
   <footer>
     <div>
-      <div class="label">STEP {{step}} OF {{totalSteps}}</div>
-      <div class="metering"><div class="progress" ref="progress" v-bind:style="{ width: meterWidth }"></div></div>
-    </div>
-    <div>
       <button v-bind:style="{visibility: viewBack}" @click="back">Back</button>
       <button v-if="step < totalSteps" :disabled="!nextEnabled" @click="next">Next</button>
-      <button v-if="step === totalSteps" :disabled="!nextEnabled" @click="submit">{{submitLabel || 'Submit'}}</button>
+      <button v-if="step >= totalSteps" :disabled="!nextEnabled" 
+        @click="submit">{{submitLabel || 'Submit'}}</button>
+    </div>
+    <div>
+      <div class="label">STEP {{step}} OF {{totalSteps}}</div>
+      <div class="metering"><div class="progress" ref="progress" v-bind:style="{ width: meterWidth }"></div></div>
     </div>
   </footer>
 </template>
@@ -66,8 +67,13 @@ footer {
   font-size: 0.7rem;
   color: #6c7a89;
   margin-bottom: 0.25rem;
+  white-space: nowrap; 
 }
 footer > div:first-child {
+  order: 2;
+}
+footer > div:last-child {
+  order: 1;
   flex: 1;
 }
 .metering {
@@ -82,7 +88,6 @@ footer > div:first-child {
   border-radius: 0.25rem;
   background-color: #5A478F;
 }
-
 footer > div:last-child {
   padding-left: 2vw;
 }
@@ -97,5 +102,31 @@ button {
 }
 button:disabled {
   opacity: 0.5;
+}
+@media screen and (max-width: 50em) {
+  footer {
+    display: block;
+  }
+  footer > div {
+    width: 100%;
+  }
+  footer div:first-child {
+    text-align: center;
+    margin-bottom: .25rem;
+  }
+  footer div:last-child {
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+  }
+  .label {
+    margin-right: .5rem;
+  }
+  button {
+    font-size: 1.3rem;
+  }
+  button:last-child {
+    margin-left: 2vw;
+  }
 }
 </style>

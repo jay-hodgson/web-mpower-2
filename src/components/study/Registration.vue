@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MainNav title="Install The App"/>
+    <MainNav title="Install The App" :back-to-overview="true" :show-help="true" :show-steps="true"/>
     <div class="container">
       <p>Enter your mobile phone number and select your phone type to receive your download link for the app:</p>
 
@@ -9,10 +9,10 @@
       </p>
       <div class="buttons">
         <a @click="apple">
-          <img src="/static/images/AppStoreButton.gif" :style="{opacity: hasNumber}">
+          <BridgeImage src="/static/images/AppStoreButton.gif" :style="{opacity: hasNumber}"/>
         </a>
         <a @click="google">
-          <img src="/static/images/PlayStoreButton.gif" :style="{opacity: hasNumber}">
+          <BridgeImage src="/static/images/PlayStoreButton.gif" :style="{opacity: hasNumber}"/>
         </a>
       </div>
     </div>

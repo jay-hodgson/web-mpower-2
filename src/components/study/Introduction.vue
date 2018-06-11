@@ -6,44 +6,51 @@
     <section v-freeze>
       <div class="container">
         <div class="screen" v-show="step === 1">
-          <img src="/static/images/about%20the%20study.svg">
-          <h3>About the study</h3>
-          <p>mPower research study was developed by Sage Bioneworks (non-profit) to measure the symptoms, day to day changes, and long-term changes in people with Parkinson’s Disease (PD). </p>
-          <!--<p><a href="#">Learn more</a></p>-->
+          <div class="panel">
+            <BridgeImage src="/static/images/about%20the%20study.svg"/>
+            <h3>About the study</h3>
+            <p>mPower research study was developed by Sage Bioneworks (non-profit) to measure the symptoms, day to day changes, and long-term changes in people with Parkinson’s Disease (PD). </p>
+          </div>
           <div class="buttons">
             <button @click="doBack" disabled>Back</button>
             <button @click="doNext">Next</button>
           </div>
         </div>
         <div class="screen" v-show="step === 2">
-          <img src="/static/images/procedures%20activities.svg">
-          <h3>Procedures and Activities</h3>
-          <p>
-            1. Join the study if you are 18 years old, live in the United States and have PD.<br>
-            2. Complete a brief survey<br>
-            3. Track your symptoms, triggers, and medication<br>
-            4. Do short physical and cognitive activities
-          </p>
+          <div class="panel">
+            <BridgeImage src="/static/images/procedures%20activities.svg"/>
+            <h3>Procedures and Activities</h3>
+            <p>
+              1. Join the study if you are 18 years old, live in the United States and have PD.<br>
+              2. Complete a brief survey<br>
+              3. Track your symptoms, triggers, and medication<br>
+              4. Do short physical and cognitive activities
+            </p>
+          </div>
           <div class="buttons">
             <button @click="doBack">Back</button>
             <button @click="doNext">Next</button>
           </div>
         </div>
         <div class="screen" v-show="step === 3">
-          <img src="/static/images/how%20long%20does%20it%20last.svg">
-          <h3>How long does it last?</h3>
-          <p>We will ask you to participate for 2 weeks every three months. We would like you to participate for 2 years, but you can participate as long as you like.</p>
+          <div class="panel">
+            <BridgeImage src="/static/images/how%20long%20does%20it%20last.svg"/>
+            <h3>How long does it last?</h3>
+            <p>We will ask you to participate for 2 weeks every three months. We would like you to participate for 2 years, but you can participate as long as you like.</p>
+          </div>
           <div class="buttons">
             <button @click="doBack">Back</button>
             <button @click="doNext">Next</button>
           </div>
         </div>
         <div class="screen" v-show="step === 4">
-          <img src="/static/images/benefits%20and%20risks.svg">
-          <h3>What are the benefits and risks?</h3>
-          <p>You may help researchers better understand PD. You may not directly benefit from taking part but seeing trends in your data may be interesting to you. </p>
+          <div class="panel">
+            <BridgeImage src="/static/images/benefits%20and%20risks.svg"/>
+            <h3>What are the benefits and risks?</h3>
+            <p>You may help researchers better understand PD. You may not directly benefit from taking part but seeing trends in your data may be interesting to you. </p>
 
-          <p>Participating in the study and seeing your data may cause a range of emotions.</p>
+            <p>Participating in the study and seeing your data may cause a range of emotions.</p>
+          </div>
           <div class="buttons">
             <button @click="doBack">Back</button>
             <button @click="doSubmit">Next</button>
@@ -99,6 +106,9 @@ section {
   margin: 0 auto;
   text-align: center;
 }
+.panel {
+  height: 22rem;
+}
 h3 {
   font-size: 1.3rem;
 }
@@ -118,11 +128,11 @@ img {
   margin: 1rem auto;
 }
 .buttons {
-  margin: 2rem auto 0;
+  margin: 1rem auto 0 auto;
   text-align: center;
 }
   .buttons button {
-    font-size: .7rem;
+    font-size: 1rem;
     background-color: white;
     padding: .75rem 2rem;
     border-radius: 100px;
@@ -134,4 +144,9 @@ img {
   button[disabled] {
     opacity: .5;
   }
+@media screen and (max-width: 50em) {
+  h3, p {
+    line-height: 1.1;
+  }
+}
 </style>

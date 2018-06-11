@@ -1,43 +1,47 @@
 <template>
   <div class="docked-layout">
-    <MainNav title="Sign"/>
+    <MainNav title="Sign" :back-to-overview="true" :show-help="true" :show-steps="true"/>
     <section>
-      <ConsentViewer/>
+      <ConsentSummaryViewer/>
     </section>
     <footer>
       <div class="slider">
         <div class="slider-element animated" :class="{'slideOutLeft': showSharing}">
-          <h1>Please review and sign the consent document</h1>
-          <p>By signing your name, you have indicated that you have read and fully agree with the consent form given below. This is the document which you just went through in the consent and quiz process.</p>
-          <input v-model="name" placeholder="Please type your full name here">
+          <div class="inner">
+            <h1>How widely can we share your data with other researchers?</h1>
+            <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners" color="white">
+              Sponsors and Partners
+            </RadioButton>
+            <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers" color="white">
+              All Qualified Researchers
+            </RadioButton>
+          </div>
         </div>
         <div class="slider-element slider-offscreen animated" :class="{'slideInRight': showSharing}">
-          <h1>How widely can we share your data with other researchers?</h1>
-          <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners" color="white">
-            Sponsors and Partners
-          </RadioButton>
-          <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers" color="white">
-            All Qualified Researchers
-          </RadioButton>
+          <div class="inner">
+            <h1>Please review and sign the consent document</h1>
+            <p>By signing your name, you have indicated that you have read and fully agree with the consent form given below. This is the document which you just went through in the consent and quiz process.</p>
+            <input v-model="name" placeholder="Please type your full name here">
+            <div class="buttons">
+              <a href="/" @click="cancel">Disagree</a>
+              <button class="join-button" :disabled="canSubmit" @click="advance">ACCEPT</button>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="buttons">
-        <a href="/" @click="cancel">Disagree</a>
-        <button class="join-button" :disabled="canSubmit" @click="advance">ACCEPT</button>
       </div>
     </footer>
   </div>
 </template>
 
 <script>
-import ConsentViewer from './ConsentViewer.vue'
+import ConsentSummaryViewer from './ConsentSummaryViewer.vue'
 import MainNav from './MainNav.vue'
 import Store from '../store'
 import RadioButton from './RadioButton'
 
 export default {
   name: 'StudySign',
-  components: { ConsentViewer, MainNav, RadioButton },
+  components: { ConsentSummaryViewer, MainNav, RadioButton },
   data() {
     return {
       name: '',
@@ -86,14 +90,15 @@ export default {
     },
     updateSharing: function(name, value) {
       this.scope = value;
+      this.advance();
     }
   }
 }
 </script>
 
 <style scoped>
-.docked-layout section {
-  overflow-y: hidden;
+.docked-layout {
+  box-sizing: border-box;
 }
   strong {
     font-weight: normal;
@@ -103,79 +108,88 @@ export default {
   }
 section {
   padding: 0;
+  overflow: hidden;
 }
 footer {
   background-image: linear-gradient(90deg, #332069, #907FBA);
   background-attachment: fixed;
-  padding: 1rem 0;
-
 }
-  footer h1 {
+    .slider {
+      position: relative;
+      overflow: hidden;
+      height: 11rem;
+    }
+    .slider-element {
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      bottom: 0;
+    }
+      .inner {
+        padding: 1rem; 
+        max-width: 30rem; 
+        margin: 0 auto;
+      }
+    .slider-offscreen {
+      transform: translate(100vw,0); 
+      display:flex; 
+      flex-direction: column; 
+      align-items: center;
+    }
+  .slider-element h1 {
     color: white;
-    text-align: center;
     font-size: .9rem;
     font-weight: normal;
-    margin-bottom: .75rem;
-    margin: 0 1rem .5rem 1rem;
+    margin-bottom: .5rem;
+    line-height: 1.2;
   }
-  footer p {
+  .slider-element p {
     color: white;
-    text-align: center;
     font-size: .7rem;
     line-height: 1.1;
-    margin: 0 1rem;
   }
-  footer input {
+  .slider-element input {
     color: white;
     font-size: 1rem;
     padding: .2rem .4rem;
-    margin: .5rem auto;
+    margin: 0 auto;
+    margin-top: -.75rem;
     display: block;
-    width: 80vw;
+    width: 95%;
     text-align: center;
     background-color: transparent;
     border: none;
   }
-  footer input::placeholder {
-    color: rgba(255,255,255,0.85);
+  .slider-element input::placeholder {
+    color: rgba(255,255,255,0.65);
+    text-decoration: underline;
   }
-  footer .buttons {
+  .slider-element .buttons {
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin: 0 auto;
   }
-  footer a {
+  .slider-element button {
+    color: #332069;
+    padding: .7rem 2rem;
+    font-size: .7rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .slider-element .buttons a {
+    margin-right: 6rem;
+  }
+  .slider-element button:disabled {
+    opacity: .8;
+  }
+  .slider-element a {
     color: rgba(255,255,255,0.85);
     text-decoration: underline;
     font-size: .9rem;
   }
-  footer button {
-    color: #332069;
-    padding: .7rem 2rem;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  footer button:disabled {
-    opacity: .8;
-  }
-  .slider {
-    height: 130px; 
-    position: relative;
-    overflow:hidden;
-  }
-  .slider-element {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0;
-  }
-  .slider-offscreen {
-    transform: translate(100vw,0); 
-    text-align: center; 
-    display:flex; 
-    flex-direction: column; 
-    align-items: center;
+  .slider-element .radio-holder {
+    margin-left: .5rem;
   }
 </style>

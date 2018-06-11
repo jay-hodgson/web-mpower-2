@@ -1,8 +1,8 @@
 <template>
   <div class="docked-layout">
-    <MainNav title="Test your knowledge"/>
+    <MainNav title="Quiz" :back-to-overview="true" :show-help="true" :show-steps="true"/>
     <section>
-      <div class="failure" v-if="showFailure">
+      <div class="failure" v-if="showFailure" v-freeze>
         <div>
           <h4>Not quite!</h4>
           <p v-if="step === 1">The purpose of this study is to understand the fluctuations of Parkinson’s disease symptoms. This is not a treatment study. The app does not replace your usual medical care.</p>
@@ -12,7 +12,7 @@
           <p v-if="step === 5">The mPower app does not connect to your doctor or health care provider. It does allow you to track your symptoms and triggers.</p>
         </div>
       </div>
-      <div class="success" v-if="showSuccess">
+      <div class="success" v-if="showSuccess" v-freeze>
         <div>
           <h4>Great job!</h4>
           <p v-if="step === 1">The purpose of this study is to better understand the fluctuations of Parkinson’s disease symptoms. It is not a treatment study. The app does not replace your usual medical care.</p>
@@ -20,6 +20,10 @@
           <p v-if="step === 3">Your coded study data cannot be deleted once it is used in another research. </p>
           <p v-if="step === 4">Answering questions may cause a wide range of emotions. It can be stressful.</p>
           <p v-if="step === 5">The mPower app does not connect to your doctor or health care provider. It does allow you to track your symptoms and triggers.</p>
+          <div style="text-align:right">
+            <button v-if="step !== 5" @click="doNext">Next</button>
+            <button v-if="step === 5" @click="doSubmit">Done</button>
+          </div>
         </div>
       </div>
       <div class="container">
@@ -84,9 +88,6 @@
         </div>
       </div>
     </section>
-    <Footer v-freeze ref="footer" :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled"
-      :doNotAdvanceOnSubmit="true" v-on:back="doBack" v-on:next="doNext" v-on:submit="doSubmit" 
-      v-on:animateSubmitDone="doAnimateSubmitDone"/>
   </div>
 </template>
 
@@ -121,6 +122,12 @@ export default {
     updateQuizState(name, value) {
       this.answer = value
       this.furthestStep = this.step
+      console.log(this.step, this.furthestStep);
+      if (this.step === this.furthestStep) {
+        this.doSubmit()
+      } else {
+        this.doNext()
+      }
     },
     doBack() {
       if (this.step > 1) {
@@ -151,7 +158,8 @@ export default {
     },
     doSubmit() {
       if (this.showSuccess && this.answer !== 'wrong') {
-        this.$refs.footer.animateSubmit();
+        this.$store.setCurrentStep(Store.QUIZ_DONE)
+        this.$router.push('/study/overview')
       } else if (this.answer === 'wrong') {
         this.showSuccess = false
         this.showFailure = true
@@ -159,11 +167,9 @@ export default {
         this.showSuccess = true
         this.showFailure = false
       }
-    },
+    }/*,
     doAnimateSubmitDone() {
-      this.$store.setCurrentStep(Store.QUIZ_DONE)
-      this.$router.push('/study/overview')
-    }
+    }*/
   }
 }
 </script>
@@ -193,22 +199,38 @@ section {
   display: block;
 }
 .success, .failure {
-  font-size: smaller;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
+  .success h4, .failure h4 {
+    font-size: 1.3rem;
+    margin: .5rem 0;
+  }
   .success div, .failure div {
     max-width: 30rem;
     margin: 0 auto; 
     padding: .5rem 1.5rem;
   }
   .success {
-    background-color: rgba(99, 212, 158, 0.1);
+    background-color: #f0faf6;
   }
     .success h4 {
       color: #63D49E;
       font-weight: normal;
     }
+    .success button {
+       font-size: 1.3rem; 
+       background-color: #5A478F; 
+       color: white; 
+       border-radius: 100px; 
+       padding: .25rem 2rem;
+       margin-bottom: .5rem;
+    }
   .failure {
-    background-color: rgba(238, 96, 112, 0.1);
+    background-color: #fef0f1;
   }
     .failure h4 {
       color: #EE6070;

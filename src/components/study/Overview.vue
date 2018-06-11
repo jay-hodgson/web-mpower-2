@@ -1,14 +1,14 @@
 <template>
   <div>
-    <MainNav title="Overview" :showBack="false" :showHelp="true" :showSteps="false"/>
+    <MainNav title="Overview" :show-help="true"/>
     <div class="intro">
       <template v-if="currentStep === Store.UNSTARTED">
         <h2>Let’s get started!</h2>
-        <p>Now that you have learned what mPower is all about, let’s check to see if you are eligible for the study.</p>
+        <p>Now that you’ve learned the basics of mPower, we will provide you with a bit more detail so you can decide if mPower is right for you.</p><p>First, let’s see if you’re eligible for the mPower study!</p>
       </template>
       <template v-if="currentStep === Store.ELIGIBILITY_DONE">
-        <h2>Congratulations, you’re eligible!</h2>
-        <p>Now that we have found out that you are eligible, let’s move on to the next step. Your next step will be Consent where you’ll learn some more about the study.</p>
+        <h2>Welcome to mPower!</h2>
+        <p>mPower is a study to track the symptoms of Parkinson’s Disease over time. Here you can learn about the study and decide if you want to join! Let’s get started.</p>
       </template>
       <template v-if="currentStep === Store.CONSENT_DONE">
         <h2>Thanks for walking through consent!</h2>
@@ -155,7 +155,7 @@ export default {
   line-height: 1.3;
 }
   .intro h2 {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
   .intro p {
     font-size: .9rem;

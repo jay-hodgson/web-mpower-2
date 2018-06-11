@@ -5,12 +5,12 @@ import webCss from '@/assets/web.css'
 import YourStory from '@/components/web/YourStory'
 import About from '@/components/web/About'
 import Team from '@/components/web/Team'
-
-import PrivacyPolicy from '@/components/web/PrivacyPolicy'
-import TermsOfService from '@/components/web/TermsOfService'
-import FAQ from '@/components/web/FAQ'
-import Contact from '@/components/web/Contact'
 import Uninstalled from '@/components/web/Uninstalled'
+
+const PrivacyPolicy = () => import(/* webpackChunkName: "secondary" */ '@/components/web/PrivacyPolicy')
+const TermsOfService = () => import(/* webpackChunkName: "secondary" */ '@/components/web/TermsOfService')
+const FAQ = () => import(/* webpackChunkName: "secondary" */ '@/components/web/FAQ')
+const Contact = () => import(/* webpackChunkName: "secondary" */ '@/components/web/Contact')
 
 /* I love Vue router. Lazy loading the onboarding screens is this simple. */
 const StudyOverview = () => import(/* webpackChunkName: "study" */ '@/components/study/Overview')
@@ -25,7 +25,10 @@ const StudyIneligible = () => import(/* webpackChunkName: "study" */ '@/componen
 const StudyDone = () => import(/* webpackChunkName: "study" */ '@/components/study/Done')
 const StudyIntroduction = () => import(/* webpackChunkName: "study" */ '@/components/study/Introduction')
 
+import BridgeImage from '@/components/BridgeImage';
+
 Vue.use(Router)
+Vue.component('BridgeImage', BridgeImage)
 
 export default new Router({
   mode: "history",

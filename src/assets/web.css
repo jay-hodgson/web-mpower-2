@@ -38,9 +38,7 @@ h2 {
   font-weight: normal;
   color: #5A478F;
   text-align: center;
-  margin: 0;
-  margin-top: 2rem;
-  margin-bottom: .5rem;
+  margin: 1rem 0 .5rem 0;
 }
 h3 {
   font-weight: normal;
@@ -70,7 +68,7 @@ section:nth-child(odd) {
 .container {
   max-width: 30rem;
   margin: 0 auto;
-  padding: .5rem 1.5rem;
+  padding: 1.5rem;
 }
   .image.container {
     max-width: 40rem;
@@ -193,12 +191,12 @@ nav.basic a {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
 }
-  .docked-layout section {
+  .docked-layout > section {
     flex: 1;
     overflow-y: scroll;
-    /* this breaks the quiz component on some updates. Disable. */
-    /*-webkit-overflow-scrolling: touch;*/
-    padding: 1.5rem 0;
+  }
+  .docked-layout > section.smooth-scroller {
+    -webkit-overflow-scrolling: touch;
   }
 @media screen and (max-width: 50em) {
   .image.container {
@@ -210,7 +208,6 @@ nav.basic a {
   }
   .image.container .text {
     margin: 1rem;
-    ;
   }
 }
 @media screen and (min-width: 80em) {

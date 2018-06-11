@@ -14,7 +14,7 @@
     <section>
       <div class="container">
         <div class="preamble">
-          <img src="/static/images/warning-icon.png">
+          <BridgeImage src="/static/images/warning-icon.png"/>
           <h2>You’re almost there!</h2>
           <p>You answered one or more questions incorrectly. We want to make sure that you understand what this study is about and what is involved before you proceed. Please review the sections again. </p>
         </div>
