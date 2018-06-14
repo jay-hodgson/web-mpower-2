@@ -112,7 +112,6 @@
     <Footer v-freeze :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled"
       v-on:back="doBack" v-on:next="doNext" v-on:submit="doSubmit" submit-label="Done"/>
   </div>
-  <!-- <NavFooter v-freeze v-if="review" label="Back" @click="backToReview"/>-->
 </template>
 
 
@@ -210,24 +209,24 @@ section {
 }
 @media screen and (max-width: 50em) {
   section {
-    display: block;
     overflow: hidden;
+    flex-direction: column;
+  }
+  .consent-viewer-holder, .summary {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
   }
   .consent-viewer-holder {
-    width: 100%;
-    height: 50%;
-    margin: 0;
-    border: none;
+    height: 35vh;
   }
   .summary {
-    margin: 0;
-    width: 100%;
-    border: none;
-    height: 50%;
     border-top: solid 3px rgba(108, 122, 137, 0.3);
     padding: 1rem;
-    box-sizing: border-box;
-    overflow-y: auto;
+    overflow-y: scroll!important;
   }
   .summary img, .summary object {
     height: 5rem;

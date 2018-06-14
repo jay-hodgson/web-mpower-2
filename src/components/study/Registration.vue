@@ -88,15 +88,12 @@ export default {
   padding-top: 5rem;
 }
 .buttons {
-  width: 15em;
-  margin: 0 auto;
+  margin-top: 3rem;
   display: flex;
   justify-content: space-around;
 }
-.buttons a {
-  cursor: pointer;
-}
 .buttons img {
-  width: 8rem;
+  width: 38vw;
+  max-width: 10rem;
 }
 </style>

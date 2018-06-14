@@ -46,11 +46,13 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-const SCREENS_W_BGS = ["/study/intro", "/study/overview", "/study/retake-quiz", "/study/ineligible", "/study/done"]
+const SCREENS_W_BGS = ["/study/intro", "/study/overview", "/study/retake-quiz", 
+  "/study/ineligible", "/study/done"]
 
 router.beforeEach((to, from, next) => {
-  document.documentElement.classList.toggle("consent", 
-    SCREENS_W_BGS.some((segment) => { return to.path === segment }))
+  document.documentElement.classList.toggle("consent", SCREENS_W_BGS.some((segment) => { 
+    return to.path === segment 
+  }))
   next()
 })
 

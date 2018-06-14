@@ -5,6 +5,7 @@ import webCss from '@/assets/web.css'
 import YourStory from '@/components/web/YourStory'
 import About from '@/components/web/About'
 import Team from '@/components/web/Team'
+import Consent from '@/components/web/Consent'
 import Uninstalled from '@/components/web/Uninstalled'
 
 const PrivacyPolicy = () => import(/* webpackChunkName: "secondary" */ '@/components/web/PrivacyPolicy')
@@ -40,6 +41,7 @@ export default new Router({
     {path: '/your-story', component: YourStory},
     {path: '/about', component: About},
     {path: '/team', component: Team},
+    {path: '/consent', component: Consent},
     {path: '/app/*', component: Uninstalled},
 
     // Secondary pages

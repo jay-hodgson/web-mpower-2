@@ -7,7 +7,7 @@
         @click="submit">{{submitLabel || 'Submit'}}</button>
     </div>
     <div>
-      <div class="label">STEP {{step}} OF {{totalSteps}}</div>
+      <div class="label">STEP {{(step <= totalSteps) ? step : totalSteps}} OF {{totalSteps}}</div>
       <div class="metering"><div class="progress" ref="progress" v-bind:style="{ width: meterWidth }"></div></div>
     </div>
   </footer>
@@ -39,11 +39,11 @@ export default {
       this.$emit("next");
     },
     submit() {
-      if (this.doNotAdvanceOnSubmit !== true) {
+      if (this.doNotAdvanceOnSubmit === true) {
+        this.$emit("submit");
+      } else {
         this.$refs.progress.style.width = "100%";
         setTimeout(() => this.$emit("submit"), 300);
-      } else {
-        this.$emit("submit");
       }
     },
     animateSubmit() {
@@ -95,7 +95,6 @@ button {
   font-size: 1rem;
   margin: 0;
   padding: 0.25rem 2rem;
-  text-align: center;
   border-radius: 100px;
   background-color: #F5B33C;
   transition: opacity 0.1s linear;

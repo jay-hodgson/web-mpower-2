@@ -2,7 +2,7 @@
   <div>
     <nav class="basic">
       <div>Eligibility</div>
-      <a href="#/study/help">Need help?</a>
+      <router-link to="/study/help">Need help?</router-link>
     </nav>    
     <div class="container">
       <div class="intro">
@@ -12,7 +12,7 @@
       </div>
 
       <div class="back-button">
-        <a href="/">Go back</a>
+        <router-link to="/">Go back</router-link>
       </div>
     </div>
   </div>

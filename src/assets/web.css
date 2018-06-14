@@ -11,9 +11,11 @@
 }
 
 html, body {
-  font-size: calc(12px + 1vw);
+  /*font-size: calc(12px + 1vw);*/
+  font-size: calc(14px + 1vw);
   padding: 0;
   margin: 0;
+  height: 100vh;
   font-family: 'Lato', sans-serif;
   background-image: none;
 }
@@ -146,17 +148,17 @@ li {
   cursor: pointer;
   position: absolute; 
   right: 0;
-  width: 1.5rem; 
-  height: 1.5rem;
+  width: 2rem; 
+  height: 2rem;
   z-index: 1;
   border-radius: 2px;
 }
 .opener {
-  background: transparent url(/static/images/Maximize.png) center center; 
+  background: transparent url(/static/images/Maximize.svg) center center no-repeat; 
   background-size: contain;
 }
 .closer {
-  background: transparent url(/static/images/Minimize.png) center center; 
+  background: transparent url(/static/images/Minimize.svg) center center no-repeat; 
   background-size: contain;
 }
 
@@ -188,8 +190,12 @@ nav.basic a {
 .docked-layout {
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  /*
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
+  */
 }
   .docked-layout > section {
     flex: 1;

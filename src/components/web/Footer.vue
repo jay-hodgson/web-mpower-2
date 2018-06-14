@@ -29,20 +29,26 @@ footer {
   color: white;
   display: flex;
   flex-wrap: wrap;
-  font-size: .55rem;
+  font-size: .6rem;
   justify-content: space-around;
   padding: .25rem .75rem .5rem .75rem;
 }
 footer > div {
   display: flex;
   align-items: baseline;
+  justify-content: space-around;
   text-align: center;
 }
 a {
   color: white;
 }
 footer > div:first-child > * {
-  padding: .3rem;
+  padding: .5vw;
   line-height: 1.3;
+}
+@media screen and (max-width: 50em) {
+  footer {
+    font-size: 3vw;
+  }
 }
 </style>

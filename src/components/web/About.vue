@@ -12,7 +12,7 @@
   
           <p>You do not need to have Parkinson’s Disease to join this study. If you are 18 years old or older, live in the U.S. and have a personal mobile phone, then you can join mPower and make a difference in helping us to better understand Parkinson’s Disease. </p>
 
-          <p>See more details in the <a href="">study information sheet</a></p>
+          <p>See more details in the <router-link to="/consent">study information sheet</router-link></p>
         </div>
       </section>
       

@@ -41,7 +41,7 @@
             <h3>Learn from the research community</h3>
             <p>There are now xx approved projects leveraging the data shared broadly by mPower study participants. Take a look at what others are proposing to do, and reach out to us or any of the researchers who you may be interested in working with!</p>
 
-            <p><a href="https://synapse.org/" class="join-button">Join</a></p>
+            <p><a href="https://synapse.org/" class="join-button">Join Synapse</a></p>
           </div>
         </div>
       </section>

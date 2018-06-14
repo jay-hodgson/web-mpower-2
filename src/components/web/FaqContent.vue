@@ -26,7 +26,7 @@
     We are committed to protecting your privacy. Except as required by law, you will not be identified by your name or by any other direct personal identifier. Your contact information, including your name and e-mail address will be stored separately from the study data. We will use a random code number instead of your name on all your study data. This code cannot be used to directly re-identify you. Information about the code will be kept in a secure system. Only the study organizers and some IT staff will have the key to associate your coded study data to your name and account information. Your coded study data (without your name) will be encrypted and stored on a secure cloud server to prevent improper access. Sage or anyone else affiliated with mPower will never sell, rent, or lease your contact information. The mPower app does NOT access your personal contacts, other applications, text message content, or Web sites visited.</p>
 
     <p><b>Will researchers contact me any other way, such as by email or phone?</b><br>
-    You will mostly receive notifications through the app. Occasionally, researchers may also send email announcements participants.</p>
+    You will mostly receive notifications through the app. Occasionally, researchers may also send email announcements to participants.</p>
 
     <p><b>I have a question that isn’t answered in this FAQ. Who do I contact?</b><br>
     If you have further questions that aren’t addressed here contact the mPower study by email at EMAIL or call toll free xxx-xxx-xxxx</p>
@@ -54,6 +54,6 @@
     Go to the iTunes store and download mPower (link). Log in by entering your smartphone number and tap on “request magic link” button. New information will be added to your existing study information.</p>
 
     <p><b>My question isn’t answered here. Can I talk to someone?</b><br>
-    Yes, we are happy to answer your questions by phone (number) or email (address).</p>
+    Yes, we are happy to answer your questions by phone (1-844-822-4708 toll free) or email (PDApp@sagebionetworks.org).</p>
     </div>
 </template>

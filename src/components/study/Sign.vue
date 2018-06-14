@@ -8,12 +8,12 @@
       <div class="slider">
         <div class="slider-element animated" :class="{'slideOutLeft': showSharing}">
           <div class="inner">
-            <h1>How widely can we share your data with other researchers?</h1>
+            <h1>Sharing your coded study data more broadly (without information such as your name) may benefit this and future research.</h1>
             <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners" color="white">
-              Sponsors and Partners
+              Yes, share my data with Sage Bionetworks and qualified researchers worldwide for future research
             </RadioButton>
             <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers" color="white">
-              All Qualified Researchers
+              No, only share my data with Sage Bionetworks and its partners
             </RadioButton>
           </div>
         </div>
@@ -23,7 +23,7 @@
             <p>By signing your name, you have indicated that you have read and fully agree with the consent form given below. This is the document which you just went through in the consent and quiz process.</p>
             <input v-model="name" placeholder="Please type your full name here">
             <div class="buttons">
-              <a href="/" @click="cancel">Disagree</a>
+              <router-link to="/">Disagree</router-link>
               <button class="join-button" :disabled="canSubmit" @click="advance">ACCEPT</button>
             </div>
           </div>
@@ -117,7 +117,7 @@ footer {
     .slider {
       position: relative;
       overflow: hidden;
-      height: 11rem;
+      height: 11.5rem;
     }
     .slider-element {
       position: absolute; 
@@ -137,6 +137,9 @@ footer {
       flex-direction: column; 
       align-items: center;
     }
+    .slider-element .radio-holder {
+      margin-left:0!important;
+    }
   .slider-element h1 {
     color: white;
     font-size: .9rem;
@@ -153,8 +156,7 @@ footer {
     color: white;
     font-size: 1rem;
     padding: .2rem .4rem;
-    margin: 0 auto;
-    margin-top: -.75rem;
+    margin: .5rem auto;
     display: block;
     width: 95%;
     text-align: center;

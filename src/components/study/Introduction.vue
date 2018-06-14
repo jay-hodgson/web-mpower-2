@@ -9,7 +9,8 @@
           <div class="panel">
             <BridgeImage src="/static/images/about%20the%20study.svg"/>
             <h3>About the study</h3>
-            <p>mPower research study was developed by Sage Bioneworks (non-profit) to measure the symptoms, day to day changes, and long-term changes in people with Parkinson’s Disease (PD). </p>
+            <p>mPower research study was developed by Sage Bionetworks (non-profit) to measure the symptoms, day to day changes, and long-term changes in people with Parkinson’s Disease (PD). </p>
+            <p><router-link to="/consent">Learn more</router-link></p>
           </div>
           <div class="buttons">
             <button @click="doBack" disabled>Back</button>
@@ -21,10 +22,10 @@
             <BridgeImage src="/static/images/procedures%20activities.svg"/>
             <h3>Procedures and Activities</h3>
             <p>
-              1. Join the study if you are 18 years old, live in the United States and have PD.<br>
-              2. Complete a brief survey<br>
-              3. Track your symptoms, triggers, and medication<br>
-              4. Do short physical and cognitive activities
+              1. Join the study if you are 18 years old, live in the United States and have PD;<br>
+              2. Complete a brief survey;<br>
+              3. Track your symptoms, triggers, and medication;<br>
+              4. Do short physical and cognitive activities.
             </p>
           </div>
           <div class="buttons">
@@ -106,30 +107,31 @@ section {
   margin: 0 auto;
   text-align: center;
 }
-.panel {
-  height: 22rem;
+h3 {
+  font-size: 3.2vh;
+  font-weight: bold;
+}
+p, a {
+  font-size: calc(2vh*1.4);
 }
 h3 {
-  font-size: 1.3rem;
+  margin: 0 0 .5rem 0;
 }
-p {
-  font-size: .8rem;
-}
-h3, p {
-  color: white;
-}
-a {
-  font-size: .7rem;
+h3, p, a {
   color: white;
 }
 img {
-  height: 12rem;
+  height: 28vh;
   display: block;
   margin: 1rem auto;
 }
 .buttons {
   margin: 1rem auto 0 auto;
   text-align: center;
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0
 }
   .buttons button {
     font-size: 1rem;
@@ -146,7 +148,7 @@ img {
   }
 @media screen and (max-width: 50em) {
   h3, p {
-    line-height: 1.1;
+    line-height: 1.2;
   }
 }
 </style>

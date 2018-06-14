@@ -7,14 +7,15 @@
     <div class="container">
 			<div class="intro">
         <BridgeImage src="/static/images/Register.svg" css="transform: translateX(17%)"/>
-				<h2>The link is on its way to your mobile phone! </h2>
+				<h2>Your link is on its way!</h2>
 
-				<p>We sent the link via a SMS to {{phone}}.<br>
-				<router-link style="color:white; font-size:.8rem" to="/study/registration">(change mobile number)</router-link>
-
-				<p>The link expires in 4 hours, so be sure to install the app soon.</p>
-
-				<h2>Go check your SMS messages!</h2>
+				<p>We sent you a link via a SMS text message to</p>
+        <p style="font-size:larger">{{phone}}<br>
+          <router-link style="color:white; font-size:.8rem" to="/study/registration">
+            (change mobile number)
+          </router-link>
+        </p>
+				<p>This will expire in 24 hours, so be sure to tap on the link in your messages soon!</p>
 			</div>
     </div>
   </div>
@@ -25,7 +26,7 @@ export default {
   name: "Done",
   data() {
     return {
-			phone: this.$store.getPhone()
+			phone: '206-495-3728'/*this.$store.getPhone()*/
 		};
 	}
 };
