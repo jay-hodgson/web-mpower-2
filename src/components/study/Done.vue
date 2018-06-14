@@ -36,7 +36,7 @@ export default {
 img {
 	max-width: 30%; 
 	display: block; 
-	margin: 2rem auto;
+	margin: 1rem auto;
 }
 .intro {
   padding: 0 0 1.5rem 0;

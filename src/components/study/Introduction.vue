@@ -129,7 +129,7 @@ img {
   margin: 1rem auto 0 auto;
   text-align: center;
   position: absolute;
-  bottom: 1rem;
+  bottom: 5rem;
   left: 0;
   right: 0
 }
@@ -148,7 +148,7 @@ img {
   }
 @media screen and (max-width: 50em) {
   h3, p {
-    line-height: 1.2;
+    line-height: 1.1;
   }
 }
 </style>

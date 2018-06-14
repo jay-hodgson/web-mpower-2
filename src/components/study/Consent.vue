@@ -1,13 +1,13 @@
 <template>
-  <div ref="dockedLayout" class="docked-layout">
+  <div class="docked-layout">
     <MainNav title="Consent" :back-to-overview="true" :show-help="true" :show-steps="true"/>
     <section>
-      <div class="consent-viewer-holder">
+
+      <section class="top">
         <ConsentViewer :highlight-id="highlightId"/>
-      </div>
-      <div ref="summary" class="summary">
+      </section>
+      <section ref="summary" class="bottom summary">
         <div v-show="step === 1">
-          <!-- regular images were not appearing correctly, object is a weird tag to use, but it works. -->
           <object data="/static/images/Comprehension.svg" type="image/svg+xml"></object>
           <h3>What is involved</h3>
           <p>Install the mPower app on your phone. </p>
@@ -107,7 +107,8 @@
             <li>You can opt out of these follow up notifications at any time</li>
           </ul>
         </div>
-      </div>
+      </section>
+            
     </section>
     <Footer v-freeze :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled"
       v-on:back="doBack" v-on:next="doNext" v-on:submit="doSubmit" submit-label="Done"/>
@@ -178,14 +179,20 @@ export default {
 </script>
 
 <style scoped>
-section {
+.docked-layout > section {
   display: flex;
-  justify-content: space-around;
-  padding: 0;
+  box-sizing: border-box;
+}
+.docked-layout > section > section {
+  margin: 2rem;
+  background-color: white;
+  overflow-y: auto;
+  width: 40vw;
+}
+.top {
+  border: solid 3px rgba(108, 122, 137, 0.3);
 }
 .summary {
-  margin: 2rem 0;
-  width: 40%;
   font-size: .9rem;
 }
 .summary img, .summary object {
@@ -202,43 +209,20 @@ section {
   margin: .4rem 0;
   line-height: 1.2;
 }
-.consent-viewer-holder {
-  border: solid 10px rgba(108, 122, 137, 0.3);
-  width: 40%;
-  margin: 2rem 0 3rem 0;
-}
 @media screen and (max-width: 50em) {
-  section {
-    overflow: hidden;
+  .docked-layout > section {
     flex-direction: column;
+    align-items: stretch;
   }
-  .consent-viewer-holder, .summary {
-    margin: 0;
-    padding: 0;
+  .docked-layout > section > section {
+    flex: 1;
     border: none;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
+    margin: 0;
+    width: auto;
   }
-  .consent-viewer-holder {
-    height: 35vh;
-  }
-  .summary {
-    border-top: solid 3px rgba(108, 122, 137, 0.3);
+  .bottom {
+    border-top: solid 3px rgba(108, 122, 137, 0.3)!important;
     padding: 1rem;
-    overflow-y: scroll!important;
-  }
-  .summary img, .summary object {
-    height: 5rem;
-    width: 5rem;
-    display: block;
-    margin: 0 auto;
-    float: none;
-  }
-  .summary h3 {
-    padding: 1rem 0;
-    text-align: center;
-    font-size: 1.2rem;
   }
 }
 </style>

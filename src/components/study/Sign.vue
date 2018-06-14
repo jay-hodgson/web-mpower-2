@@ -97,19 +97,6 @@ export default {
 </script>
 
 <style scoped>
-.docked-layout {
-  box-sizing: border-box;
-}
-  strong {
-    font-weight: normal;
-  }
-  h2, h3 {
-    text-align: left;
-  }
-section {
-  padding: 0;
-  overflow: hidden;
-}
 footer {
   background-image: linear-gradient(90deg, #332069, #907FBA);
   background-attachment: fixed;
@@ -117,7 +104,7 @@ footer {
     .slider {
       position: relative;
       overflow: hidden;
-      height: 11.5rem;
+      height: 12rem;
     }
     .slider-element {
       position: absolute; 
@@ -132,7 +119,9 @@ footer {
         margin: 0 auto;
       }
     .slider-offscreen {
-      transform: translate(100vw,0); 
+      transform: translate(100%,0);
+      -webkit-transform: translate(100%,0);
+
       display:flex; 
       flex-direction: column; 
       align-items: center;
@@ -156,7 +145,7 @@ footer {
     color: white;
     font-size: 1rem;
     padding: .2rem .4rem;
-    margin: .5rem auto;
+    margin: .5rem auto 0;
     display: block;
     width: 95%;
     text-align: center;

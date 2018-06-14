@@ -11,7 +11,6 @@
 }
 
 html, body {
-  /*font-size: calc(12px + 1vw);*/
   font-size: calc(14px + 1vw);
   padding: 0;
   margin: 0;
@@ -185,25 +184,22 @@ nav.basic a {
   font-size: .7rem;
 }
 
-
-/* DOCKED LAYOUT (header annd footer at top and bottom of viewport, center scrolls) */
+/* DOCKED LAYOUT (header annd footer at top and bottom of viewport, center elements each scroll) */
 .docked-layout {
   display: flex;
   flex-direction: column;
-  width: 100vw;
   height: 100vh;
-  /*
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  */
+  box-sizing: border-box;
 }
   .docked-layout > section {
     flex: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
+    position: relative;
   }
   .docked-layout > section.smooth-scroller {
     -webkit-overflow-scrolling: touch;
   }
+
 @media screen and (max-width: 50em) {
   .image.container {
     flex-direction: column;
