@@ -14,7 +14,7 @@ html, body {
   font-size: calc(14px + 1vw);
   padding: 0;
   margin: 0;
-  height: 100vh;
+  height: 100%;
   font-family: 'Lato', sans-serif;
   background-image: none;
 }
@@ -145,7 +145,7 @@ li {
 .min-max-control {
   bottom: 0;
   cursor: pointer;
-  position: absolute; 
+  position: absolute;
   right: 0;
   width: 2rem; 
   height: 2rem;
@@ -188,7 +188,7 @@ nav.basic a {
 .docked-layout {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   box-sizing: border-box;
 }
   .docked-layout > section {
@@ -212,8 +212,8 @@ nav.basic a {
     margin: 1rem;
   }
 }
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 40em) {
   html, body {
-    font-size: 25px;
+    font-size: 20px;
   }
 }

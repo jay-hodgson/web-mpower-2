@@ -6,7 +6,7 @@
     </nav>
     <div class="container">
 			<div class="intro">
-        <BridgeImage src="/static/images/Register.svg" css="transform: translateX(17%)"/>
+        <BridgeImage src="/static/images/Register.svg" style="transform: translateX(17%)"/>
 				<h2>Your link is on its way!</h2>
 
 				<p>We sent you a link via a SMS text message to</p>
@@ -26,7 +26,7 @@ export default {
   name: "Done",
   data() {
     return {
-			phone: '206-495-3728'/*this.$store.getPhone()*/
+			phone: this.$store.getPhone()
 		};
 	}
 };

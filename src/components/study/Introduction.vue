@@ -12,10 +12,6 @@
             <p>mPower research study was developed by Sage Bionetworks (non-profit) to measure the symptoms, day to day changes, and long-term changes in people with Parkinson’s Disease (PD). </p>
             <p><router-link to="/consent">Learn more</router-link></p>
           </div>
-          <div class="buttons">
-            <button @click="doBack" disabled>Back</button>
-            <button @click="doNext">Next</button>
-          </div>
         </div>
         <div class="screen" v-show="step === 2">
           <div class="panel">
@@ -28,20 +24,12 @@
               4. Do short physical and cognitive activities.
             </p>
           </div>
-          <div class="buttons">
-            <button @click="doBack">Back</button>
-            <button @click="doNext">Next</button>
-          </div>
         </div>
         <div class="screen" v-show="step === 3">
           <div class="panel">
             <BridgeImage src="/static/images/how%20long%20does%20it%20last.svg"/>
             <h3>How long does it last?</h3>
             <p>We will ask you to participate for 2 weeks every three months. We would like you to participate for 2 years, but you can participate as long as you like.</p>
-          </div>
-          <div class="buttons">
-            <button @click="doBack">Back</button>
-            <button @click="doNext">Next</button>
           </div>
         </div>
         <div class="screen" v-show="step === 4">
@@ -52,13 +40,13 @@
 
             <p>Participating in the study and seeing your data may cause a range of emotions.</p>
           </div>
-          <div class="buttons">
-            <button @click="doBack">Back</button>
-            <button @click="doSubmit">Next</button>
-          </div>
         </div>
       </div>
     </section>
+    <div class="buttons" v-freeze>
+      <button @click="doBack" :disabled="this.step === 1">Back</button>
+      <button @click="doNext">{{nextName}}</button>
+    </div>
   </div>
 </template>
 
@@ -74,7 +62,10 @@ export default {
       totalSteps: 4
     }
   },
-  created() {
+  computed: {
+    nextName: function() {
+      return (this.step === this.totalSteps) ? "Submit" : "Next";
+    }
   },
   methods: {
     doBack() {
@@ -85,6 +76,8 @@ export default {
     doNext() {
       if (this.step < this.totalSteps) {
         this.step += 1
+      } else if (this.step === this.totalSteps) {
+        this.$router.push('/study/overview?start=true')  
       }
     },
     doSubmit() {
@@ -107,6 +100,9 @@ section {
   margin: 0 auto;
   text-align: center;
 }
+.panel {
+  overflow-y: auto;
+}
 h3 {
   font-size: 3.2vh;
   font-weight: bold;
@@ -126,12 +122,8 @@ img {
   margin: 1rem auto;
 }
 .buttons {
-  margin: 1rem auto 0 auto;
+  margin: 1rem auto 2rem auto;
   text-align: center;
-  position: absolute;
-  bottom: 5rem;
-  left: 0;
-  right: 0
 }
   .buttons button {
     font-size: 1rem;

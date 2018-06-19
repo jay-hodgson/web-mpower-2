@@ -4,7 +4,7 @@
       <ConsentContent/>
     </div>
     <div class="consent-max">
-      <div @mousedown="toggleMax" class="min-max-control opener"></div>
+      <div ref="minMaxControl" @mousedown="toggleMax" class="min-max-control opener"></div>
     </div>
   </div>
 </template>
@@ -66,7 +66,8 @@ export default {
   padding: 0;
   font-size: 1rem;
   height: 100%;
-  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .consent-viewer h2 {
   margin-top: 0;

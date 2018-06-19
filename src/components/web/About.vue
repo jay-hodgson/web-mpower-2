@@ -67,28 +67,28 @@
           <carousel :per-page="1">
             <slide>
               <div class="slide">
-                <BridgeImage css="height: 12rem" src="/static/images/eligibility%20and%20consent.svg"/>
+                <BridgeImage style="height: 12rem" src="/static/images/eligibility%20and%20consent.svg"/>
                 <p style="margin-bottom:0">Eligibility & consent</p>
                 <p style="margin-top: 0; font-size:smaller">Once you have received confirmation of your eligibility, we will ask you to do an informed consent process which only takes about 20 minutes.</p>
               </div>
             </slide>
             <slide>
               <div class="slide">
-                <BridgeImage css="height: 12rem" src="/static/images/download%20the%20app.svg"/>
+                <BridgeImage style="height: 12rem" src="/static/images/download%20the%20app.svg"/>
                 <p style="margin-bottom:0">Download the app</p>
                 <p style="margin-top: 0; font-size:smaller">After consenting, you will enter your mobile number to receive a link to download the mPower app for free from either the iOS App Store or the Google Play Store. </p>
               </div>
             </slide>
             <slide>
               <div class="slide">
-                <BridgeImage css="height: 12rem" src="/static/images/perform%20pd%20activities.svg"/>
+                <BridgeImage style="height: 12rem" src="/static/images/perform%20pd%20activities.svg"/>
                 <p style="margin-bottom:0">Perform PD activities</p>
                 <p style="margin-top: 0; font-size:smaller">Throughout the 2 year study, you will be notified every 3 months asking you to complete activities in 2 week bursts. These daily activities will include exercises such as finger tapping, cognitive games, and a one time health survey. </p>
               </div>
             </slide>
             <slide>
               <div class="slide">
-                <BridgeImage css="height: 12rem" src="/static/images/track%20your%20health.svg"/>
+                <BridgeImage style="height: 12rem" src="/static/images/track%20your%20health.svg"/>
                 <p style="margin-bottom:0">Track your health</p>
                 <p style="margin-top: 0; font-size:smaller">Tracking your medication and other factors (e.g. stress, exercise) may provide insight into your symptoms and your activity results. As you use mPower, you can view your past activity to gain insights into your day to day health and lifestyle.</p>
               </div>
@@ -100,7 +100,7 @@
       <section>
         <div class="image container">
           <div class="image">
-            <BridgeImage css="margin-bottom: -6px" src="/static/images/scientists%20make%20discoveries.svg"/>
+            <BridgeImage style="margin-bottom: -6px" src="/static/images/scientists%20make%20discoveries.svg"/>
           </div>
           <div class="text">
             <h3>Scientists make discoveries</h3>
@@ -111,7 +111,8 @@
       <section>
         <div class="image container">
           <div class="image">
-            <BridgeImage css="transform: scale(0.7); padding-bottom: 1rem" src="/static/images/create your story.svg"/>
+            <BridgeImage style="transform: scale(0.7); padding-bottom: 1rem" 
+              src="/static/images/create your story.svg"/>
           </div>
           <div class="text">
             <h3>Create your story</h3>
@@ -170,6 +171,9 @@ export default {
 .wide-carousel .right {
     width: 50%; 
     padding: 2rem;
+}
+.wide-carousel .right p {
+    line-height: 1.3;
 }
 .wide-carousel img, .narrow-carousel img {
   height: 20rem;

@@ -35,7 +35,7 @@
       <section>
         <div class="image container">
           <div class="image">
-            <BridgeImage className="hidden-image" src="/static/images/mpower%20data%20and%20analysis.svg"/>
+            <BridgeImage class="hidden-image" src="/static/images/mpower%20data%20and%20analysis.svg"/>
           </div>
           <div class="text">
             <h3>Learn from the research community</h3>

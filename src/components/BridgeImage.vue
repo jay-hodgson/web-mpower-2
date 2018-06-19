@@ -1,13 +1,17 @@
 <template>
-    <img onerror="this.style.display='none'" :class="className" :src="src" :style="css">
+    <img v-on="listeners">
 </template>
 <script>
 export default {
   name: 'BridgeImage',
-  props: {
-    src: String,
-    className: String,
-    css: String
+  computed: {
+    listeners() {
+      const { error, ...listeners } = this.$listeners;
+      return listeners;
+    }
+  },
+  mounted() {
+    this.$el.addEventListener("error", () => this.$el.style.display = 'none')
   }
 }
 </script>

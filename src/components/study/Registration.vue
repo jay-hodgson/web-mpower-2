@@ -44,14 +44,15 @@ export default {
     }
   },
   methods: {
-    apple: function() {
-      console.log(this);
+    apple: function(event) {
       if (this.hasNumber === 1) {
+        event.target.style.opacity = .6;
         this.post('iPhone OS')
       }
     },
-    google: function() {
+    google: function(event) {
       if (this.hasNumber === 1) {
+        event.target.style.opacity = .6;
         this.post('Android')
       }
     },
@@ -95,5 +96,6 @@ export default {
 .buttons img {
   width: 38vw;
   max-width: 10rem;
+  cursor: pointer;
 }
 </style>

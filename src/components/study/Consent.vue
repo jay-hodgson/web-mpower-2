@@ -186,6 +186,7 @@ export default {
 .docked-layout > section > section {
   margin: 2rem;
   background-color: white;
+  flex: 1;
   overflow-y: auto;
   width: 40vw;
 }

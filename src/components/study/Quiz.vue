@@ -122,7 +122,6 @@ export default {
     updateQuizState(name, value) {
       this.answer = value
       this.furthestStep = this.step
-      console.log(this.step, this.furthestStep);
       if (this.step === this.furthestStep) {
         this.doSubmit()
       } else {
@@ -206,13 +205,16 @@ section {
   z-index: 10;
 }
   .success h4, .failure h4 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: .5rem 0;
   }
   .success div, .failure div {
     max-width: 30rem;
     margin: 0 auto; 
-    padding: .5rem 1.5rem;
+    padding: 0rem 1.5rem;
+  }
+  .success p, .failure p {
+    line-height: 1.1;
   }
   .success {
     background-color: #f0faf6;
@@ -227,7 +229,8 @@ section {
        color: white; 
        border-radius: 100px; 
        padding: .25rem 2rem;
-       margin-bottom: .5rem;
+       margin-top: -1rem;
+       margin-bottom: 1rem;
     }
   .failure {
     background-color: #fef0f1;

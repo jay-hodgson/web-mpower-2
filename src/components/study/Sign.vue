@@ -96,6 +96,11 @@ export default {
 }
 </script>
 
+<style>
+  label {
+    line-height: 1;
+  }
+</style>
 <style scoped>
 footer {
   background-image: linear-gradient(90deg, #332069, #907FBA);
@@ -134,12 +139,12 @@ footer {
     font-size: .9rem;
     font-weight: normal;
     margin-bottom: .5rem;
-    line-height: 1.2;
+    line-height: 1;
   }
   .slider-element p {
     color: white;
     font-size: .7rem;
-    line-height: 1.1;
+    line-height: 1;
   }
   .slider-element input {
     color: white;

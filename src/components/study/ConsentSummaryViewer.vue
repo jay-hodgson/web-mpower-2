@@ -108,6 +108,7 @@ export default {
   padding: 0;
   font-size: 1rem;
   height: 100%;
+  overflow: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
