@@ -9,11 +9,8 @@
           <div class="panel">
             <BridgeImage src="/static/images/about%20the%20study.svg"/>
             <h3>About the study</h3>
-            <p>mPower research study was developed by Sage Bioneworks (non-profit) to measure the symptoms, day to day changes, and long-term changes in people with Parkinson’s Disease (PD). </p>
-          </div>
-          <div class="buttons">
-            <button @click="doBack" disabled>Back</button>
-            <button @click="doNext">Next</button>
+            <p>mPower research study was developed by Sage Bionetworks (non-profit) to measure the symptoms, day to day changes, and long-term changes in people with Parkinson’s Disease (PD). </p>
+            <p><router-link to="/consent">Learn more</router-link></p>
           </div>
         </div>
         <div class="screen" v-show="step === 2">
@@ -21,15 +18,11 @@
             <BridgeImage src="/static/images/procedures%20activities.svg"/>
             <h3>Procedures and Activities</h3>
             <p>
-              1. Join the study if you are 18 years old, live in the United States and have PD.<br>
-              2. Complete a brief survey<br>
-              3. Track your symptoms, triggers, and medication<br>
-              4. Do short physical and cognitive activities
+              1. Join the study if you are 18 years old, live in the United States and have PD;<br>
+              2. Complete a brief survey;<br>
+              3. Track your symptoms, triggers, and medication;<br>
+              4. Do short physical and cognitive activities.
             </p>
-          </div>
-          <div class="buttons">
-            <button @click="doBack">Back</button>
-            <button @click="doNext">Next</button>
           </div>
         </div>
         <div class="screen" v-show="step === 3">
@@ -37,10 +30,6 @@
             <BridgeImage src="/static/images/how%20long%20does%20it%20last.svg"/>
             <h3>How long does it last?</h3>
             <p>We will ask you to participate for 2 weeks every three months. We would like you to participate for 2 years, but you can participate as long as you like.</p>
-          </div>
-          <div class="buttons">
-            <button @click="doBack">Back</button>
-            <button @click="doNext">Next</button>
           </div>
         </div>
         <div class="screen" v-show="step === 4">
@@ -51,13 +40,13 @@
 
             <p>Participating in the study and seeing your data may cause a range of emotions.</p>
           </div>
-          <div class="buttons">
-            <button @click="doBack">Back</button>
-            <button @click="doSubmit">Next</button>
-          </div>
         </div>
       </div>
     </section>
+    <div class="buttons" v-freeze>
+      <button @click="doBack" :disabled="this.step === 1">Back</button>
+      <button @click="doNext">{{nextName}}</button>
+    </div>
   </div>
 </template>
 
@@ -73,7 +62,10 @@ export default {
       totalSteps: 4
     }
   },
-  created() {
+  computed: {
+    nextName: function() {
+      return (this.step === this.totalSteps) ? "Submit" : "Next";
+    }
   },
   methods: {
     doBack() {
@@ -84,6 +76,8 @@ export default {
     doNext() {
       if (this.step < this.totalSteps) {
         this.step += 1
+      } else if (this.step === this.totalSteps) {
+        this.$router.push('/study/overview?start=true')  
       }
     },
     doSubmit() {
@@ -107,28 +101,28 @@ section {
   text-align: center;
 }
 .panel {
-  height: 22rem;
+  overflow-y: auto;
 }
 h3 {
-  font-size: 1.3rem;
+  font-size: 3.2vh;
+  font-weight: bold;
 }
-p {
-  font-size: .8rem;
+p, a {
+  font-size: calc(2vh*1.4);
 }
-h3, p {
-  color: white;
+h3 {
+  margin: 0 0 .5rem 0;
 }
-a {
-  font-size: .7rem;
+h3, p, a {
   color: white;
 }
 img {
-  height: 12rem;
+  height: 24vh;
   display: block;
   margin: 1rem auto;
 }
 .buttons {
-  margin: 1rem auto 0 auto;
+  margin: 1rem auto 5vh auto;
   text-align: center;
 }
   .buttons button {
@@ -137,6 +131,7 @@ img {
     padding: .75rem 2rem;
     border-radius: 100px;
     cursor: pointer;
+    font-weight: bold;
   }
   .buttons button + button {
     margin-left: 1rem;

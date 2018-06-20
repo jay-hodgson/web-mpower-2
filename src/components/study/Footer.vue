@@ -7,8 +7,12 @@
         @click="submit">{{submitLabel || 'Submit'}}</button>
     </div>
     <div>
-      <div class="label">STEP {{step}} OF {{totalSteps}}</div>
-      <div class="metering"><div class="progress" ref="progress" v-bind:style="{ width: meterWidth }"></div></div>
+      <div class="label">STEP {{(step <= totalSteps) ? step : totalSteps}} OF {{totalSteps}}</div>
+      <div class="meter-holder">
+        <div class="metering">
+          <div class="progress" ref="progress" v-bind:style="{ width: meterWidth }"></div>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
@@ -39,11 +43,11 @@ export default {
       this.$emit("next");
     },
     submit() {
-      if (this.doNotAdvanceOnSubmit !== true) {
+      if (this.doNotAdvanceOnSubmit === true) {
+        this.$emit("submit");
+      } else {
         this.$refs.progress.style.width = "100%";
         setTimeout(() => this.$emit("submit"), 300);
-      } else {
-        this.$emit("submit");
       }
     },
     animateSubmit() {
@@ -76,29 +80,32 @@ footer > div:last-child {
   order: 1;
   flex: 1;
 }
+.meter-holder {
+  margin-right: 1rem;
+}
 .metering {
   width: 100%;
   height: 10px;
   border-radius: 0.25rem;
   background-color: #eeeeee;
+  position:relative;
 }
 .progress {
   height: 10px;
   transition: width 0.25s linear;
   border-radius: 0.25rem;
   background-color: #5A478F;
-}
-footer > div:last-child {
-  padding-left: 2vw;
+  position: absolute;
+  top:0; bottom: 0; left: 0; right: 0;
 }
 button {
   font-size: 1rem;
   margin: 0;
   padding: 0.25rem 2rem;
-  text-align: center;
   border-radius: 100px;
   background-color: #F5B33C;
   transition: opacity 0.1s linear;
+  font-weight: bold;
 }
 button:disabled {
   opacity: 0.5;
@@ -118,6 +125,14 @@ button:disabled {
     padding-left: 0;
     display: flex;
     align-items: center;
+  }
+  .meter-holder {
+    margin-left: 1rem;
+    margin-right: 0;
+    width: 100%;
+  }
+  .metering {
+    width: 100%;
   }
   .label {
     margin-right: .5rem;

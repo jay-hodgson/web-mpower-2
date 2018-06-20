@@ -5,7 +5,7 @@
       <p>Enter your mobile phone number and select your phone type to receive your download link for the app:</p>
 
       <p style="text-align: center">
-        <mdc-textfield ref="phoneField" v-model="phone" label="(###) ###-####" type="tel" pattern="[0-9]*"/>
+        <mdc-textfield ref="phoneField" v-model="phone" label="Phone number" type="tel" pattern="[0-9]*"/>
       </p>
       <div class="buttons">
         <a @click="apple">
@@ -44,14 +44,15 @@ export default {
     }
   },
   methods: {
-    apple: function() {
-      console.log(this);
+    apple: function(event) {
       if (this.hasNumber === 1) {
+        event.target.style.opacity = .6;
         this.post('iPhone OS')
       }
     },
-    google: function() {
+    google: function(event) {
       if (this.hasNumber === 1) {
+        event.target.style.opacity = .6;
         this.post('Android')
       }
     },
@@ -88,15 +89,12 @@ export default {
   padding-top: 5rem;
 }
 .buttons {
-  width: 15em;
-  margin: 0 auto;
+  margin-top: 3rem;
   display: flex;
   justify-content: space-around;
 }
-.buttons a {
-  cursor: pointer;
-}
 .buttons img {
-  width: 8rem;
+  width: calc(6rem + 2vw);
+  cursor: pointer;
 }
 </style>

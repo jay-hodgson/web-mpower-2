@@ -39,7 +39,7 @@
           </div>
           <div class="text">
             <h3>Telling your story</h3>
-            <p>Through the mPower app, you can tell your story of living with PD. It’s a tool to understand your symptoms, factors, how these relates to your medication. You also can see your changes over time on physical and cognitive activities. This can help you talk about your story with doctors and caregivers. It is about you and how you live with PD.</p>
+            <p>Through the mPower app, you can tell your story of living with PD. It’s a tool to understand your symptoms, factors, and how these relate to your medication. You also can see your changes over time on physical and cognitive activities. This can help you talk about your story with doctors and caregivers. It is about you and how you live with PD.</p>
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@
   <div>
     <nav class="basic">
       <div>Eligibility</div>
-      <a href="#/study/help">Need help?</a>
+      <router-link to="/study/help">Need help?</router-link>
     </nav>    
     <div class="container">
       <div class="intro">
@@ -12,7 +12,7 @@
       </div>
 
       <div class="back-button">
-        <a href="/">Go back</a>
+        <router-link to="/">Go back</router-link>
       </div>
     </div>
   </div>
@@ -65,6 +65,7 @@ export default {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   text-align: center;
+  font-weight: bold;
 }
   .back-button a {
     background-color: white;

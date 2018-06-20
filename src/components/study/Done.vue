@@ -6,15 +6,16 @@
     </nav>
     <div class="container">
 			<div class="intro">
-        <BridgeImage src="/static/images/Register.svg" css="transform: translateX(17%)"/>
-				<h2>The link is on its way to your mobile phone! </h2>
+        <BridgeImage src="/static/images/Register.svg" style="transform: translateX(17%)"/>
+				<h2>Your link is on its way!</h2>
 
-				<p>We sent the link via a SMS to {{phone}}.<br>
-				<router-link style="color:white; font-size:.8rem" to="/study/registration">(change mobile number)</router-link>
-
-				<p>The link expires in 4 hours, so be sure to install the app soon.</p>
-
-				<h2>Go check your SMS messages!</h2>
+				<p>We sent you a link via a SMS text message to</p>
+        <p style="font-size:larger">{{formattedPhone}}<br>
+          <router-link style="color:white; font-size:.8rem" to="/study/registration">
+            (change mobile number)
+          </router-link>
+        </p>
+				<p>This will expire in 24 hours, so be sure to tap on the link in your messages soon!</p>
 			</div>
     </div>
   </div>
@@ -27,15 +28,26 @@ export default {
     return {
 			phone: this.$store.getPhone()
 		};
-	}
+	},
+  computed: { 
+    formattedPhone() {
+      let phone = this.$store.getPhone()
+      phone = phone.replace(/^1-/g,'')
+      phone = phone.replace(/^\+1/g,'')
+      let phone2 = (""+phone).replace(/\D/g, '')
+      let m = phone2.match(/^(\d{3})(\d{3})(\d{4})$/)
+      let result = (!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3]
+      return result || phone
+    }
+  }
 };
 </script>
 
 <style scoped>
 img {
-	max-width: 30%; 
+	max-width: 25%; 
 	display: block; 
-	margin: 2rem auto;
+	margin: 1rem auto;
 }
 .intro {
   padding: 0 0 1.5rem 0;

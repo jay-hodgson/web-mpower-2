@@ -36,7 +36,7 @@
       </div>
     </section>
     <Footer v-freeze :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled" 
-      @back="doBack" @next="doNext" @submit="doSubmit"/>
+      @back="doBack" @next="doNext" @submit="doSubmit" :do-not-advance-on-submit="true"/>
   </div>
 </template>
 
