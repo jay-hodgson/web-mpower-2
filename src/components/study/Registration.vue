@@ -5,7 +5,7 @@
       <p>Enter your mobile phone number and select your phone type to receive your download link for the app:</p>
 
       <p style="text-align: center">
-        <mdc-textfield ref="phoneField" v-model="phone" label="(###) ###-####" type="tel" pattern="[0-9]*"/>
+        <mdc-textfield ref="phoneField" v-model="phone" label="Phone number" type="tel" pattern="[0-9]*"/>
       </p>
       <div class="buttons">
         <a @click="apple">
@@ -94,8 +94,7 @@ export default {
   justify-content: space-around;
 }
 .buttons img {
-  width: 38vw;
-  max-width: 10rem;
+  width: calc(6rem + 2vw);
   cursor: pointer;
 }
 </style>

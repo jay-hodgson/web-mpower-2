@@ -105,6 +105,7 @@ button {
   border-radius: 100px;
   background-color: #F5B33C;
   transition: opacity 0.1s linear;
+  font-weight: bold;
 }
 button:disabled {
   opacity: 0.5;

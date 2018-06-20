@@ -10,7 +10,7 @@
 				<h2>Your link is on its way!</h2>
 
 				<p>We sent you a link via a SMS text message to</p>
-        <p style="font-size:larger">{{phone}}<br>
+        <p style="font-size:larger">{{formattedPhone}}<br>
           <router-link style="color:white; font-size:.8rem" to="/study/registration">
             (change mobile number)
           </router-link>
@@ -28,13 +28,24 @@ export default {
     return {
 			phone: this.$store.getPhone()
 		};
-	}
+	},
+  computed: { 
+    formattedPhone() {
+      let phone = this.$store.getPhone()
+      phone = phone.replace(/^1-/g,'')
+      phone = phone.replace(/^\+1/g,'')
+      let phone2 = (""+phone).replace(/\D/g, '')
+      let m = phone2.match(/^(\d{3})(\d{3})(\d{4})$/)
+      let result = (!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3]
+      return result || phone
+    }
+  }
 };
 </script>
 
 <style scoped>
 img {
-	max-width: 30%; 
+	max-width: 25%; 
 	display: block; 
 	margin: 1rem auto;
 }

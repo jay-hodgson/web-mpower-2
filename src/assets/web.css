@@ -36,13 +36,11 @@ h1 {
   color: #5A478F;
 }
 h2 {
-  font-weight: normal;
   color: #5A478F;
   text-align: center;
   margin: 1rem 0 .5rem 0;
 }
 h3 {
-  font-weight: normal;
   color: #5A478F;
   margin: 0;
   margin-bottom: .25rem;
@@ -87,11 +85,9 @@ section:nth-child(odd) {
     margin-left: 2rem;
   }
   .image.container .text h2 {
-    font-weight: normal;
     color: #31117d;
   }
   .image.container .text h3 {
-    font-weight: normal;
     color: #31117d;
   }
   .image.container .text p {
@@ -109,6 +105,7 @@ img {
   margin: .2rem 0;
   padding: .4rem 1.6rem;
   text-decoration: none;
+  font-weight: bold;
 }
 .grayscale {
   opacity: .4;
@@ -164,20 +161,19 @@ li {
 nav.basic {
   color: white;
   background-color: rgba(0,0,0,.1);
-
   display: flex;
   overflow: hidden;
   justify-content: space-between;
   align-items: center;
   padding-left: 1rem;
+  padding-right: 1rem;
 }
 nav.basic > div {
   height: 2.2rem;
   line-height: 2.2rem;
-  padding: .25rem 1rem;
+  padding: .25rem 0rem;
 }
 nav.basic a {
-  margin: .5rem 2rem;
   background-color: white;
   padding: .4rem 1rem;
   border-radius: 1rem;

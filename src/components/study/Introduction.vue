@@ -117,12 +117,12 @@ h3, p, a {
   color: white;
 }
 img {
-  height: 28vh;
+  height: 24vh;
   display: block;
   margin: 1rem auto;
 }
 .buttons {
-  margin: 1rem auto 2rem auto;
+  margin: 1rem auto 5vh auto;
   text-align: center;
 }
   .buttons button {
@@ -131,6 +131,7 @@ img {
     padding: .75rem 2rem;
     border-radius: 100px;
     cursor: pointer;
+    font-weight: bold;
   }
   .buttons button + button {
     margin-left: 1rem;

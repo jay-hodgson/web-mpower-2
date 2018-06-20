@@ -49,14 +49,12 @@ nav {
     margin-right: 3vw;
   }
 a.router-link-active {
-  border-bottom: 6px solid #B2A5D1;
-  font-weight: bold;
+  border-bottom: 5px solid #B2A5D1;
 }
 @media screen and (max-width: 30em) {
   a.router-link-active {
     transform: translateY(1px);
     border-bottom: 2px solid #B2A5D1;
-    font-weight: bold;
   }
   nav {
     display: block;

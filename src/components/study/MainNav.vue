@@ -1,9 +1,15 @@
 <template>
   <nav>
     <div class="left">
-      <router-link v-show="backToOverview" to="/study/overview">{{title}}</router-link>
+      <router-link v-show="backToOverview" to="/study/overview">
+        <BridgeImage style="width: .5vw" src="/static/images/Back.svg"/>
+        {{title}}
+      </router-link>
       <span v-if="!backToOverview && !showBack">{{title}}</span>
-      <span v-if="showBack"><a @click="historyBack">{{title}}</a></span>
+      <a @click="historyBack" v-if="showBack">
+        <BridgeImage style="width: .5vw" src="/static/images/Back.svg"/>
+        {{title}}
+      </a>
     </div>
     <div class="center" v-if="showSteps">
       <span class="eligibility icon" v-bind:class="{ grayscale: currentStep > Store.UNSTARTED }"></span>
@@ -75,28 +81,26 @@ nav {
   color: white;
   height: 3rem;
 }
-.left a, .left span {
+.left {
+  padding: 0 0 0 1rem;
+  display: flex;
+  align-items: center;
+}
+.left img {
+  width: 1rem!important;
+  margin-right: .5rem;
+}
+.left a {
   color: white;
-  display: block;
+  display: flex;
+  align-items: center;
 }
 .center {
-  display: flex;
-  flex: 1;
-  justify-content: flex-end;
-  border-right: 1px solid silver;
-  padding-right: 0.6rem;
+  display: none;
 }
 .right {
   display: flex;
   margin: 0.6rem;
-}
-.left a {
-  padding-left: 7vw;
-  background: transparent url(/static/images/Back.svg) 3vw center no-repeat;
-  background-size: 3vw 5.16vw;
-}
-.left span {
-  margin-left: 1rem;
 }
 .icon {
   display: block;
@@ -156,6 +160,9 @@ nav {
   filter: grayscale(1);
 }
 @media screen and (max-width: 30em) {
+  .center {
+    display: none;
+  }
   .full.help-link {
     display: none;
   }
@@ -174,9 +181,13 @@ nav {
     line-height: 1.4rem;
   }
 }
-@media screen and (min-width: 45em) {
-  .left a {
-    font-size: 32px;
+@media screen and (min-width: 50em) {
+  .center {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    border-right: 1px solid silver;
+    padding-right: 0.6rem;
   }
 }
 </style>

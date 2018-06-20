@@ -64,7 +64,7 @@ export default {
 }
 .consent-doc {
   padding: 0;
-  font-size: 1rem;
+  font-size: .8rem;
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;

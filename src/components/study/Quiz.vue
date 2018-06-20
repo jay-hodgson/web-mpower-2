@@ -221,7 +221,6 @@ section {
   }
     .success h4 {
       color: #63D49E;
-      font-weight: normal;
     }
     .success button {
        font-size: 1.3rem; 
@@ -231,12 +230,12 @@ section {
        padding: .25rem 2rem;
        margin-top: -1rem;
        margin-bottom: 1rem;
+       font-weight: bold;
     }
   .failure {
     background-color: #fef0f1;
   }
     .failure h4 {
       color: #EE6070;
-      font-weight: normal;
     }
 </style>

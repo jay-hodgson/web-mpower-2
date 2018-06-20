@@ -9,10 +9,10 @@
         <div class="slider-element animated" :class="{'slideOutLeft': showSharing}">
           <div class="inner">
             <h1>Sharing your coded study data more broadly (without information such as your name) may benefit this and future research.</h1>
-            <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners" color="white">
+            <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners">
               Yes, share my data with Sage Bionetworks and qualified researchers worldwide for future research
             </RadioButton>
-            <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers" color="white">
+            <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers">
               No, only share my data with Sage Bionetworks and its partners
             </RadioButton>
           </div>
@@ -103,8 +103,8 @@ export default {
 </style>
 <style scoped>
 footer {
-  background-image: linear-gradient(90deg, #332069, #907FBA);
-  background-attachment: fixed;
+  box-shadow: 0px 2px 7px black;
+  z-index: 1;
 }
     .slider {
       position: relative;
@@ -135,30 +135,24 @@ footer {
       margin-left:0!important;
     }
   .slider-element h1 {
-    color: white;
     font-size: .9rem;
-    font-weight: normal;
     margin-bottom: .5rem;
     line-height: 1;
   }
   .slider-element p {
-    color: white;
     font-size: .7rem;
     line-height: 1;
   }
   .slider-element input {
-    color: white;
     font-size: 1rem;
     padding: .2rem .4rem;
     margin: .5rem auto 0;
     display: block;
     width: 95%;
     text-align: center;
-    background-color: transparent;
     border: none;
   }
   .slider-element input::placeholder {
-    color: rgba(255,255,255,0.65);
     text-decoration: underline;
   }
   .slider-element .buttons {
@@ -181,7 +175,6 @@ footer {
     opacity: .8;
   }
   .slider-element a {
-    color: rgba(255,255,255,0.85);
     text-decoration: underline;
     font-size: .9rem;
   }

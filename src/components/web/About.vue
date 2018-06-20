@@ -2,6 +2,7 @@
   <div class="docked-layout">
     <MainNav/>
     <section class="smooth-scroller">
+      <section></section>
       <section>
         <div class="container">
           <h2>About the study</h2>
