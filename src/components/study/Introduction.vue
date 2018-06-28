@@ -117,7 +117,7 @@ h3, p, a {
   color: white;
 }
 img {
-  height: 24vh;
+  height: 36vh;
   display: block;
   margin: 1rem auto;
 }

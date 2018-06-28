@@ -16,24 +16,45 @@
         <p>In order to access the Parkinson mPower App functionalities, we ask you to create an account through the Parkinson mPower App. To create an account, you must provide a username, a password and your email address. If you wish, you can also provide your name and birth date. We will inform you of the purposes for which we are collecting, processing, using, and sharing your personal data and we will obtain your consent through an informed consent document and process. You must affirmatively consent to participate in the Study prior to creating your account. To provide your informed consent, you will be asked to provide your first and last name, as well as your signature.</p>
 
         <h3>Information We Collect</h3>
-        <!-- TODO this is blanked out in the v3 design...
-        <p>In addition to the data we collect in registration for the Study, we collect the following through the Parkinson mPower App and the Study:</p>
+        
+        <p>In general, we collect all information that you give us directly. For example, you may contact us with questions or comments and give us your email address and other information.  We only use such information to answer your questions.  We also collect information passively when you use the website and app.</p>
 
-        <p><b>Data Imports</b><br>
-        The Parkinson mPower App allows you to import data to the Parkinson mPower App and the Study, including voice recordings and data collected in connection with your performance of specified tasks while holding your iPhone like walking and tapping or through sensors on your iPhone. You may also give permission to import certain data from third party wearable activity devices (like Fitbit or Jawbone), as well as other data that you may have provided to Apple Health app separately or that may be available through other third party applications and data available through Health app, such as birthdate, weight, height, steps walked or sleep pattern. We are not responsible for the data practices of third parties from which you may elect to import data and you are advised to consult their privacy policies separately. You may choose not to import these data types and to still participate in the Study.</p>
+        <ul>
+          <li>Standard log files and usage data. When you visit the mPower2.0 website, we collect standard server log information, like your internet protocol address or your browser type. We also collect information about how you use the app and website. For example, the pages you access or the date and time you sign in. We do not collect information using cookies, beacons or device fingerprinting.[CS2] </li>
+        </ul>
 
-        <p><b>Health Surveys</b><br>
-        With your permission, we collect and process some personal data that is necessary for the purpose of the study. To better understand your evolving health, we will ask you to answer questions about yourself (e.g., body height, weight, gender, age), your medical history, and your current health, race or ethnicity. Most surveys are optional. You can skip any optional survey questions that you do not wish to answer. The diagnosis and medications survey is mandatory. It is used to appropriately administer activities to participants with or without Parkinson disease.</p>
+        <p>Before you can participate, you must register for the study and download the app on your smartphone. . We will collect information from you through the mPower2.0 website as part of registration and through the app when you use the app for the study. Here is a list of what we will collect and when we will collect it:</p>          
 
-        <p><b>Standard Log Information</b><br>
-        We automatically collect standard server log information, such as internet protocol address and details of how you used the Parkinson mPower App (e.g. history of page requests such as uploading data or signing in and date/time of request).</p>
+        <p>As part of the registration you must complete the informed consent process and create an account. </p>
 
-        <p><b>Location data</b><br>
-        You may elect to turn on the location services on the mPower App and grant the app access to your GPS coordinates. With your permission, we use that location data to determine the overall distances you travelled so that we better understand your level of activity and evolving health, but we do not share your actual location.</p>
+        <ul>
+          <li><u>Informed consent:</u> The informed consent process explains the research study. You must consent to join the study. We will collect your first and last name, and your phone numberas part of the informed consent process.</li>
 
-        <p><b>Other Information</b>
-        You Provide to Us. We also receive other information, including personal data that you may provide to us, such as comments or questions you provide to us.</p>
-        -->
+          <li><u>Account creation:</u> You must create your personal study account. When you create an account, we will collect a username, password, and your email address. The mPower2.0 study is designed for people age 18 or older living with PD or not. We do not knowingly allow children under the age of 18 to join the mPower2.0 study. </li>
+        </ul>
+
+        <p>Once you join the study we will collect information about your health and wellness through surveys and activities.</p>
+
+        <ul>
+          <li><u>Health surveys.</u> As part of the mPower2.0 research study, we collect information about you. We will ask you about your health, medical history and wellness. Most of these questions are optional. We will ask a few required questions. For example, “Do you have PD?” These questions are required because we need to know the answers as part of the research study.</li>
+ 
+          <li><u>Data imports.</u> As part of the research study we will import information into the mPower2.0 app. For example, we will ask you to do a short walking activity. During this activity, we will import information from the sensors in your smartphone about your speed and balance.</li>
+        </ul>
+
+        <p>We will ask you to link the mPower2.0 app to HealthKit, the Apple health app. In this way, we may import information from HealthKit like your weight, height, the number of steps you take and/or your sleep patterns. Any information that we import from HealthKit will be treated the same as the information we collect in the mPower2.0 app directly. </p>
+ 
+        <p>It is important to note that we do not have control over the privacy policies or practices of HealthKit. You can participate in the mPower2.0 research study even if you do not want to link information from HealthKit to the mPower2.0 app.</p>
+
+        <ul>
+          <li><u>Location data.</u> You can opt-in to linking  the mPower2.0 app to your smartphone’s GPS (global positioning system). We will use your GPS to capture your movement patterns. To reduce issues relating to your privacy, we will collect only the distance you travel and will not be storing actual GPS coordinates or location.</li>
+
+          <li><u>Passive sensor data:</u> If you agree, we will collect sensor information from your smartphone for a brief 20-30 sec window in the background when you are moving.</li>
+ 
+          <li><u>Symptom/Trigger/Medication Information.</u> You can add information about your symptoms, triggers and medication adherence. Should you provide this information, it will be stored with your de-identified data.</li>
+        </ul>
+
+        <p>We will NOT access your personal contacts, photos, text, or email messages on your smartphone. We will only collect information that you give to mPower.</p>
+
         <h3>How we use information</h3>
         <p>Except as described in this privacy policy, we will not sell, rent, lease, give away, disclose or share your contact information, and will not disclose your information that we collect through the Parkinson mPower App and the Study to third parties without your consent. We may provide contact or coded study information to third parties if you consent to us doing so, as well as in the following circumstances:</p>
 
@@ -128,3 +149,9 @@ export default {
   components: { MainNav, Footer },
 }
 </script>
+
+<style scoped>
+li {
+  line-height: 1.5;
+}
+</style>

@@ -2,34 +2,97 @@
   <div class="docked-layout">
     <MainNav title="Sign" :back-to-overview="true" :show-help="true" :show-steps="true"/>
     <section>
-      <ConsentSummaryViewer/>
-    </section>
-    <footer>
-      <div class="slider">
-        <div class="slider-element animated" :class="{'slideOutLeft': showSharing}">
-          <div class="inner">
-            <h1>Sharing your coded study data more broadly (without information such as your name) may benefit this and future research.</h1>
-            <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners">
-              Yes, share my data with Sage Bionetworks and qualified researchers worldwide for future research
-            </RadioButton>
-            <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers">
-              No, only share my data with Sage Bionetworks and its partners
-            </RadioButton>
+      <div ref="consentDoc" class="consent-doc">
+        <section class="preamble-section">
+          <div class="preamble container">
+            <div>
+              <h2>mPower 2.0</h2>
+              <h3>Consent Signature</h3>
+            </div>
           </div>
-        </div>
-        <div class="slider-element slider-offscreen animated" :class="{'slideInRight': showSharing}">
-          <div class="inner">
-            <h1>Please review and sign the consent document</h1>
-            <p>By signing your name, you have indicated that you have read and fully agree with the consent form given below. This is the document which you just went through in the consent and quiz process.</p>
-            <input v-model="name" placeholder="Please type your full name here">
-            <div class="buttons">
-              <router-link to="/">Disagree</router-link>
-              <button class="join-button" :disabled="canSubmit" @click="advance">ACCEPT</button>
+        </section>
+        <section></section> <!-- flip zebra striping -->
+        <section>
+          <div class="assertion container">
+            <div>I know and agree that:</div>
+          </div>
+        </section>
+        <section>
+          <div class="will-use container">
+            <object data="/static/images/Step1.svg" type="image/svg+xml"></object>
+            <div>I will use the Mpower app to answer questions and do short physical and cognitive activities. The app will help me track my symptoms, triggers and medications.</div>
+          </div>
+        </section>
+        <section>
+          <div class="privacy container">
+            <object data="/static/images/Step2.svg" type="image/svg+xml"></object>
+            <div>My study data and personal information (Data) will be encrypted and transferred from my phone. It will be stored in Sage Bionetworks’ secure cloud-based database.</div>
+          </div>
+        </section>
+        <section>
+          <div class="research container">
+            <object data="/static/images/Step3.svg" type="image/svg+xml"></object>
+            <div>My Data will be used for research as described in the study information.</div>
+          </div>
+        </section>
+        <section>
+          <div class="sharing-scope container">
+            <object data="/static/images/Step4.svg" type="image/svg+xml"></object>
+            <div>I have the option to share my coded study data for future research. It is up to me. I can say yes or no.</div>
+          </div>
+        </section>
+        <section>
+          <div class="risks-benefits container">
+            <object data="/static/images/Step5.svg" type="image/svg+xml"></object>
+            <div>The main risk of participating in mPower study is to my privacy. This is risk is low but not zero. The main benefit is seeing my trends over time.</div>
+          </div>
+        </section>
+        <section>
+          <div class="not-medical container">
+            <object data="/static/images/Step6.svg" type="image/svg+xml"></object>
+            <div>mPower is a research study. The mPower app shouldn’t be used for diagnosis or treatment decisions.</div>
+          </div>
+        </section>
+        <section>
+          <div class="unpaid container">
+            <object data="/static/images/Step7.svg" type="image/svg+xml"></object>
+            <div>I will not get paid for participating in this study. I will not receive any profit from use of my Data in this or future research study.</div>
+          </div>
+        </section>
+        <section>
+          <div class="voluntary container">
+            <object data="/static/images/Step8.svg" type="image/svg+xml"></object>
+            <div>I can withdraw (quit) at any time for any reason. There is no penalty if I withdraw.</div>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <div class="slider">
+          <div class="slider-element animated" :class="{'slideOutLeft': showSharing}">
+            <div class="inner">
+              <h1>Sharing your coded study data more broadly (without information such as your name) may benefit this and future research.</h1>
+              <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners">
+                Yes, share my data with Sage Bionetworks and qualified researchers worldwide for future research
+              </RadioButton>
+              <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers">
+                No, only share my data with Sage Bionetworks and its partners
+              </RadioButton>
+            </div>
+          </div>
+          <div class="slider-element slider-offscreen animated" :class="{'slideInRight': showSharing}">
+            <div class="inner">
+              <h1>Please review and sign the consent document</h1>
+              <p>By signing your name, you have indicated that you have read and fully agree with the consent form given below. This is the document which you just went through in the consent and quiz process.</p>
+              <input v-model="name" placeholder="Please type your full name here">
+              <div class="buttons">
+                <router-link to="/">Disagree</router-link>
+                <button class="join-button" :disabled="canSubmit" @click="advance">ACCEPT</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </section>
   </div>
 </template>
 
@@ -102,6 +165,59 @@ export default {
   }
 </style>
 <style scoped>
+.consent-doc {
+  padding: 0;
+  font-size: 1rem;
+  /*
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  */
+}
+.container {
+  padding: .75rem;
+}
+.consent-doc h2, .consent-doc h3 {
+  text-align: left;
+}
+.container {
+  box-sizing: border-box;
+}
+.preamble-section {
+  background-color: #51417b;
+}
+.preamble h2, .preamble h3 {
+  color: white;
+  margin: 0;
+}
+.preamble.container object {
+  width: 7rem;
+  height: 7rem;
+  margin-bottom: -1rem;
+  margin-top: -1rem;
+  margin-left: 0rem;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container object {
+  width: 4rem;
+  height: 4rem;
+  margin-left: .75rem;
+}
+.container div {
+  flex: 1;
+  padding-left: .75rem;
+  padding-right: .5rem;
+}
+.assertion {
+  color: #51417B;
+  padding-left: 0;
+}
+
 footer {
   box-shadow: 0px 2px 7px black;
   z-index: 1;

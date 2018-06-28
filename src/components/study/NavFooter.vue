@@ -26,14 +26,15 @@ footer {
   padding: .5rem;
 }
 button {
-  cursor: pointer;
-  font-size: 1rem;
-  margin: 0;
-  padding: .5rem 2rem;
-  text-align: center;
-	border-radius: .4rem;
-  background-color: #3b4a63;
-  color: white;
-  transition: opacity .1s linear;
+  background-color: #F5B33C;
+  color: #1A1C29;
+  border-radius: 100px;
+  border: none;
+  display: inline-block;
+  margin: .2rem 0;
+  padding: .4rem 1.6rem;
+  text-decoration: none;
+  font-weight: bold;
+
 }
 </style>

@@ -105,7 +105,7 @@
           </div>
           <div class="text">
             <h3>Scientists make discoveries</h3>
-            <p style="font-size: .75rem">When you use the app you contribute to research on MS. By combining the information from many people who are using the app, researchers expect to find patterns. The information you provide through the elevateMS app gets encrypted on the phone to protect your privacy. As you participate over time, you help create a powerful dataset that may lead to scientific breakthrough and to new ways to help people with MS improve their well being. You do not need to have MS to participate. This study will last about one year. We’d like you to participate for three consecutive months or longer if you can.</p>
+            <p>When you use the app you contribute to research on MS. By combining the information from many people who are using the app, researchers expect to find patterns. The information you provide through the elevateMS app gets encrypted on the phone to protect your privacy. As you participate over time, you help create a powerful dataset that may lead to scientific breakthrough and to new ways to help people with MS improve their well being. You do not need to have MS to participate. This study will last about one year. We’d like you to participate for three consecutive months or longer if you can.</p>
           </div>
         </div>
       </section>

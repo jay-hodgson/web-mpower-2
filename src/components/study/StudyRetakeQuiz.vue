@@ -43,14 +43,14 @@
           </div>
           <div class="question" :class="{error: isError('stressful')}">
             <label>QUESTION 4</label>
-            <p>The survey questions may be stressful for some people</p>
+            <p>For some people, seeing their data may be stressful.</p>
             <div>
               <router-link to="/study/consent?review=4">(Review section)</router-link>
             </div>
           </div>
           <div class="question" :class="{error: isError('pausable')}">
             <label>QUESTION 5</label>
-            <p>I can pause / resume participating at any time.</p>
+            <p>With the mPower app I will be able to&hellip;</p>
             <div>
               <router-link to="/study/consent?review=5">(Review section)</router-link>
             </div>
@@ -89,8 +89,6 @@ export default {
 
 <style scoped>
 nav {
-  background-image: linear-gradient(86deg, #473b7b, #3584a7 76%, hsl(173, 64%, 51%));
-  background-blend-mode: multiply;
   display: flex;
   justify-content: space-around;
   align-items: center;

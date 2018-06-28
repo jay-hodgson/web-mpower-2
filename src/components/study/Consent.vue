@@ -20,6 +20,7 @@
             <li>Every three months you will be asked to complete activities on the app like tapping your fingers or doing a cognitive game daily for 2 weeks (10 minutes)</li>
           </ul>
           <p>We would like you to participate for 2 years but you can participate as long as you like. </p>
+          <p><a href="">See this on the Information Sheet</a></p>
         </div>
         <div v-show="step === 2">
           <div class="header">
@@ -130,7 +131,8 @@
       </section>
             
     </section>
-    <Footer v-freeze :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled"
+    <NavFooter v-if="review" label="Back" @click="backToReview"/>
+    <Footer v-else v-freeze :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled"
       v-on:back="doBack" v-on:next="doNext" v-on:submit="doSubmit" submit-label="Done"/>
   </div>
 </template>
@@ -211,7 +213,8 @@ export default {
   width: 40vw;
 }
 .top {
-  border: solid 3px rgba(108, 122, 137, 0.3);
+  display: none;
+  /*border: solid 3px rgba(108, 122, 137, 0.3);*/
 }
 .summary {
   font-size: 1.1rem;
