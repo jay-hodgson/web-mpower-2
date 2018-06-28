@@ -33,7 +33,7 @@
       <p>mPower research study was developed by Sage Bionetworks (non-for-profit research organization). The Principal Investigator for this study is Lara Mangravite, PhD. If you have any questions about this study please contact the Study Team at: 1-844-822-4708 (toll free) or email at PDApp@sagebase.org. </p>
       </div>
 
-      <div id="what-is-involved">
+      <div class="what-is-involved">
       <h3>What Is Involved</h3>
 
       <p>We will ask you to download the study app to your phone. In the app, we will ask you questions about your health and your medical history. We will also ask you complete activities. These questions and activities are important for the research study.</p>
@@ -59,7 +59,7 @@
       <p>If you participated in mPower 1.0, you will have the option to link your mPower 1.0 data to this study.</p>
       </div>
 
-      <div id="data-collection">
+      <div class="data-collection">
       <h3>Data Collection, Storage and Privacy</h3>
 
       <p>Your privacy is important to us. We will make every effort to protect your privacy. We will process your data electronically.</p>
@@ -79,7 +79,7 @@
       <p>Please read our Privacy Policy for more information.</p>
       </div>
 
-      <div id="trends">
+      <div class="trends">
       <h3>Data Use & Trends</h3>
 
       <p>This is your data. You’ll be able to view your recent symptoms, triggers, medication adherence and data trends on the app and download your data.</p>
@@ -89,7 +89,7 @@
       <p>We will not use the coded study data for commercial advertising.</p>
       </div>
 
-      <div id="sharing">
+      <div class="sharing">
       <h3>Sharing For Future Research</h3>
 
       <p>The same coded study data that you donate for mPower could be used for other research. You get to decide if you want to share your coded study data with qualified researchers worldwide. If you give permission, sharing will be done without additional informed consent.</p>
@@ -101,7 +101,7 @@
       <p>You cannot take back your data once it is used in research. Your data will not be destroyed or deleted.  Once we share your data, there is not a way for us to remove your data from what researchers have been given.</p>
       </div>
 
-      <div id="risks">
+      <div class="risks">
       <h3>Potential Risks</h3>
 
       <p>This is not a medical treatment study. We do not expect medical side effects from participating in this study. </p>
@@ -115,7 +115,7 @@
       <p>Participation in this study may involve risks that are not known at this time. You will be told of any new information that might change your decision to be in this study.</p>
       </div>
 
-      <div id="benefits">
+      <div class="benefits">
       <h3>Potential Benefits</h3>
 
       <p>The primary benefit of this study is increasing understanding of the symptoms of PD. We will be looking for health patterns across large groups, not individual health trends. </p>
@@ -125,7 +125,7 @@
       <p>The mPower app is not a personal diagnosis tool. For diagnosis or treatment consult with a medical professional. </p>
       </div>
 
-      <div id="issues">
+      <div class="issues">
       <h3>Issues to Consider</h3>
 
       <p>Transmitting data collected in this study may count against your mobile data plan. You may configure the application to only use Wi-Fi connections to limit the impact this data collection has on your data plan. </p>
@@ -135,7 +135,7 @@
       <p>We will not pay for medical care or compensate you if you think you were injured as a result of taking part in the study. You will be responsible for the cost of your medical care. </p>
       </div>
 
-      <div id="not-medical">
+      <div class="not-medical">
       <h3>Not Medical Care</h3>
 
       <p>mPower is a research study. The mPower app is not a diagnostic tool. It shouldn’t be used for medical care, diagnosis, or treatment. You should not use mPower in place of seeing a healthcare provider.</p>
@@ -145,7 +145,7 @@
       <p>If you have questions or concerns related to your health, you should see a healthcare provider. </p>
       </div>
 
-      <div id="leaving">
+      <div class="leaving">
       <h3>Leaving The Study</h3>
 
       <p>You may leave the study at any time.</p>
@@ -163,7 +163,7 @@
       <p>If you would like to speak to someone other than us about this study, please contact the Western Institutional Review Board at 360-252-2500 (toll free at 1-800-562-4789) or by email at Help@wirb.com.</p>
       </div>
 
-      <div id="contact">
+      <div class="contact">
       <h3>Contacts</h3>
 
       <p>We may reach out to you. We might want to alert you to research events, like webinars. We might want to tell you about other research opportunities. </p>

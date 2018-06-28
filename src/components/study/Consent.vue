@@ -4,7 +4,7 @@
     <section>
 
       <section class="top">
-        <ConsentViewer :highlight-id="highlightId"/>
+        <ConsentViewer ref="consentViewer" :highlight-id="highlightId"/>
       </section>
       <section ref="summary" class="bottom summary">
         <div v-show="step === 1">
@@ -127,6 +127,7 @@
             <li>You can opt out of these follow up notifications at any time</li>
           </ul>
         </div>
+        <p class="more"><a href="#" @click.prevent="showMore">See this on the information sheet.</a></p>
       </section>
             
     </section>
@@ -194,6 +195,11 @@ export default {
     },
     backToReview() {
       this.$router.push('/study/retake-quiz')
+    },
+    showMore() {
+      let cv = this.$refs.consentViewer;
+      cv.toggleMax()
+      cv.highlightId = REFERENCE_IDS[this.step];
     }
   }
 }
@@ -212,8 +218,7 @@ export default {
   width: 40vw;
 }
 .top {
-  display: none;
-  /*border: solid 3px rgba(108, 122, 137, 0.3);*/
+  border: solid 3px rgba(108, 122, 137, 0.3);
 }
 .summary {
   font-size: 1.1rem;
@@ -233,6 +238,9 @@ export default {
   margin: .4rem 0;
   line-height: 1.2;
 }
+.more {
+  display: none;
+}
 @media screen and (max-width: 50em) {
   .docked-layout > section {
     flex-direction: column;
@@ -244,9 +252,27 @@ export default {
     margin: 0;
     width: auto;
   }
+  .top {
+    display: none;
+  }
+  .bottom {
+    padding: 1rem;
+  }
+  .more {
+    display: block;
+    margin-top: 1.5rem!important;
+  }
+  /*
+  .docked-layout > section > section {
+    flex: 1;
+    border: none;
+    margin: 0;
+    width: auto;
+  }
   .bottom {
     border-top: solid 3px rgba(108, 122, 137, 0.3)!important;
     padding: 1rem;
   }
+  */
 }
 </style>

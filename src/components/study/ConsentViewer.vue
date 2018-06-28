@@ -12,6 +12,23 @@
 <script>
 import ConsentContent from '../web/ConsentContent.vue';
 
+function makeHighlighter(target) {
+  target = target || document.body
+  return function(newVal, oldVal) {
+    if (oldVal) {
+      var oldEl = target.querySelector("."+oldVal)
+      if (oldEl) {
+        oldEl.classList.remove("highlighted")
+      }
+    }
+    var newEl = target.querySelector("."+newVal)
+    if (newEl) {
+      newEl.classList.add("highlighted")
+      newEl.scrollIntoView({ behavior: "smooth", alignToTop: true })
+    }
+  }
+}
+
 export default {
   name: "ConsentViewer",
   components: { ConsentContent },
@@ -22,17 +39,7 @@ export default {
     };
   },
   watch: {
-    highlightId: function(newVal, oldVal) {
-      var oldEl = document.getElementById(oldVal);
-      if (oldEl) {
-        oldEl.classList.remove("highlighted");
-      }
-      var newEl = document.getElementById(newVal);
-      if (newEl) {
-        newEl.classList.add("highlighted");
-        newEl.scrollIntoView({ behavior: "smooth" });
-      }
-    }
+    highlightId: makeHighlighter()
   },
   methods: {
     toggleMax() {
@@ -51,6 +58,9 @@ export default {
       div.appendChild(toggle);
       div.appendChild(this.$refs.consentDoc.cloneNode(true));
       document.body.appendChild(div);
+
+      let highlighter = makeHighlighter(div)
+      highlighter(this.highlightId)
     }
   }
 };
@@ -72,5 +82,4 @@ export default {
 .consent-viewer h2 {
   margin-top: 0;
 }
-
 </style>
