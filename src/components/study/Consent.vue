@@ -20,7 +20,6 @@
             <li>Every three months you will be asked to complete activities on the app like tapping your fingers or doing a cognitive game daily for 2 weeks (10 minutes)</li>
           </ul>
           <p>We would like you to participate for 2 years but you can participate as long as you like. </p>
-          <p><a href="">See this on the Information Sheet</a></p>
         </div>
         <div v-show="step === 2">
           <div class="header">
