@@ -1,64 +1,40 @@
 <template>
   <div class="docked-layout">
-    <nav>
-      <div class="title">
-        Retake Quiz
-      </div>
-      <div class="step-icons">
-      </div>
-      <div class="nav-right">
-        <router-link to="/study/help" class="help-link">Need Help?</router-link>
-      </div>
-    </nav>
-    
+    <MainNav title="Retake Quiz" :show-help="true"/>
     <section>
-      <div class="container">
+      <div class="container" style="padding-bottom: 0">
         <div class="preamble">
           <BridgeImage src="/static/images/warning-icon.png"/>
           <h2>You’re almost there!</h2>
           <p>You answered one or more questions incorrectly. We want to make sure that you understand what this study is about and what is involved before you proceed. Please review the sections again. </p>
         </div>
-        
+      </div>
+      <div class="container" style="padding:0">
         <div class="questions">
           <div class="question" :class="{error: isError('purpose')}">
             <label>QUESTION 1</label>
             <p>What is the purpose of this study?</p>
-            <div>
-              <router-link to="/study/consent?review=1">(Review section)</router-link>
-            </div>
           </div>
           <div class="question" :class="{error: isError('anon')}">
             <label>QUESTION 2</label>
             <p>Will my name be stored with my study data?</p>
-            <div>
-              <router-link to="/study/consent?review=2">(Review section)</router-link>
-            </div>
           </div>
           <div class="question" :class="{error: isError('deletable')}">
             <label>QUESTION 3</label>
             <p>If I decide to share my data with qualified researchers and then I change my mind, can my data be deleted from their studies?</p>
-            <div>
-              <router-link to="/study/consent?review=3">(Review section)</router-link>
-            </div>
           </div>
           <div class="question" :class="{error: isError('stressful')}">
             <label>QUESTION 4</label>
             <p>For some people, seeing their data may be stressful.</p>
-            <div>
-              <router-link to="/study/consent?review=4">(Review section)</router-link>
-            </div>
           </div>
           <div class="question" :class="{error: isError('pausable')}">
             <label>QUESTION 5</label>
             <p>With the mPower app I will be able to&hellip;</p>
-            <div>
-              <router-link to="/study/consent?review=5">(Review section)</router-link>
-            </div>
           </div>
         </div>
       </div>
     </section>
-    <NavFooter label="Retake quiz" @click="navigate"></NavFooter>
+    <NavFooter label="Review consent" @click="navigate"></NavFooter>
   </div>
 </template>
 
@@ -80,8 +56,8 @@ export default {
       return this.$store.getAnswers()[tag] === 'wrong'
     },
     navigate() {
-      this.$store.setCurrentStep(Store.CONSENT_DONE)
-      this.$router.push('/study/quiz')
+      //this.$store.setCurrentStep(Store.CONSENT_DONE)
+      this.$router.push('/study/consent')
     }
   }
 }
@@ -124,13 +100,14 @@ nav {
 }
   .preamble h2 {
     margin-top: 0;
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
   .preamble p {
     font-size: .8rem;
   }
 .questions {
   background-color: white;
+  max-width: 30rem;
   padding: .5rem 2rem;
 }
 label {
@@ -159,15 +136,15 @@ label {
 .question {
   border-bottom: 1px solid rgba(0, 0, 0, 0.24);
   padding: .5rem;
-  background: transparent url(/static/images/check-mark.png) left 15%;
+  background: transparent url(/static/images/Check-Mark.svg) left center;
   background-repeat: no-repeat;
-  background-size: 2rem 2rem;
+  background-size: 1.5rem 1.5rem;
   padding-left: 3rem;
 }
 .error {
-  background: transparent url(/static/images/wrong-icon.png) left 15%;
+  background: transparent url(/static/images/Wrong-Icon.svg) left center;
   background-repeat: no-repeat;
-  background-size: 2rem 2rem;
+  background-size: 1.5rem 1.5rem;
   padding-left: 3rem;
 }
 .error label, .error p {

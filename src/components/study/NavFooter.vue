@@ -35,6 +35,7 @@ button {
   padding: .4rem 1.6rem;
   text-decoration: none;
   font-weight: bold;
-
+  font-size: 1rem;
+  cursor: pointer;
 }
 </style>
