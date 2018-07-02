@@ -3,7 +3,6 @@
     <div ref="consentDoc" class="consent-doc">
       <section class="preamble-section">
         <div class="preamble container">
-          <object data="/static/images/Header2.svg" type="image/svg+xml"></object>
           <div>
             <h2>mPower 2.0</h2>
             <h3>Consent Signature</h3>

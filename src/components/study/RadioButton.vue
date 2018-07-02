@@ -5,8 +5,8 @@
       <input class="mdc-radio__native-control" @change="sendEvent"
         type="radio" :id="id" :value="value" :name="name">
       <div class="mdc-radio__background">
-        <div class="mdc-radio__outer-circle" :style="{borderColor: color}"></div>
-        <div class="mdc-radio__inner-circle" :style="{backgroundColor: color}"></div>
+        <div class="mdc-radio__outer-circle"></div>
+        <div class="mdc-radio__inner-circle"></div>
       </div>
     </div>
     <label :id="labelId" :for="id" :style="{color: color}"><slot></slot></label>
@@ -19,7 +19,6 @@ export default {
   props: ['name','value','color'],
   data() {
     return {
-      element: ''
     }
   },
   methods: {
@@ -49,4 +48,11 @@ export default {
   padding-left: .4rem;
   cursor: pointer;
 }
+.mdc-radio__outer-circle {
+  border-color: #5A478F!important;
+}
+.mdc-radio__inner-circle {
+  background-color: #402D72!important;
+}
+
 </style>

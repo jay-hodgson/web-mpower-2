@@ -9,10 +9,10 @@
       </p>
       <div class="buttons">
         <a @click="apple">
-          <BridgeImage src="/static/images/AppStoreButton.gif" :style="{opacity: hasNumber}"/>
+          <BridgeImage src="/static/images/App_Store_Badge.svg" :style="{opacity: hasNumber}"/>
         </a>
         <a @click="google">
-          <BridgeImage src="/static/images/PlayStoreButton.gif" :style="{opacity: hasNumber}"/>
+          <BridgeImage src="/static/images/Android_Google_Play.svg" :style="{opacity: hasNumber}"/>
         </a>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="docked-layout">
-    <MainNav title="Quiz" :back-to-overview="true" :show-help="true" :show-steps="true"/>
+    <MainNav title="Test your knowledge"/>
     <section>
       <div class="container">
         <div class="question" v-show="step === 1">
@@ -41,7 +41,7 @@
 
         <div class="question" v-show="step === 4">
           <label>QUESTION {{step}}</label>
-          <h3>For some people, seeing their data may be stressful.</h3>
+          <h3>The survey questions may be stressful for some people.</h3>
 
           <RadioButton @change="updateQuizState"  name="stressful" value="right">
             Yes
@@ -53,13 +53,13 @@
 
         <div class="question" v-show="step === 5">
           <label>QUESTION {{step}}</label>
-          <h3>With the mPower app I will be able to:</h3>
+          <h3>I can pause / resume participating at any time.</h3>
 
           <RadioButton @change="updateQuizState"  name="pausable" value="right">
-            Track my symptoms and triggers
+            Yes
           </RadioButton>
           <RadioButton @change="updateQuizState"  name="pausable" value="wrong">
-            Schedule an appointment with my doctor
+            No
           </RadioButton>
         </div>
       </div>
@@ -107,10 +107,10 @@ export default {
     doNext() {
       if (this.step < this.totalSteps) {
         this.step += 1
-      }      
+      }
     },
     doSubmit() {
-      let hasErrors = Object.values(this.answers).some((answer) => answer === 'wrong')
+      var hasErrors = Object.values(this.answers).some((answer) => answer === 'wrong')
       if (hasErrors) {
         this.$store.setAnswers(this.answers)
         this.$router.push('/study/retake-quiz')
@@ -118,77 +118,17 @@ export default {
         this.$store.setCurrentStep(Store.QUIZ_DONE)
         this.$router.push('/study/overview')
       }
-    },
-    // Is this used? Doesn't seem to be.
-    doAnimateSubmitDone() {
     }
   }
 }
 </script>
 
 <style scoped>
-section {
-  padding-top: 0;
-}
-.container {
-  padding: 0;
-  max-width: 30rem;
-}
-.question {
-  padding: 1.5rem 1.5rem .5rem 1.5rem;
-}
 .question > label {
   color: #6c7a89;
   font-size: .7rem;
-  margin-bottom: 1rem;
-  display: block;
 }
 .question > h3 {
   color: #3b4a63;
-  margin-bottom: 1rem;
 }
-.radio-holder {
-  display: block;
-}
-.success, .failure {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
-  .success h4, .failure h4 {
-    font-size: 1.2rem;
-    margin: .5rem 0;
-  }
-  .success div, .failure div {
-    max-width: 30rem;
-    margin: 0 auto; 
-    padding: 0rem 1.5rem;
-  }
-  .success p, .failure p {
-    line-height: 1.1;
-  }
-  .success {
-    background-color: #f0faf6;
-  }
-    .success h4 {
-      color: #63D49E;
-    }
-    .success button {
-       font-size: 1.3rem; 
-       background-color: #5A478F; 
-       color: white; 
-       border-radius: 100px; 
-       padding: .25rem 2rem;
-       margin-top: -1rem;
-       margin-bottom: 1rem;
-       font-weight: bold;
-    }
-  .failure {
-    background-color: #fef0f1;
-  }
-    .failure h4 {
-      color: #EE6070;
-    }
 </style>
