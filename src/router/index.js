@@ -3,11 +3,17 @@ import Router from 'vue-router'
 import webCss from '@/assets/web.css'
 
 import YourStory from '@/components/web/YourStory'
+
+const About = () => import(/* webpackChunkName: "primary" */ '@/components/web/About')
+const Team = () => import(/* webpackChunkName: "primary" */ '@/components/web/Team')
+const Consent = () => import(/* webpackChunkName: "primary" */ '@/components/web/Consent')
+const Uninstalled = () => import(/* webpackChunkName: "primary" */ '@/components/web/Uninstalled')
+/*
 import About from '@/components/web/About'
 import Team from '@/components/web/Team'
 import Consent from '@/components/web/Consent'
 import Uninstalled from '@/components/web/Uninstalled'
-
+*/
 const PrivacyPolicy = () => import(/* webpackChunkName: "secondary" */ '@/components/web/PrivacyPolicy')
 const TermsOfService = () => import(/* webpackChunkName: "secondary" */ '@/components/web/TermsOfService')
 const FAQ = () => import(/* webpackChunkName: "secondary" */ '@/components/web/FAQ')

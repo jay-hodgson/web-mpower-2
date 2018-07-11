@@ -53,10 +53,9 @@ export default {
   },
   methods: {
     isError: function(tag) {
-      return this.$store.getAnswers()[tag] === 'wrong'
+      return this.$store.getAnswers()[tag] !== 'right'
     },
     navigate() {
-      //this.$store.setCurrentStep(Store.CONSENT_DONE)
       this.$router.push('/study/consent')
     }
   }
