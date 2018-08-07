@@ -28,7 +28,8 @@
           </div>
           <ul>
             <li>Your data is encrypted on your phone.</li>
-            <li>We collect the encrypted survey and activity data from your phone. </li>
+            <li>We collect the encrypted survey responses, activity data, and passive sensor measurements from your phone.</li>
+            <li>We will NOT collect your exact location or what you are typing on your phone (for example text messages, emails, etc.)</li>
             <li>We replace your name with a random code and combine your coded study data with data from other volunteers. </li>
             <li>We store the coded study data on a secure cloud server. </li>
           </ul>
@@ -122,7 +123,7 @@
             <h3>Contact</h3>
           </div>
           <ul>
-            <li>If you have questions you can reach us by email at PDApp@sagebase.org or call toll free 1-844-822-4708.</li>
+            <li>If you have questions you can reach us by email at PDApp@sagebionetworks.org or call toll free 1-844-822-4708.</li>
             <li>We may want to reach out to you.</li>
             <li>You can opt out of these follow up notifications at any time</li>
           </ul>

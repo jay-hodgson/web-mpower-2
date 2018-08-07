@@ -2,9 +2,9 @@
     {  
        "target":{  
           "namespace":"android_app",
-          "package_name":"org.sagebionetworks.mpower",
+          "package_name":"org.sagebionetworks.research.mpower",
           "sha256_cert_fingerprints":[  
-             ""
+            "2F:CA:44:C7:D5:4D:2C:A6:03:8C:AD:FC:A9:DD:3D:BD:D0:6D:4C:78:B3:EC:E4:78:5F:34:7B:AB:54:44:0D:9E"
           ]
        },
        "relation":[  

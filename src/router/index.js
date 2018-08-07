@@ -48,7 +48,7 @@ export default new Router({
     {path: '/about', component: About},
     {path: '/team', component: Team},
     {path: '/consent', component: Consent},
-    {path: '/app/*', component: Uninstalled},
+    {path: '/sage-mpower-2/*', component: Uninstalled},
 
     // Secondary pages
     {path: '/privacy-policy', component: PrivacyPolicy},

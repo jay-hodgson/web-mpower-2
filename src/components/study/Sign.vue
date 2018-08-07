@@ -6,7 +6,7 @@
         <section class="preamble-section">
           <div class="preamble container">
             <div>
-              <h2>mPower 2.0</h2>
+              <h2>mPower</h2>
               <h3>Consent Signature</h3>
             </div>
           </div>
@@ -14,13 +14,13 @@
         <section></section> <!-- flip zebra striping -->
         <section>
           <div class="assertion container">
-            <div>I know and agree that:</div>
+            <div>I understand:</div>
           </div>
         </section>
         <section>
           <div class="will-use container">
             <object data="/static/images/Step1.svg" type="image/svg+xml"></object>
-            <div>I will use the Mpower app to answer questions and do short physical and cognitive activities. The app will help me track my symptoms, triggers and medications.</div>
+            <div>I will use the mPower app to answer questions and do short physical and cognitive activities. The app will help me track my symptoms, triggers and medications.</div>
           </div>
         </section>
         <section>
@@ -70,6 +70,17 @@
         <div class="slider">
           <div class="slider-element animated" :class="{'slideOutLeft': showSharing}">
             <div class="inner">
+              <h1>Please review and sign below if you want to join.</h1>
+              <p>By signing/typing your name, you have indicated that you have read and consented to join the mPower Progression study.</p>
+              <input v-model="name" placeholder="Please type your full name here">
+              <div class="buttons">
+                <router-link to="/">Disagree</router-link>
+                <button class="join-button" :disabled="canSubmit" @click="advance">ACCEPT</button>
+              </div>
+            </div>
+          </div>
+          <div class="slider-element slider-offscreen animated" :class="{'slideInRight': showSharing}">
+            <div class="inner" style="padding-bottom:0">
               <h1>Sharing your coded study data more broadly (without information such as your name) may benefit this and future research.</h1>
               <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners">
                 Yes, share my data with Sage Bionetworks and qualified researchers worldwide for future research
@@ -78,16 +89,8 @@
                 No, only share my data with Sage Bionetworks and its partners
               </RadioButton>
             </div>
-          </div>
-          <div class="slider-element slider-offscreen animated" :class="{'slideInRight': showSharing}">
-            <div class="inner">
-              <h1>Please review and sign the consent document</h1>
-              <p>By signing your name, you have indicated that you have read and fully agree with the consent form given below. This is the document which you just went through in the consent and quiz process.</p>
-              <input v-model="name" placeholder="Please type your full name here">
-              <div class="buttons">
-                <router-link to="/">Disagree</router-link>
-                <button class="join-button" :disabled="canSubmit" @click="advance">ACCEPT</button>
-              </div>
+            <div class="buttons">
+              <button class="join-button" :disabled="canSubmit" @click="advance">ACCEPT</button>
             </div>
           </div>
         </div>
@@ -153,7 +156,6 @@ export default {
     },
     updateSharing: function(name, value) {
       this.scope = value;
-      this.advance();
     }
   }
 }

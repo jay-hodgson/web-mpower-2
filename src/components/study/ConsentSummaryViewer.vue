@@ -18,7 +18,7 @@
       <section>
         <div class="will-use container">
           <object data="/static/images/Step1.svg" type="image/svg+xml"></object>
-          <div>I will use the Mpower app to answer questions and do short physical and cognitive activities. The app will help me track my symptoms, triggers and medications.</div>
+          <div>I will use the mPower app to answer questions and do short physical and cognitive activities. The app will help me track my symptoms, triggers and medications.</div>
         </div>
       </section>
       <section>

@@ -18,7 +18,7 @@
               <td>Phone Number:</td><td>1-844-822-4708 (toll free)</td>
           </tr>
           <tr>
-              <td>Email Address:</td><td>PDApp@sagebase.org </td>
+              <td>Email Address:</td><td>PDApp@sagebionetworks.org</td>
           </tr>
           <tr>
               <td>Sponsor:</td><td>Sage Bionetworks</td>
@@ -30,7 +30,7 @@
 
       <p>You are invited to participate in the mPower research study. You may help researchers better understand variations in symptoms of Parkinson’s disease (PD). The purpose of this study is to look for patterns over time. If you join the study, we will ask you to use your cell phone to complete activities for 2 weeks every three months. We would like you to participate for 2 years, but you can participate as long as you like. You may not directly benefit from taking part, but seeing trends in your data may be interesting to you. Participating in the study and seeing your data may cause a range of emotions. </p>
 
-      <p>mPower research study was developed by Sage Bionetworks (non-for-profit research organization). The Principal Investigator for this study is Lara Mangravite, PhD. If you have any questions about this study please contact the Study Team at: 1-844-822-4708 (toll free) or email at PDApp@sagebase.org. </p>
+      <p>mPower research study was developed by Sage Bionetworks (non-for-profit research organization). The Principal Investigator for this study is Lara Mangravite, PhD. If you have any questions about this study please contact the Study Team at: 1-844-822-4708 (toll free) or email at PDApp@sagebionetworks.org. </p>
       </div>
 
       <div class="what-is-involved">
@@ -156,7 +156,7 @@
       
       <p>The study team may also withdraw you from the study at any time for any reason.</p>
       
-      <p>There are two ways to ask questions or to leave the study. You can do so directly from your app profile page. Or you can contact us: 1-206-667-2129 (toll free at 1-844-822-4708) or email at PDApp@sagebase.org. </p>
+      <p>There are two ways to ask questions or to leave the study. You can do so directly from your app profile page. Or you can contact us: 1-206-667-2129 (toll free at 1-844-822-4708) or email at PDApp@sagebionetworks.org. </p>
       
       <p>You can also uninstall the app from your phone at any time.  </p>
 
@@ -170,7 +170,7 @@
       
       <p>You can still participate in mPower even if you opt out of these follow up notifications.</p>
       
-      <p>There are two ways to opt out of follow up notifications. You can adjust the “permissions” setting in your mPowerprofile. Or you can contact us at PDApp@sagebase.org or call toll free 1-844-822-4708.</p>
+      <p>There are two ways to opt out of follow up notifications. You can adjust the “permissions” setting in your mPowerprofile. Or you can contact us at PDApp@sagebionetworks.org or call toll free 1-844-822-4708.</p>
 
       <p>If you are not satisfied with the response of the research team, contact the IRB. The IRB is a group of experts who independently review research. The IRB will address any concerns or complaints you have about this study. They will also help with any questions you have about your rights as a research participant. You can reach Western IRB (WIRB) at help@WIRB.com at 360-252-2500 or toll free 800-562-4789.</p>
 

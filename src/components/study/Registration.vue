@@ -2,11 +2,12 @@
   <div>
     <MainNav title="Install The App" :back-to-overview="true" :show-help="true" :show-steps="true"/>
     <div class="container">
-      <p>Enter your mobile phone number and select your phone type to receive your download link for the app:</p>
+      <p>Thank you! Please enter your mobile phone number and select your phone type to receive your download link for the mPower app:</p>
 
       <p style="text-align: center">
         <mdc-textfield ref="phoneField" v-model="phone" label="Phone number" type="tel" pattern="[0-9]*"/>
       </p>
+      <p style="text-align: center; margin-top: 3rem">Pick one depending on your mobile phone:</p>
       <div class="buttons">
         <a @click="apple">
           <BridgeImage src="/static/images/App_Store_Badge.svg" :style="{opacity: hasNumber}"/>
@@ -89,7 +90,7 @@ export default {
   padding-top: 5rem;
 }
 .buttons {
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: space-around;
 }

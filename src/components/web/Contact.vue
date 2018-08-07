@@ -7,7 +7,7 @@
         <p>For information about participating and questions around the study, please review the FAQ page. If you have additional questions or other queries, please send us a message.</p>
 
         <p class="button-item">
-          <a class="join-button" href="mailto:mpower@sagebase.org">Send us a message</a>
+          <a class="join-button" href="mailto:PDApp@sagebionetworks.org">Send us a message</a>
         </p>
 
         <p>This study is sponsored by Sage Bionetworks, a 501(c)(3) nonprofit research organization located at 1100 Fairview Avenue North, Seattle, WA, 98109.</p>
@@ -19,13 +19,13 @@
         <p>If you have any questions at any time before, during, or after the study, you can contact:</p>
 
         <p><b>Scientific team</b><br>
-        Lara Mangravite, PhD leads mPower. You can email Dr. Mangravite at <a href="mailto:mpower@sagebase.org">mpower@sagebase.org</a> or call her at 1-844-822-4708 or 1 206-667-2129.</p>
+        Lara Mangravite, PhD leads mPower. You can email Dr. Mangravite at <a href="mailto:PDApp@sagebionetworks.org">PDApp@sagebionetworks.org</a> or call her at 1-844-822-4708 or 1 206-667-2129.</p>
 
         <p><b>Privacy</b><br>
-        For questions, comments or requests regarding the privacy policy or our processing of your information, please contact: <a href="mailto:privacypolicy@sagebase.org">privacypolicy@sagebase.org</a>.
+        For questions, comments or requests regarding the privacy policy or our processing of your information, please contact: <a href="mailto:privacypolicy@sagebionetworks.org">privacypolicy@sagebionetworks.org</a>.
 
         <p><b>Technical support</b><br>
-        Please contact our technical support team at <a href="mailto:mpower@sagebase.org">mpower@sagebase.org</a>.
+        Please contact our technical support team at <a href="mailto:PDApp@sagebionetworks.org">PDApp@sagebionetworks.org</a>.
 
         <p><b>Independent contact</b><br>
         The Western Institutional Review Board (WIRB) oversees the mPower study. Contact WIRB you have questions, concerns, or complaints about mPower. Contact WIRB if you have questions or concerns about your rights as a participant in mPower.</p>

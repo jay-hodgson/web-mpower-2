@@ -98,15 +98,15 @@
 
         <p>Within the App, you are able to review and amend certain personal data we have collected through your use of the Parkinson mPower App and participation in the Study.</p>
 
-        <p>If you wish to access, rectify, delete or block any other personal data we hold about you, you may contact us at <a href="mailto:privacypolicy@sagebase.org">privacypolicy@sagebase.org</a>. Please note that while any changes you make will be reflected in active user databases within a reasonable period of time, we may retain all information you submit for backups, archiving, prevention of fraud and abuse, analytics, satisfaction of legal obligations, or where we otherwise reasonably believe that we have a legitimate reason to do so, as permitted by applicable law.</p>
+        <p>If you wish to access, rectify, delete or block any other personal data we hold about you, you may contact us at <a href="mailto:privacypolicy@sagebionetworks.org">privacypolicy@sagebionetworks.org</a>. Please note that while any changes you make will be reflected in active user databases within a reasonable period of time, we may retain all information you submit for backups, archiving, prevention of fraud and abuse, analytics, satisfaction of legal obligations, or where we otherwise reasonably believe that we have a legitimate reason to do so, as permitted by applicable law.</p>
 
         <p>At any time, you can elect not to grant access to the use of location data by de-activating the relevant setting within the mPower App or your mobile device.</p>
 
-        <p>If you would like to withdraw from the Study, you may do so within the Parkinson mPower App by clicking on the “Leave study” link in your profile page. You also may contact us at <a href="mailto:PDApp@sagebase.org">PDApp@sagebase.org</a> to withdraw from the Study.</p>
+        <p>If you would like to withdraw from the Study, you may do so within the Parkinson mPower App by clicking on the “Leave study” link in your profile page. You also may contact us at <a href="mailto:PDApp@sagebionetworks.org">PDApp@sagebionetworks.org</a> to withdraw from the Study.</p>
 
         <p>You can withdraw any consent you have provided to us for the processing of your personal data at any time and free of charge. Please note that if you withdraw from the Study, we will stop collecting new data from you, but the coded study data that you have already provided will already have been distributed and will not be able to be destroyed or deleted.</p>
 
-        <p>If you have questions about your rights and choices in relation to your personal data, or would like to request additional information, please contact <a href="mailto:privacypolicy@sagebase.org">privacypolicy@sagebase.org</a>.</p>
+        <p>If you have questions about your rights and choices in relation to your personal data, or would like to request additional information, please contact <a href="mailto:privacypolicy@sagebionetworks.org">privacypolicy@sagebionetworks.org</a>.</p>
 
         <h3>Cross-Border Transfer of Your Information</h3>
 
@@ -124,7 +124,7 @@
 
         <p>If you have any questions, comments or requests regarding this privacy policy or our processing of your information, please contact:</p>
 
-        <p><a href="mailto:privacypolicy@sagebase.org">privacypolicy@sagebase.org</a></p>
+        <p><a href="mailto:privacypolicy@sagebionetworks.org">privacypolicy@sagebionetworks.org</a></p>
 
         <p>Sage Bionetworks
         1100 Fairview Avenue North
