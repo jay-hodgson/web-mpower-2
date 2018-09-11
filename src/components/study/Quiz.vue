@@ -8,13 +8,13 @@
           <h3>What is the purpose of this study?</h3>
 
           <RadioButton @change="updateQuizState" name="purpose" value="right">
-            Understand the fluctuations of Parkinson’s disease symptoms
+            Understand the changes in Parkinson’s disease symptoms 
           </RadioButton>
           <RadioButton @change="updateQuizState"  name="purpose" value="wrong1">
             Give medical and treatment advice to people with Parkinson’s disease
           </RadioButton>
           <RadioButton @change="updateQuizState"  name="purpose" value="wrong2">
-            Diagnose people with Parkinson's disease
+            Diagnose people with Parkinson’s disease
           </RadioButton>
         </div>
 
@@ -29,7 +29,7 @@
             My house address
           </RadioButton>
           <RadioButton @change="updateQuizState"  name="anon" value="right">
-            My Global Unique Identifier
+            My Global Unique Identifier (GUID)
           </RadioButton>
         </div>
         
@@ -44,7 +44,7 @@
             My data will continue to be used in research
           </RadioButton>
           <RadioButton @change="updateQuizState"  name="deletable" value="wrong2">
-            My data will be sent to my regular care provider
+            My data will be sent to my regular healthcare provider
           </RadioButton>
         </div>
 

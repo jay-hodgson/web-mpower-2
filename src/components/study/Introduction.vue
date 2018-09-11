@@ -8,20 +8,27 @@
         <div class="screen" v-show="step === 1">
           <div class="panel">
             <BridgeImage src="/static/images/about%20the%20study.svg"/>
+
             <h3>About the study</h3>
             <p>mPower research study was developed by Sage Bionetworks (non-profit) to measure the symptoms, day to day changes, and long-term changes in people with Parkinson’s Disease (PD). </p>
-            <p><router-link to="/consent">Learn more</router-link></p>
+            <p><a href="" @click.prevent="learnMore">Learn more</a></p>
+
+            <DocumentViewer ref="consentViewer">
+              <ConsentContent/>
+            </DocumentViewer>
+
           </div>
         </div>
         <div class="screen" v-show="step === 2">
           <div class="panel">
             <BridgeImage src="/static/images/procedures%20activities.svg"/>
-            <h3>Procedures and Activities</h3>
+            <h3>How does the study work?</h3>
             <p>
-              1. Join the study if you are 18 years old, live in the United States and have PD;<br>
-              2. Complete a brief survey;<br>
-              3. Track your symptoms, triggers, and medication;<br>
-              4. Do short physical and cognitive activities.
+              1. Answer questions to determine if you are eligible for this study <br>
+              2. Complete the informed consent process & download the app<br>
+              3. Complete a one-time health survey<br>
+              4. Complete short physical and cognitive activities <br>
+              5. Track your symptoms, triggers, and medications
             </p>
           </div>
         </div>
@@ -36,9 +43,9 @@
           <div class="panel">
             <BridgeImage src="/static/images/benefits%20and%20risks.svg"/>
             <h3>What are the benefits and risks?</h3>
-            <p>You may help researchers better understand PD. You may not directly benefit from taking part but seeing trends in your data may be interesting to you. </p>
+            <p>You may not directly benefit from taking part but seeing trends in your data may be interesting to you. You may help researchers better understand PD.</p>
 
-            <p>Participating in the study and seeing your data may cause a range of emotions.</p>
+            <p>The main risk is to your privacy by an accidental release of your data. You may find some of the activities tiring and seeing your data may be stressful.</p>
           </div>
         </div>
       </div>
@@ -52,10 +59,12 @@
 
 <script>
 import MainNav from './MainNav.vue'
+import DocumentViewer from '../study/DocumentViewer.vue'
+import ConsentContent from '../web/ConsentContent.vue'
 
 export default {
   name: 'StudyIntroduction',
-  components: { MainNav },
+  components: { MainNav, DocumentViewer, ConsentContent },
   data() {
     return {
       step: 1,
@@ -82,6 +91,9 @@ export default {
     },
     doSubmit() {
       this.$router.push('/study/overview?start=true')
+    },
+    learnMore(event) {
+      this.$refs.consentViewer.toggleMax();
     }
   }
 }
@@ -103,6 +115,10 @@ section {
 .panel {
   overflow-y: auto;
 }
+.consent-viewer {
+  width: 0px;
+  height: 0px!important;
+}
 h3 {
   font-size: 3.2vh;
   font-weight: bold;
@@ -115,6 +131,9 @@ h3 {
 }
 h3, p, a {
   color: white;
+}
+p {
+  text-align: center;
 }
 img {
   height: 36vh;
