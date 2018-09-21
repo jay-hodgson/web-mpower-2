@@ -28,7 +28,9 @@
       <div class="icon eligibility"></div>
       <div class="content">
         <h3>Eligibility</h3>
-        <p>Let’s see if you are eligible for the Parkinsons Disease study.<br>2 MINUTES</p>
+        <p v-if="currentStep < Store.ELIGIBILITY_DONE">
+          Let’s see if you are eligible for the Parkinsons Disease study.<br>2 MINUTES</p>
+        <p v-else>Great, you are eligible for the mPower study</p>
       </div>
       <div class="done"></div>
       <div class="lock"></div>
@@ -40,7 +42,9 @@
       <div class="icon consent"></div>
       <div class="content">
         <h3>Consent</h3>
-        <p>Learn about the study, risks, and benefits of joining.<br>5 MINUTES</p>
+        <p v-if="currentStep < Store.CONSENT_DONE">
+          Learn about the study, risks, and benefits of joining.<br>5 MINUTES</p>
+        <p v-else>Thanks for walk through the consent</p>
       </div>
       <div class="done"></div>
       <div class="lock"></div>
@@ -52,7 +56,9 @@
       <div class="icon quiz"></div>
       <div class="content">
         <h3>Quiz</h3>
-        <p>Let’s see what you have learned from the consent document.<br>5 MINUTES</p>
+        <p v-if="currentStep < Store.QUIZ_DONE">
+          Let’s see what you have learned from the consent document.<br>5 MINUTES</p>
+        <p v-else>Awesome job</p>
       </div>
       <div class="done"></div>
       <div class="lock"></div>
@@ -64,7 +70,8 @@
       <div class="icon sign"></div>
       <div class="content">
         <h3>Sign</h3>
-        <p>Sign the consent document.<br>2 MINUTES</p>
+        <p v-if="currentStep < Store.SIGN_DONE">Sign the consent document.<br>2 MINUTES</p>
+        <p v-else>You have agreed to the study, let’s get started.</p>
       </div>
       <div class="done"></div>
       <div class="lock"></div>

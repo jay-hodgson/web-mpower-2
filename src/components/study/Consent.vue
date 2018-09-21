@@ -4,7 +4,9 @@
     <section>
 
       <section class="top">
-        <ConsentViewer ref="consentViewer" :highlight-id="highlightId"/>
+        <DocumentViewer ref="consentViewer" :highlight-id="highlightId">
+          <ConsentContent/>
+        </DocumentViewer>
       </section>
       <section ref="summary" class="bottom summary">
         <div v-show="step === 1">
@@ -12,14 +14,17 @@
             <object data="/static/images/Comprehension.svg" type="image/svg+xml"></object>
             <h3>What is involved</h3>
           </div>
-          <p>Install the mPower app on your phone. </p>
-          <p>To understand changes in your health we will ask you to do:</p>
+          <p>If you decide to participate in the study, you’ll first need to install the free mPower app to your phone. </p>
+
+          <p>To understand changes in your health we will ask you to use the app to:</p>
+
           <ul>
-            <li>At the start of the study you will answer a few questions about your health (5 minutes). </li>
-            <li>You can track your health daily through your symptoms, triggers and medications (5 minutes). </li>
-            <li>Every three months you will be asked to complete activities on the app like tapping your fingers or doing a cognitive game daily for 2 weeks (10 minutes)</li>
+            <li>Answer a few questions about your health, once when you start the study (5 minutes). </li>
+            <li>Track your symptoms, triggers and medications daily (5 minutes). </li>
+            <li>Complete activities on the app like tapping your fingers or doing a cognitive game daily for 2 weeks (10 minutes). Repeat every 3 months.</li>
           </ul>
-          <p>We would like you to participate for 2 years but you can participate as long as you like. </p>
+
+          <p>We would like you to participate for 2 years if you can but you can participate as long as you like. </p>
         </div>
         <div v-show="step === 2">
           <div class="header">
@@ -28,8 +33,9 @@
           </div>
           <ul>
             <li>Your data is encrypted on your phone.</li>
-            <li>We collect the encrypted survey and activity data from your phone. </li>
-            <li>We replace your name with a random code and combine your coded study data with data from other volunteers. </li>
+            <li>We collect the encrypted survey responses, activity data, and passive sensor measurements from your phone.</li>
+            <li>We will NOT collect your exact location or what you are typing on your phone (for example text messages, emails, etc.)</li>
+            <li>We replace your name with a unique code (GUID). We will combine your coded study data with data from other volunteers. </li>
             <li>We store the coded study data on a secure cloud server. </li>
           </ul>
         </div>
@@ -52,7 +58,7 @@
           </div>
           <ul>
             <li>Sharing your coded study data broadly (without information such as your name) may benefit this and future research.</li>
-            <li>You get to decide if you want to share your coded study data broadly.</li>
+            <li>You get to decide if you want to share your coded study data broadly with qualified researchers.</li>
             <li>Once we have shared your data with other researchers we cannot withdraw it.</li>
           </ul>
         </div>
@@ -82,18 +88,6 @@
         </div>
         <div v-show="step === 7">
           <div class="header">
-            <object data="/static/images/Issues%20to%20consider.svg" type="image/svg+xml"></object>
-            <h3>Issues to Consider</h3>
-          </div>
-          <ul>
-            <li>The time you use on this app may count against your mobile data plan. You can set up the app to use Wi-Fi connections instead. </li>
-            <li>You will not be paid for participating in this study. You will not be paid for sharing your data. </li>
-            <li>You will not receive any profit from this or future research. </li>
-            <li>The risk of injury is low in this study. You will not be compensated for injury.</li>
-          </ul>
-        </div>
-        <div v-show="step === 8">
-          <div class="header">
             <object data="/static/images/Not%20medical%20care.svg" type="image/svg+xml"></object>
             <h3>NOT medical care</h3>
           </div>
@@ -102,6 +96,18 @@
             <li>mPower does not provide medical care, medical advice, or treatment.</li>
             <li>The mPower app is not a diagnosis tool. </li>
             <li>Contact your health provider if you have questions or concerns related to your health, or if you need medical care.</li>
+          </ul>
+        </div>
+        <div v-show="step === 8">
+          <div class="header">
+            <object data="/static/images/Issues%20to%20consider.svg" type="image/svg+xml"></object>
+            <h3>Issues to Consider</h3>
+          </div>
+          <ul>
+            <li>The time you use on this app may count against your mobile data plan. You can set up the app to use Wi-Fi connections instead. </li>
+            <li>You will not be paid for participating in this study. You will not be paid for sharing your data. </li>
+            <li>You will not receive any profit from this or future research. </li>
+            <li>The risk of injury is low in this study. You will not be compensated for injury.</li>
           </ul>
         </div>
         <div v-show="step === 9">
@@ -122,7 +128,7 @@
             <h3>Contact</h3>
           </div>
           <ul>
-            <li>If you have questions you can reach us by email at PDApp@sagebase.org or call toll free 1-844-822-4708.</li>
+            <li>If you have questions you can reach us by email at PDApp@sagebionetworks.org or call toll free +1.833-SAGEBIO.</li>
             <li>We may want to reach out to you.</li>
             <li>You can opt out of these follow up notifications at any time</li>
           </ul>
@@ -139,18 +145,19 @@
 
 
 <script>
-import ConsentViewer from './ConsentViewer.vue'
+import DocumentViewer from './DocumentViewer.vue'
+import ConsentContent from '../web/ConsentContent.vue'
 import Footer from './Footer.vue'
 import MainNav from './MainNav.vue'
 import NavFooter from './NavFooter.vue'
 import Store from '../store'
 
 const REFERENCE_IDS = ['', 'what-is-involved', 'data-collection', 'trends', 'sharing', 'risks', 
-  'benefits', 'issues', 'not-medical', 'leaving', 'contact'];
+  'benefits', 'not-medical', 'issues', 'leaving', 'contact'];
 
 export default {
   name: 'StudyConsent',
-  components: { ConsentViewer, Footer, MainNav, NavFooter },
+  components: { ConsentContent, DocumentViewer, Footer, MainNav, NavFooter },
   data() {
     return {
       step: 1,
@@ -262,17 +269,5 @@ export default {
     display: block;
     margin-top: 1.5rem!important;
   }
-  /*
-  .docked-layout > section > section {
-    flex: 1;
-    border: none;
-    margin: 0;
-    width: auto;
-  }
-  .bottom {
-    border-top: solid 3px rgba(108, 122, 137, 0.3)!important;
-    padding: 1rem;
-  }
-  */
 }
 </style>

@@ -18,7 +18,7 @@
       <section>
         <div class="will-use container">
           <object data="/static/images/Step1.svg" type="image/svg+xml"></object>
-          <div>I will use the Mpower app to answer questions and do short physical and cognitive activities. The app will help me track my symptoms, triggers and medications.</div>
+          <div>I will use the mPower app to answer questions and do short physical and cognitive activities. The app will help me track my symptoms, triggers and medications.</div>
         </div>
       </section>
       <section>
@@ -48,13 +48,13 @@
       <section>
         <div class="not-medical container">
           <object data="/static/images/Step6.svg" type="image/svg+xml"></object>
-          <div>mPower is a research study. The mPower app shouldn’t be used for diagnosis or treatment decisions.</div>
+          <div>I will not get paid for participating in this study. I will not receive any profit from use of my Data in this or future research study.</div>
         </div>
       </section>
       <section>
         <div class="unpaid container">
           <object data="/static/images/Step7.svg" type="image/svg+xml"></object>
-          <div>I will not get paid for participating in this study. I will not receive any profit from use of my Data in this or future research study.</div>
+          <div>mPower is a research study. The mPower app shouldn’t be used for diagnosis or treatment decisions.</div>
         </div>
       </section>
       <section>

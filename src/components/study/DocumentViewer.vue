@@ -1,7 +1,7 @@
 <template>
   <div class="consent-viewer">
     <div ref="consentDoc" class="consent-doc">
-      <ConsentContent/>
+      <slot></slot>
     </div>
     <div class="consent-max">
       <div ref="minMaxControl" @mousedown="toggleMax" class="min-max-control opener"></div>
@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import ConsentContent from '../web/ConsentContent.vue';
 
 function makeHighlighter(target) {
   target = target || document.body
@@ -30,8 +29,8 @@ function makeHighlighter(target) {
 }
 
 export default {
-  name: "ConsentViewer",
-  components: { ConsentContent },
+  name: "DocumentViewer",
+  components: { /*ConsentContent*/ },
   props: ["highlightId"],
   data() {
     return {

@@ -12,23 +12,23 @@
       <div class="container" style="padding:0">
         <div class="questions">
           <div class="question" :class="{error: isError('purpose')}">
-            <label>QUESTION 1</label>
+            <label>Question 1</label>
             <p>What is the purpose of this study?</p>
           </div>
           <div class="question" :class="{error: isError('anon')}">
-            <label>QUESTION 2</label>
+            <label>Question 2</label>
             <p>Will my name be stored with my study data?</p>
           </div>
           <div class="question" :class="{error: isError('deletable')}">
-            <label>QUESTION 3</label>
+            <label>Question 3</label>
             <p>If I decide to share my data with qualified researchers and then I change my mind, can my data be deleted from their studies?</p>
           </div>
           <div class="question" :class="{error: isError('stressful')}">
-            <label>QUESTION 4</label>
+            <label>Question 4</label>
             <p>For some people, seeing their data may be stressful.</p>
           </div>
           <div class="question" :class="{error: isError('pausable')}">
-            <label>QUESTION 5</label>
+            <label>Question 5</label>
             <p>With the mPower app I will be able to&hellip;</p>
           </div>
         </div>
@@ -53,10 +53,9 @@ export default {
   },
   methods: {
     isError: function(tag) {
-      return this.$store.getAnswers()[tag] === 'wrong'
+      return this.$store.getAnswers()[tag] !== 'right'
     },
     navigate() {
-      //this.$store.setCurrentStep(Store.CONSENT_DONE)
       this.$router.push('/study/consent')
     }
   }

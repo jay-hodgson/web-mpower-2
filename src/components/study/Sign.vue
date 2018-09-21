@@ -6,33 +6,33 @@
         <section class="preamble-section">
           <div class="preamble container">
             <div>
-              <h2>mPower 2.0</h2>
-              <h3>Consent Signature</h3>
+              <h2>mPower Progression Study</h2>
+              <h3>Consent and Authorization Contents</h3>
             </div>
           </div>
         </section>
         <section></section> <!-- flip zebra striping -->
         <section>
           <div class="assertion container">
-            <div>I know and agree that:</div>
+            <div>I understand:</div>
           </div>
         </section>
         <section>
           <div class="will-use container">
             <object data="/static/images/Step1.svg" type="image/svg+xml"></object>
-            <div>I will use the Mpower app to answer questions and do short physical and cognitive activities. The app will help me track my symptoms, triggers and medications.</div>
+            <div>I will use the mPower app to answer questions and do short physical and cognitive activities. The app will help me track my symptoms, triggers, and medications.</div> 
           </div>
         </section>
         <section>
           <div class="privacy container">
             <object data="/static/images/Step2.svg" type="image/svg+xml"></object>
-            <div>My study data and personal information (Data) will be encrypted and transferred from my phone. It will be stored in Sage Bionetworks’ secure cloud-based database.</div>
+            <div>My study data will be encrypted and transferred from my phone. It will be stored on Sage Bionetworks’ secure cloud-based database.</div>
           </div>
         </section>
         <section>
           <div class="research container">
             <object data="/static/images/Step3.svg" type="image/svg+xml"></object>
-            <div>My Data will be used for research as described in the study information.</div>
+            <div>My data will be used for research as described in the study information (<a href="https://parkinsonmpower.org/consent">https://parkinsonmpower.org/consent</a>).</div>
           </div>
         </section>
         <section>
@@ -44,19 +44,19 @@
         <section>
           <div class="risks-benefits container">
             <object data="/static/images/Step5.svg" type="image/svg+xml"></object>
-            <div>The main risk of participating in mPower study is to my privacy. This is risk is low but not zero. The main benefit is seeing my trends over time.</div>
-          </div>
-        </section>
-        <section>
-          <div class="not-medical container">
-            <object data="/static/images/Step6.svg" type="image/svg+xml"></object>
-            <div>mPower is a research study. The mPower app shouldn’t be used for diagnosis or treatment decisions.</div>
+            <div>The main risk of participating in the mPower Progression Study is to my privacy and confidentiality. This risk is low but not zero. The main benefit is seeing the trends in my data over time.</div>
           </div>
         </section>
         <section>
           <div class="unpaid container">
+            <object data="/static/images/Step6.svg" type="image/svg+xml"></object>
+            <div>mPower Progression Study is a research study. The mPower app shouldn’t be used for diagnosis or treatment decision.</div>
+          </div>
+        </section>
+        <section>
+          <div class="not-medical container">
             <object data="/static/images/Step7.svg" type="image/svg+xml"></object>
-            <div>I will not get paid for participating in this study. I will not receive any profit from use of my Data in this or future research study.</div>
+            <div>I will not get paid for participating in this study. I will not receive any profit from the use of my data in this or future research.</div>
           </div>
         </section>
         <section>
@@ -65,29 +65,38 @@
             <div>I can withdraw (quit) at any time for any reason. There is no penalty if I withdraw.</div>
           </div>
         </section>
+        <section>
+          <div class="contact container">
+            <object data="/static/images/Step9.svg" type="image/svg+xml"></object>
+            <div>My contact information may be used to tell me about other studies.</div>
+          </div>
+        </section>
       </div>
       <footer>
         <div class="slider">
           <div class="slider-element animated" :class="{'slideOutLeft': showSharing}">
             <div class="inner">
-              <h1>Sharing your coded study data more broadly (without information such as your name) may benefit this and future research.</h1>
-              <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners">
-                Yes, share my data with Sage Bionetworks and qualified researchers worldwide for future research
-              </RadioButton>
-              <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers">
-                No, only share my data with Sage Bionetworks and its partners
-              </RadioButton>
-            </div>
-          </div>
-          <div class="slider-element slider-offscreen animated" :class="{'slideInRight': showSharing}">
-            <div class="inner">
-              <h1>Please review and sign the consent document</h1>
-              <p>By signing your name, you have indicated that you have read and fully agree with the consent form given below. This is the document which you just went through in the consent and quiz process.</p>
+              <h1>Please review and sign below if you want to join.</h1>
+              <p>I have read and understand the above information. All of my questions have been answered. I freely and willingly choose to take part in the mPower Progression Study. By signing this consent I have not given up any of my legal rights.</p> 
               <input v-model="name" placeholder="Please type your full name here">
               <div class="buttons">
                 <router-link to="/">Disagree</router-link>
-                <button class="join-button" :disabled="canSubmit" @click="advance">ACCEPT</button>
+                <button class="join-button" :disabled="canSubmit" @click="advance">Accept</button>
               </div>
+            </div>
+          </div>
+          <div class="slider-element slider-offscreen animated" :class="{'slideInRight': showSharing}">
+            <div class="inner" style="padding-bottom:0">
+              <h1>Data sharing option (you can change this at any time in the app setting)</h1>
+              <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners">
+                <span style="font-size:.8rem">I want to share my data with other researchers for future research.</span>
+              </RadioButton>
+              <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers">
+                <span style="font-size:.8rem">I want to share my data for this study only.</span>
+              </RadioButton>
+            </div>
+            <div class="buttons">
+              <button class="join-button" :disabled="canSubmit" @click="advance">Accept</button>
             </div>
           </div>
         </div>
@@ -153,7 +162,6 @@ export default {
     },
     updateSharing: function(name, value) {
       this.scope = value;
-      this.advance();
     }
   }
 }
@@ -168,12 +176,6 @@ export default {
 .consent-doc {
   padding: 0;
   font-size: 1rem;
-  /*
-  height: 100%;
-  overflow: hidden;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  */
 }
 .container {
   padding: .75rem;
@@ -194,8 +196,6 @@ export default {
 .preamble.container object {
   width: 7rem;
   height: 7rem;
-  margin-bottom: -1rem;
-  margin-top: -1rem;
   margin-left: 0rem;
 }
 .container {
@@ -222,42 +222,42 @@ footer {
   box-shadow: 0px 2px 7px black;
   z-index: 1;
 }
-    .slider {
-      position: relative;
-      overflow: hidden;
-      height: 12rem;
+  .slider {
+    position: relative;
+    overflow: hidden;
+    height: 15rem;
+  }
+  .slider-element {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+  }
+    .inner {
+      padding: 1rem; 
+      max-width: 30rem; 
+      margin: 0 auto;
     }
-    .slider-element {
-      position: absolute; 
-      top: 0; 
-      left: 0; 
-      right: 0; 
-      bottom: 0;
-    }
-      .inner {
-        padding: 1rem; 
-        max-width: 30rem; 
-        margin: 0 auto;
-      }
-    .slider-offscreen {
-      transform: translate(100%,0);
-      -webkit-transform: translate(100%,0);
+  .slider-offscreen {
+    transform: translate(100%,0);
+    -webkit-transform: translate(100%,0);
 
-      display:flex; 
-      flex-direction: column; 
-      align-items: center;
-    }
-    .slider-element .radio-holder {
-      margin-left:0!important;
-    }
+    display:flex; 
+    flex-direction: column; 
+    align-items: center;
+  }
+  .slider-element .radio-holder {
+    margin-left:0!important;
+  }
   .slider-element h1 {
     font-size: .9rem;
     margin-bottom: .5rem;
-    line-height: 1;
+    line-height: 1.2;
   }
   .slider-element p {
-    font-size: .7rem;
-    line-height: 1;
+    font-size: .8rem;
+    line-height: 1.2;
   }
   .slider-element input {
     font-size: 1rem;
@@ -275,7 +275,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 0 auto;
+    margin: .5rem auto;
   }
   .slider-element button {
     color: #332069;
@@ -297,4 +297,89 @@ footer {
   .slider-element .radio-holder {
     margin-left: .5rem;
   }
+
+@charset "UTF-8";
+
+/*!
+ * animate.css -http://daneden.me/animate
+ * Version - 3.6.0
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2018 Daniel Eden
+ */
+
+.animated {
+  -webkit-animation-duration: .7s;
+  animation-duration: .7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft;
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+
 </style>

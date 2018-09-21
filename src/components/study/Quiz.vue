@@ -4,62 +4,77 @@
     <section>
       <div class="container">
         <div class="question" v-show="step === 1">
-          <label>QUESTION {{step}}</label>
+          <label>Question {{step}}</label>
           <h3>What is the purpose of this study?</h3>
 
           <RadioButton @change="updateQuizState" name="purpose" value="right">
-            Understand the fluctuations of Parkinson’s disease symptoms
+            Understand the changes in Parkinson’s disease symptoms 
           </RadioButton>
-          <RadioButton @change="updateQuizState"  name="purpose" value="wrong">
-            Give medical advice and diagnose people with Parkinson’s disease
+          <RadioButton @change="updateQuizState"  name="purpose" value="wrong1">
+            Give medical and treatment advice to people with Parkinson’s disease
+          </RadioButton>
+          <RadioButton @change="updateQuizState"  name="purpose" value="wrong2">
+            Diagnose people with Parkinson’s disease
           </RadioButton>
         </div>
 
         <div class="question" v-show="step === 2">
-          <label>QUESTION {{step}}</label>
-          <h3>Will my name be stored with my study data?</h3>
+          <label>Question {{step}}</label>
+          <h3>What will be used to identify my study data?</h3>
 
-          <RadioButton @change="updateQuizState"  name="anon" value="wrong">
-            Yes
+          <RadioButton @change="updateQuizState"  name="anon" value="wrong1">
+            My full name
+          </RadioButton>
+          <RadioButton @change="updateQuizState"  name="anon" value="wrong2">
+            My house address
           </RadioButton>
           <RadioButton @change="updateQuizState"  name="anon" value="right">
-            No
+            My Global Unique Identifier (GUID)
           </RadioButton>
         </div>
         
         <div class="question" v-show="step === 3">
-          <label>QUESTION {{step}}</label>
-          <h3>If I decide to share my data with qualified researchers and then I change my mind, can my data be deleted from their studies?</h3>
+          <label>Question {{step}}</label>
+          <h3>I decided to share my data broadly with qualified researchers and now I want to stop. What happens to the data I have already shared?</h3>
 
-          <RadioButton @change="updateQuizState"  name="deletable" value="wrong">
-            Yes
+          <RadioButton @change="updateQuizState"  name="deletable" value="wrong1">
+            My account and all my data will be deleted 
           </RadioButton>
           <RadioButton @change="updateQuizState"  name="deletable" value="right">
-            No
+            The data I already shared will continue to be used in research
+          </RadioButton>
+          <RadioButton @change="updateQuizState"  name="deletable" value="wrong2">
+            My data will be sent to my regular healthcare provider
           </RadioButton>
         </div>
 
         <div class="question" v-show="step === 4">
-          <label>QUESTION {{step}}</label>
-          <h3>For some people, seeing their data may be stressful.</h3>
+          <label>Question {{step}}</label>
+          <h3>Are there risks of participating in this study?</h3>
 
-          <RadioButton @change="updateQuizState"  name="stressful" value="right">
-            Yes
+          <RadioButton @change="updateQuizState"  name="stressful" value="wrong1">
+            There is no risk of participating in this research study
           </RadioButton>
-          <RadioButton @change="updateQuizState"  name="stressful" value="wrong">
-            No
+          <RadioButton @change="updateQuizState"  name="stressful" value="wrong2">
+            There is a risk that my regular doctor won’t be allowed to care for me any longer
+          </RadioButton>
+          <RadioButton @change="updateQuizState"  name="stressful" value="right">
+            Some activities may be tiring and seeing my data may be stressful
           </RadioButton>
         </div>
 
         <div class="question" v-show="step === 5">
-          <label>QUESTION {{step}}</label>
+          <label>Question {{step}}</label>
           <h3>With the mPower app I will be able to:</h3>
 
           <RadioButton @change="updateQuizState"  name="pausable" value="right">
             Track my symptoms and triggers
           </RadioButton>
-          <RadioButton @change="updateQuizState"  name="pausable" value="wrong">
-            Schedule an appointment with my doctor
+          <RadioButton @change="updateQuizState"  name="pausable" value="wrong1">
+            Schedule an appointment with my regular doctor
+          </RadioButton>
+          <RadioButton @change="updateQuizState"  name="pausable" value="wrong2">
+            Join a support group for people living with Parkinson's disease
           </RadioButton>
         </div>
       </div>
@@ -96,6 +111,7 @@ export default {
   },
   methods: {
     updateQuizState(name, value) {
+      ga('send', 'event', 'Quiz', name, value);
       this.answers[name] = value
       this.furthestStep = this.step
     },
@@ -110,17 +126,16 @@ export default {
       }      
     },
     doSubmit() {
-      let hasErrors = Object.values(this.answers).some((answer) => answer === 'wrong')
+      let hasErrors = Object.values(this.answers).some((answer) => answer !== 'right')
       if (hasErrors) {
+        ga('send', 'event', 'Quiz', 'finished', 'failure');
         this.$store.setAnswers(this.answers)
         this.$router.push('/study/retake-quiz')
       } else {
+        ga('send', 'event', 'Quiz', 'finished', 'success');
         this.$store.setCurrentStep(Store.QUIZ_DONE)
         this.$router.push('/study/overview')
       }
-    },
-    // Is this used? Doesn't seem to be.
-    doAnimateSubmitDone() {
     }
   }
 }

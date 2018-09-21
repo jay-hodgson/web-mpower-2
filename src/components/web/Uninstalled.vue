@@ -20,7 +20,16 @@ import Footer from "./Footer.vue";
 
 export default {
   name: "Uninstalled",
-  components: { Footer }
+  components: { Footer },
+  beforeCreate() {
+    let meta = this.meta = document.createElement("meta");
+    meta.name = 'apple-itunes-app';
+    meta.content = 'app-id=1375781575, app-argument=' + document.location.toString();
+    document.head.appendChild(meta);
+  },
+  destroyed() {
+    document.head.removeChild(this.meta);
+  }
 };
 </script>
 

@@ -2,13 +2,13 @@
   <footer>
     <div>
       <div>2018 mPower</div>
-      <router-link to="/privacy-policy">PRIVACY POLICY</router-link>
+      <router-link to="/privacy-policy">Privacy Policy</router-link>
       <div>|</div>
-      <router-link to="/license">LICENSE</router-link>
+      <router-link to="/license">License</router-link>
       <div>|</div>
       <router-link to="/faq">FAQ</router-link>
       <div>|</div>
-      <router-link to="/contact">CONTACT</router-link>
+      <router-link to="/contact">Contact</router-link>
     </div>
     <div>
       mPower is for research use only and does not provide medical advice, diagnosis or treatment.

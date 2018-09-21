@@ -2,7 +2,9 @@
   <div class="docked-layout">
     <MainNav/>
     <section class="smooth-scroller">
-      <ConsentContent/>
+      <div style="max-width: 40rem; margin: 0 auto">
+        <ConsentContent/>
+      </div>
       <Footer/>
     </section>
   </div>

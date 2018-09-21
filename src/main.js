@@ -45,6 +45,11 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
+router.afterEach(((to, from) => {
+  console.log(to.path);
+  ga('set', 'page', to.path);
+  ga('send', 'pageview');
+}));
 
 const SCREENS_W_BGS = ["/study/intro", "/study/overview", "/study/retake-quiz", 
   "/study/ineligible", "/study/done"]

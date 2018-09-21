@@ -29,7 +29,7 @@
     You will mostly receive notifications through the app. Occasionally, researchers may also send email announcements to participants.</p>
 
     <p><b>I have a question that isn’t answered in this FAQ. Who do I contact?</b><br>
-    If you have further questions that aren’t addressed here contact the mPower study by email at EMAIL or call toll free xxx-xxx-xxxx</p>
+    If you have further questions that aren’t addressed here contact the mPower study by email at <a href="mailto:PDApp@sagebionetworks.org">PDApp@sagebionetworks.org</a> or call toll free <a href="tel:+1.833-SAGEBIO">+1.833-SAGEBIO</a>.</p>
 
     <p><b>If I take part, will I get medical treatment or health advice?</b><br>
     mPower is a research study. You will not get medical treatment or health advice if take part. If you have questions about your health, please see your doctor.</p>
@@ -51,9 +51,9 @@
     First check to see if your phone has signal and that the airplane mode is turned off. If you do not see it the message then you can have your link resent to your smartphone. </p>
 
     <p><b>I am already enrolled in the study, but I have a new phone. What can I do to continue being part of the mPower study?</b><br>
-    Go to the iTunes store and download mPower (link). Log in by entering your smartphone number and tap on “request magic link” button. New information will be added to your existing study information.</p>
+    Go to the <a href="https://itunes.apple.com/us/app/parkinson-mpower-2/id1375781575?ls=1&mt=8">Apple App Store</a> and download mPower. Log in by entering your smartphone number and follow the prompts to sign in. New information will be added to your existing study information.</p>
 
     <p><b>My question isn’t answered here. Can I talk to someone?</b><br>
-    Yes, we are happy to answer your questions by phone (1-844-822-4708 toll free) or email (PDApp@sagebionetworks.org).</p>
+    Yes, we are happy to answer your questions by phone (<a href="tel:+1.833-SAGEBIO">+1.833-SAGEBIO</a> toll free) or email (<a href="mailto:PDApp@sagebionetworks.org">PDApp@sagebionetworks.org</a>).</p>
     </div>
 </template>

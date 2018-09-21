@@ -7,7 +7,7 @@
         @click="submit">{{submitLabel || 'Submit'}}</button>
     </div>
     <div>
-      <div class="label">STEP {{(step <= totalSteps) ? step : totalSteps}} OF {{totalSteps}}</div>
+      <div class="label">Step {{(step <= totalSteps) ? step : totalSteps}} of {{totalSteps}}</div>
       <div class="meter-holder">
         <div class="metering">
           <div class="progress" ref="progress" v-bind:style="{ width: meterWidth }"></div>

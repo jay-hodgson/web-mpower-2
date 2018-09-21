@@ -3,10 +3,11 @@ import Router from 'vue-router'
 import webCss from '@/assets/web.css'
 
 import YourStory from '@/components/web/YourStory'
-import About from '@/components/web/About'
-import Team from '@/components/web/Team'
-import Consent from '@/components/web/Consent'
-import Uninstalled from '@/components/web/Uninstalled'
+
+const About = () => import(/* webpackChunkName: "primary" */ '@/components/web/About')
+const Team = () => import(/* webpackChunkName: "primary" */ '@/components/web/Team')
+const Consent = () => import(/* webpackChunkName: "primary" */ '@/components/web/Consent')
+const Uninstalled = () => import(/* webpackChunkName: "primary" */ '@/components/web/Uninstalled')
 
 const PrivacyPolicy = () => import(/* webpackChunkName: "secondary" */ '@/components/web/PrivacyPolicy')
 const TermsOfService = () => import(/* webpackChunkName: "secondary" */ '@/components/web/TermsOfService')
@@ -42,7 +43,7 @@ export default new Router({
     {path: '/about', component: About},
     {path: '/team', component: Team},
     {path: '/consent', component: Consent},
-    {path: '/app/*', component: Uninstalled},
+    {path: '/sage-mpower-2/*', component: Uninstalled},
 
     // Secondary pages
     {path: '/privacy-policy', component: PrivacyPolicy},
