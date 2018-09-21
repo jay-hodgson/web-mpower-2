@@ -48,13 +48,13 @@
       <section>
         <div class="not-medical container">
           <object data="/static/images/Step6.svg" type="image/svg+xml"></object>
-          <div>mPower is a research study. The mPower app shouldn’t be used for diagnosis or treatment decisions.</div>
+          <div>I will not get paid for participating in this study. I will not receive any profit from use of my Data in this or future research study.</div>
         </div>
       </section>
       <section>
         <div class="unpaid container">
           <object data="/static/images/Step7.svg" type="image/svg+xml"></object>
-          <div>I will not get paid for participating in this study. I will not receive any profit from use of my Data in this or future research study.</div>
+          <div>mPower is a research study. The mPower app shouldn’t be used for diagnosis or treatment decisions.</div>
         </div>
       </section>
       <section>

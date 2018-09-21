@@ -35,7 +35,7 @@
             <li>Your data is encrypted on your phone.</li>
             <li>We collect the encrypted survey responses, activity data, and passive sensor measurements from your phone.</li>
             <li>We will NOT collect your exact location or what you are typing on your phone (for example text messages, emails, etc.)</li>
-            <li>We replace your name with a random code and combine your coded study data with data from other volunteers. </li>
+            <li>We replace your name with a unique code (GUID). We will combine your coded study data with data from other volunteers. </li>
             <li>We store the coded study data on a secure cloud server. </li>
           </ul>
         </div>
@@ -58,7 +58,7 @@
           </div>
           <ul>
             <li>Sharing your coded study data broadly (without information such as your name) may benefit this and future research.</li>
-            <li>You get to decide if you want to share your coded study data broadly.</li>
+            <li>You get to decide if you want to share your coded study data broadly with qualified researchers.</li>
             <li>Once we have shared your data with other researchers we cannot withdraw it.</li>
           </ul>
         </div>

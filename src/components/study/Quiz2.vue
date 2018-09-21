@@ -4,7 +4,7 @@
     <section>
       <div class="container">
         <div class="question" v-show="step === 1">
-          <label>QUESTION {{step}}</label>
+          <label>Question {{step}}</label>
           <h3>What is the purpose of this study?</h3>
 
           <RadioButton @change="updateQuizState" name="purpose" value="right">
@@ -16,7 +16,7 @@
         </div>
 
         <div class="question" v-show="step === 2">
-          <label>QUESTION {{step}}</label>
+          <label>Question {{step}}</label>
           <h3>Will my name be stored with my study data?</h3>
 
           <RadioButton @change="updateQuizState"  name="anon" value="wrong">
@@ -28,19 +28,22 @@
         </div>
         
         <div class="question" v-show="step === 3">
-          <label>QUESTION {{step}}</label>
-          <h3>If I decide to share my data with qualified researchers and then I change my mind, can my data be deleted from their studies?</h3>
+          <label>Question {{step}}</label>
+          <h3>I decided to share my data broadly with qualified researchers and now I want to stop. What happens to the data I have already shared?</h3>
 
           <RadioButton @change="updateQuizState"  name="deletable" value="wrong">
-            Yes
+            My account and all my data will be deleted
           </RadioButton>
           <RadioButton @change="updateQuizState"  name="deletable" value="right">
-            No
+            The data I already shared will continue to be used in research
+          </RadioButton>
+          <RadioButton @change="updateQuizState"  name="deletable" value="wrong">
+            My data will be sent to my regular healthcare provider
           </RadioButton>
         </div>
 
         <div class="question" v-show="step === 4">
-          <label>QUESTION {{step}}</label>
+          <label>Question {{step}}</label>
           <h3>The survey questions may be stressful for some people.</h3>
 
           <RadioButton @change="updateQuizState"  name="stressful" value="right">
@@ -52,7 +55,7 @@
         </div>
 
         <div class="question" v-show="step === 5">
-          <label>QUESTION {{step}}</label>
+          <label>Question {{step}}</label>
           <h3>I can pause / resume participating at any time.</h3>
 
           <RadioButton @change="updateQuizState"  name="pausable" value="right">

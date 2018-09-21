@@ -15,8 +15,10 @@ html, body {
   padding: 0;
   margin: 0;
   height: 100%;
-  font-family: 'Lato', sans-serif;
   background-image: none;
+}
+* {
+  font-family: 'Lato', sans-serif;
 }
 html.consent {
   background-image: linear-gradient(90deg, #332069, #907FBA);
@@ -99,7 +101,7 @@ img {
 }
 .join-button {
   background-color: #F5B33C;
-  color: #1A1C29;
+  color: #1A1C29!important;
   border-radius: 100px;
   border: none;
   display: inline-block;
@@ -116,7 +118,7 @@ img {
 ol, ul {
   margin: 0;
   margin-bottom: 1rem;
-  padding: 0 0 0 1rem;
+  padding: 0 0 0 1.3rem;
 }
 table {
   width: 100%;

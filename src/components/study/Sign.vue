@@ -50,13 +50,13 @@
         <section>
           <div class="unpaid container">
             <object data="/static/images/Step6.svg" type="image/svg+xml"></object>
-            <div>I will not get paid for participating in this study. I will not receive any profit from the use of my data in this or future research.</div>
+            <div>mPower Progression Study is a research study. The mPower app shouldn’t be used for diagnosis or treatment decision.</div>
           </div>
         </section>
         <section>
           <div class="not-medical container">
             <object data="/static/images/Step7.svg" type="image/svg+xml"></object>
-            <div>mPower Progression Study is a research study. The mPower app shouldn’t be used for diagnosis or treatment decision.</div>
+            <div>I will not get paid for participating in this study. I will not receive any profit from the use of my data in this or future research.</div>
           </div>
         </section>
         <section>
@@ -67,7 +67,7 @@
         </section>
         <section>
           <div class="contact container">
-            <object data="" type="image/svg+xml"></object>
+            <object data="/static/images/Step9.svg" type="image/svg+xml"></object>
             <div>My contact information may be used to tell me about other studies.</div>
           </div>
         </section>
@@ -81,7 +81,7 @@
               <input v-model="name" placeholder="Please type your full name here">
               <div class="buttons">
                 <router-link to="/">Disagree</router-link>
-                <button class="join-button" :disabled="canSubmit" @click="advance">ACCEPT</button>
+                <button class="join-button" :disabled="canSubmit" @click="advance">Accept</button>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@
               </RadioButton>
             </div>
             <div class="buttons">
-              <button class="join-button" :disabled="canSubmit" @click="advance">ACCEPT</button>
+              <button class="join-button" :disabled="canSubmit" @click="advance">Accept</button>
             </div>
           </div>
         </div>

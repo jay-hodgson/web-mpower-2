@@ -92,7 +92,7 @@ export default {
     doSubmit() {
       this.$router.push('/study/overview?start=true')
     },
-    learnMore(event) {
+    learnMore() {
       this.$refs.consentViewer.toggleMax();
     }
   }
@@ -118,6 +118,10 @@ section {
 .consent-viewer {
   width: 0px;
   height: 0px!important;
+}
+.root {
+  max-width: 40rem;
+  margin: 0 auto;
 }
 h3 {
   font-size: 3.2vh;

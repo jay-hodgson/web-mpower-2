@@ -51,7 +51,7 @@
             </div>
             <div v-if="carouselStep === 2">
               <p>Download the app</p>
-              <p>After consenting, you will enter your mobile number to receive a link to download the mPower app for free from either the iOS App Store or the Google Play Store. </p>
+              <p>After consenting, you will enter your mobile number to receive a link to download the mPower app for free from <!--either--> the <a href="https://itunes.apple.com/us/app/parkinson-mpower-2/id1375781575?ls=1&mt=8">iOS App Store</a><!-- or the <a href="https://play.google.com/store/apps/details?id=org.sagebionetworks.research.mpower">Google Play Store</a>-->. </p>
             </div>
             <div v-if="carouselStep === 3">
               <p>Perform PD activities</p>
@@ -77,7 +77,7 @@
               <div class="slide">
                 <BridgeImage style="height: 12rem" src="/static/images/download%20the%20app.svg"/>
                 <p style="margin-bottom:0">Download the app</p>
-                <p style="margin-top: 0; font-size:smaller">After consenting, you will enter your mobile number to receive a link to download the mPower app for free from either the iOS App Store or the Google Play Store. </p>
+                <p style="margin-top: 0; font-size:smaller">After consenting, you will enter your mobile number to receive a link to download the mPower app for free from <!--either--> the <a href="https://itunes.apple.com/us/app/parkinson-mpower-2/id1375781575?ls=1&mt=8">iOS App Store</a><!-- or the <a href="https://play.google.com/store/apps/details?id=org.sagebionetworks.research.mpower">Google Play Store</a>-->. </p>
               </div>
             </slide>
             <slide>
