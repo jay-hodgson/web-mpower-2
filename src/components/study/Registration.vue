@@ -7,18 +7,14 @@
       <p style="text-align: center; margin-top: 2rem">
         <mdc-textfield ref="phoneField" v-model="phone" label="Enter phone number" type="tel" pattern="[0-9]*"/>
       </p>
-      <!--
-      <p style="text-align: center; margin-top: 3rem">Pick one depending on your mobile phone:</p>
-      -->
+      <p v-if="showAndroid" style="text-align: center; margin-top: 3rem">Pick one depending on your mobile phone:</p>
       <div class="buttons">
         <a @click="apple">
           <BridgeImage src="/static/images/App_Store_Badge.svg" :style="{opacity: hasNumber}"/>
         </a>
-        <!--
-        <a @click="google">
+        <a @click="google" v-if="showAndroid">
           <BridgeImage src="/static/images/Android_Google_Play.svg" :style="{opacity: hasNumber}"/>
         </a>
-        -->
       </div>
     </div>
     <mdc-snackbar ref="snackbar"/>
@@ -35,7 +31,8 @@ export default {
   components: { MainNav },
   data() {
     return {
-      phone: ''
+      phone: '',
+      showAndroid: window.queryParams.android === "true"
     }
   },
   mounted() {
