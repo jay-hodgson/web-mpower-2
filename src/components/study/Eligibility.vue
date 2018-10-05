@@ -26,8 +26,9 @@
           <div class="mdc-select">
             <select @change="advanceTo(4)" dense v-model="comfort" class="mdc-select__surface">
               <option>Select</option>
-              <option>have</option>
-              <option>do not have</option>
+              <option>have an Apple</option>
+              <option>have an Android</option>
+              <option>do not have a</option>
             </select>
             <div class="mdc-select__bottom-line"></div>
           </div>
@@ -46,6 +47,7 @@ import Footer from './Footer.vue'
 import Store from '../store';
 
 const STATES = ['Select', "in the United States", "outside of the United States"]
+const ANDROID_FORM_LINK = 'https://docs.google.com/forms/d/e/1FAIpQLSfq73gWXNqufhDQpkKZv20RjDLAHTQiSmdJVHISVd0Hg-wQ-Q/viewform?usp=sf_link';
 
 export default {
   name: 'StudyEligibility',
@@ -86,8 +88,12 @@ export default {
       this.step += 1;
     },
     doSubmit() {
+      if (this.comfort === "have an Android" && window.queryParams.android !== "true") {
+          window.location = ANDROID_FORM_LINK;
+          return;
+      }
       var validResidence = (this.residence === "in the United States")
-      var validComfort = (this.comfort === 'have')
+      var validComfort = (this.comfort !== 'do not have a')
       var validAge = this.age >= 18;
 
       if (!validAge || !validResidence || !validComfort ) {
