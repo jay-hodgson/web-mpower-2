@@ -7,6 +7,15 @@ import Store from './components/store'
 
 var store = new Store();
 
+window.queryParams = {};
+if (document.location.search) {
+    document.location.search.substring(1).split("&").forEach(function(pair) {
+        let fragments = pair.split("=");
+        window.queryParams[decodeURIComponent(fragments[0])] = decodeURIComponent(fragments[1]);
+    });
+}
+console.debug("queryParams", queryParams);
+
 // polyfill for smooth scrolling behavior
 window.__forceSmoothScrollPolyfill__ = true;
 require('smoothscroll-polyfill').polyfill();
@@ -46,7 +55,6 @@ router.beforeEach((to, from, next) => {
   }
 });
 router.afterEach(((to, from) => {
-  console.log(to.path);
   ga('set', 'page', to.path);
   ga('send', 'pageview');
 }));

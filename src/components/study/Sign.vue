@@ -32,7 +32,7 @@
         <section>
           <div class="research container">
             <object data="/static/images/Step3.svg" type="image/svg+xml"></object>
-            <div>My data will be used for research as described in the study information (<a href="https://parkinsonmpower.org/consent">https://parkinsonmpower.org/consent</a>).</div>
+            <div>My data will be used for research as described in the study information (<a href="https://parkinsonmpower.org/consent">https://<wbr>parkinsonmpower.<wbr>org/<wbr>consent</a>).</div>
           </div>
         </section>
         <section>
@@ -124,13 +124,13 @@ export default {
   computed: {
     canSubmit: function() {
       if (!this.showSharing) {
-        return this.name.length === 0;
+        return this.name.length === 0
       } else {
-        return this.scope === '';
+        return this.scope === ''
       }
     },
     isEmbedded: function() {
-      return !!(window.consentsToResearch || window.document.consentsToResearch);
+      return !!(window.consentsToResearch || window.document.consentsToResearch || window.AndroidJsBridge.consentsToResearch);
     }
   },
   methods: {
@@ -140,18 +140,20 @@ export default {
     },
     advance: function() {
       if (!this.showSharing) {
-        this.showSharing = true;
-        return;
+        this.showSharing = true
+        return
       }
-      this.accept();
+      this.accept()
     },
     accept: function() {
       if (this.isEmbedded) {
-        var obj = {'name': this.name, 'scope': this.scope};
+        var obj = {'name': this.name, 'scope': this.scope}
         if (window.consentsToResearch) {
           window.consentsToResearch(obj)
         } else if (window.document.consentsToResearch) {
           window.document.consentsToResearch(obj)
+        } else if (window.AndroidJsBridge.consentsToResearch) {
+          window.AndroidJsBridge.consentsToResearch(JSON.stringify(obj))
         }
       } else {
         this.$store.setName(this.name)
@@ -161,7 +163,7 @@ export default {
       }
     },
     updateSharing: function(name, value) {
-      this.scope = value;
+      this.scope = value
     }
   }
 }
