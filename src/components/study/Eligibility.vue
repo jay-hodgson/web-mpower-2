@@ -32,7 +32,7 @@
             </select>
             <div class="mdc-select__bottom-line"></div>
           </div>
-          <span>a smart phone.</span>
+          <span>smart phone.</span>
         </div>
       </div>
     </section>

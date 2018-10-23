@@ -124,9 +124,9 @@ export default {
   computed: {
     canSubmit: function() {
       if (!this.showSharing) {
-        return this.name.length === 0;
+        return this.name.length === 0
       } else {
-        return this.scope === '';
+        return this.scope === ''
       }
     },
     isEmbedded: function() {
@@ -140,20 +140,20 @@ export default {
     },
     advance: function() {
       if (!this.showSharing) {
-        this.showSharing = true;
-        return;
+        this.showSharing = true
+        return
       }
-      this.accept();
+      this.accept()
     },
     accept: function() {
       if (this.isEmbedded) {
-        var obj = {'name': this.name, 'scope': this.scope};
+        var obj = {'name': this.name, 'scope': this.scope}
         if (window.consentsToResearch) {
           window.consentsToResearch(obj)
         } else if (window.document.consentsToResearch) {
           window.document.consentsToResearch(obj)
         } else if (window.AndroidJsBridge.consentsToResearch) {
-          window.AndroidJsBridge.consentsToResearch(JSON.stringify(obj));
+          window.AndroidJsBridge.consentsToResearch(JSON.stringify(obj))
         }
       } else {
         this.$store.setName(this.name)
@@ -163,7 +163,7 @@ export default {
       }
     },
     updateSharing: function(name, value) {
-      this.scope = value;
+      this.scope = value
     }
   }
 }
