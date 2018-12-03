@@ -88,10 +88,10 @@
           <div class="slider-element slider-offscreen animated" :class="{'slideInRight': showSharing}">
             <div class="inner" style="padding-bottom:0">
               <h1>Data sharing option (you can change this at any time in the app setting)</h1>
-              <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners">
+              <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers">
                 <span style="font-size:.8rem">I want to share my data with other researchers for future research.</span>
               </RadioButton>
-              <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers">
+              <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners">
                 <span style="font-size:.8rem">I want to share my data for this study only.</span>
               </RadioButton>
             </div>
@@ -130,7 +130,8 @@ export default {
       }
     },
     isEmbedded: function() {
-      return !!(window.consentsToResearch || window.document.consentsToResearch || window.AndroidJsBridge.consentsToResearch);
+      return !!(window.consentsToResearch || window.document.consentsToResearch || 
+        (window.AndroidJsBridge && window.AndroidJsBridge.consentsToResearch));
     }
   },
   methods: {

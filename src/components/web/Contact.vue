@@ -19,7 +19,7 @@
         <p>If you have any questions at any time before, during, or after the study, you can contact:</p>
 
         <p><b>Scientific team</b><br>
-        Lara Mangravite, PhD leads mPower. You can email Dr. Mangravite at <a href="mailto:PDApp@sagebionetworks.org">PDApp@sagebionetworks.org</a> or call her at 1-844-822-4708 or 1 206-667-2129.</p>
+        Lara Mangravite, PhD leads mPower. You can email Dr. Mangravite at <a href="mailto:PDApp@sagebionetworks.org">PDApp@sagebionetworks.org</a> or call her at 1-833-SAGEBIO (3246).</p>
 
         <p><b>Privacy</b><br>
         For questions, comments or requests regarding the privacy policy or our processing of your information, please contact: <a href="mailto:privacypolicy@sagebionetworks.org">privacypolicy@sagebionetworks.org</a>.
