@@ -2,7 +2,7 @@
   <div class="docked-layout">
     <MainNav title="Eligibility" :back-to-overview="true" :show-help="true" :show-steps="true"/>
     <section>
-      <div class="container">
+      <form class="container" onsubmit="return false" @keypress="advanceOnTab">
         <h3>Let’s find out if you’re eligible</h3>
 
         <div class="question" v-if="step >= 1">
@@ -34,7 +34,7 @@
           </div>
           <span>smart phone.</span>
         </div>
-      </div>
+      </form>
     </section>
     <Footer v-freeze :step="step" :total-steps="totalSteps" :next-enabled="nextEnabled" 
       @back="doBack" @next="doNext" @submit="doSubmit" :do-not-advance-on-submit="true"/>
@@ -79,6 +79,11 @@ export default {
     advanceTo(thisStep) {
       if (thisStep > this.step) {
         this.step = thisStep;
+      }
+    },
+    advanceOnTab(event) {
+      if (event.keyCode === 13) {
+        this.step += 1;
       }
     },
     doBack() {

@@ -1,11 +1,15 @@
 <template>
   <nav>
     <div class="left">
+      <router-link v-show="backToSign" to="/study/sign">
+        <BridgeImage style="width: .5vw" src="/static/images/Back.svg"/>
+        {{title}}
+      </router-link>
       <router-link v-show="backToOverview" to="/study/overview">
         <BridgeImage style="width: .5vw" src="/static/images/Back.svg"/>
         {{title}}
       </router-link>
-      <span v-if="!backToOverview && !showBack">{{title}}</span>
+      <span v-if="!backToSign && !backToOverview && !showBack">{{title}}</span>
       <a @click="historyBack" v-if="showBack">
         <BridgeImage style="width: .5vw" src="/static/images/Back.svg"/>
         {{title}}
@@ -45,6 +49,10 @@ export default {
       default: false
     },
     showHelp: {
+      type: Boolean,
+      default: false
+    },
+    backToSign: {
       type: Boolean,
       default: false
     },

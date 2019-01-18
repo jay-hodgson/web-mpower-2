@@ -32,7 +32,8 @@
         <section>
           <div class="research container">
             <object data="/static/images/Step3.svg" type="image/svg+xml"></object>
-            <div>My data will be used for research as described in the study information (<a href="https://parkinsonmpower.org/consent">https://<wbr>parkinsonmpower.<wbr>org/<wbr>consent</a>).</div>
+            <div>My data will be used for research as described in the study information 
+              (<router-link to="/study/consent-review">https://<wbr>parkinsonmpower.<wbr>org/<wbr>consent</router-link>).</div>
           </div>
         </section>
         <section>
@@ -73,7 +74,7 @@
         </section>
       </div>
       <footer>
-        <div class="slider">
+        <form class="slider" onsubmit="return false">
           <div class="slider-element animated" :class="{'slideOutLeft': showSharing}">
             <div class="inner">
               <h1>Please review and sign below if you want to join.</h1>
@@ -88,10 +89,10 @@
           <div class="slider-element slider-offscreen animated" :class="{'slideInRight': showSharing}">
             <div class="inner" style="padding-bottom:0">
               <h1>Data sharing option (you can change this at any time in the app setting)</h1>
-              <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners">
+              <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers">
                 <span style="font-size:.8rem">I want to share my data with other researchers for future research.</span>
               </RadioButton>
-              <RadioButton @change="updateSharing"  name="sharing" value="all_qualified_researchers">
+              <RadioButton @change="updateSharing"  name="sharing" value="sponsors_and_partners">
                 <span style="font-size:.8rem">I want to share my data for this study only.</span>
               </RadioButton>
             </div>
@@ -99,7 +100,7 @@
               <button class="join-button" :disabled="canSubmit" @click="advance">Accept</button>
             </div>
           </div>
-        </div>
+        </form>
       </footer>
     </section>
   </div>
@@ -130,7 +131,8 @@ export default {
       }
     },
     isEmbedded: function() {
-      return !!(window.consentsToResearch || window.document.consentsToResearch || window.AndroidJsBridge.consentsToResearch);
+      return !!(window.consentsToResearch || window.document.consentsToResearch || 
+        (window.AndroidJsBridge && window.AndroidJsBridge.consentsToResearch));
     }
   },
   methods: {

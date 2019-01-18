@@ -10,7 +10,7 @@
           <a class="join-button" href="mailto:PDApp@sagebionetworks.org">Send us a message</a>
         </p>
 
-        <p>This study is sponsored by Sage Bionetworks, a 501(c)(3) nonprofit research organization located at 1100 Fairview Avenue North, Seattle, WA, 98109.</p>
+        <p>This study is sponsored by Sage Bionetworks, a 501(c)(3) nonprofit research organization located at 2901 3rd Ave, Seattle, WA 98121.</p>
 
         <p>mPower is a research study. The mPower app is a tool for research. The mPower study and the mPower app do not provide medical advice, diagnosis, or treatment of any kind. If you have questions about your health, talk to your healthcare team. Do not use the information provided in the mPower app, email correspondence, or website in place of advice from your healthcare team.</p>
 
@@ -19,7 +19,7 @@
         <p>If you have any questions at any time before, during, or after the study, you can contact:</p>
 
         <p><b>Scientific team</b><br>
-        Lara Mangravite, PhD leads mPower. You can email Dr. Mangravite at <a href="mailto:PDApp@sagebionetworks.org">PDApp@sagebionetworks.org</a> or call her at 1-844-822-4708 or 1 206-667-2129.</p>
+        Lara Mangravite, PhD leads mPower. You can email Dr. Mangravite at <a href="mailto:PDApp@sagebionetworks.org">PDApp@sagebionetworks.org</a> or call her at 1-833-SAGEBIO (3246).</p>
 
         <p><b>Privacy</b><br>
         For questions, comments or requests regarding the privacy policy or our processing of your information, please contact: <a href="mailto:privacypolicy@sagebionetworks.org">privacypolicy@sagebionetworks.org</a>.
