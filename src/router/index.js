@@ -8,6 +8,7 @@ const About = () => import(/* webpackChunkName: "primary" */ '@/components/web/A
 const Team = () => import(/* webpackChunkName: "primary" */ '@/components/web/Team')
 const Consent = () => import(/* webpackChunkName: "primary" */ '@/components/web/Consent')
 const Uninstalled = () => import(/* webpackChunkName: "primary" */ '@/components/web/Uninstalled')
+const SignInHelp = () => import(/* webpackChunkName: "primary" */ '@/components/web/SignInHelp')
 
 const PrivacyPolicy = () => import(/* webpackChunkName: "secondary" */ '@/components/web/PrivacyPolicy')
 const TermsOfService = () => import(/* webpackChunkName: "secondary" */ '@/components/web/TermsOfService')
@@ -15,17 +16,19 @@ const FAQ = () => import(/* webpackChunkName: "secondary" */ '@/components/web/F
 const Contact = () => import(/* webpackChunkName: "secondary" */ '@/components/web/Contact')
 
 /* I love Vue router. Lazy loading the onboarding screens is this simple. */
+const StudyIntroduction = () => import(/* webpackChunkName: "study" */ '@/components/study/Introduction')
 const StudyOverview = () => import(/* webpackChunkName: "study" */ '@/components/study/Overview')
 const StudyEligibility = () => import(/* webpackChunkName: "study" */ '@/components/study/Eligibility')
 const StudyConsent = () => import(/* webpackChunkName: "study" */ '@/components/study/Consent')
 const StudyQuiz = () => import(/* webpackChunkName: "study" */ '@/components/study/Quiz')
 const StudySign = () => import(/* webpackChunkName: "study" */ '@/components/study/Sign')
 const StudyRegistration = () => import(/* webpackChunkName: "study" */ '@/components/study/Registration')
-const StudyHelp = () => import(/* webpackChunkName: "study" */ '@/components/study/StudyHelp')
-const StudyRetakeQuiz = () => import(/* webpackChunkName: "study" */ '@/components/study/StudyRetakeQuiz')
-const StudyIneligible = () => import(/* webpackChunkName: "study" */ '@/components/study/Ineligible')
-const StudyDone = () => import(/* webpackChunkName: "study" */ '@/components/study/Done')
-const StudyIntroduction = () => import(/* webpackChunkName: "study" */ '@/components/study/Introduction')
+
+const StudyHelp = () => import(/* webpackChunkName: "tertiary" */ '@/components/study/StudyHelp')
+const StudyRetakeQuiz = () => import(/* webpackChunkName: "tertiary" */ '@/components/study/StudyRetakeQuiz')
+const StudyIneligible = () => import(/* webpackChunkName: "tertiary" */ '@/components/study/Ineligible')
+const StudyDone = () => import(/* webpackChunkName: "tertiary" */ '@/components/study/Done')
+const StudyConsentReview = () => import(/* webpackChunkName: "tertiary" */ '@/components/study/ConsentReview')
 
 import BridgeImage from '@/components/BridgeImage';
 
@@ -43,6 +46,7 @@ export default new Router({
     {path: '/about', component: About},
     {path: '/team', component: Team},
     {path: '/consent', component: Consent},
+    {path: '/sage-mpower-2/phoneSignIn/:signInToken(\\d{3}-?\\d{3})', component: SignInHelp},
     {path: '/sage-mpower-2/*', component: Uninstalled},
 
     // Secondary pages
@@ -63,6 +67,7 @@ export default new Router({
     {path: '/study/ineligible', component: StudyIneligible},
     {path: '/study/done', component: StudyDone},
     
+    {path: '/study/consent-review', component: StudyConsentReview},
     {path: '/study/help', component: StudyHelp}
   ]
 })

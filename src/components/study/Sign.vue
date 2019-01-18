@@ -32,7 +32,8 @@
         <section>
           <div class="research container">
             <object data="/static/images/Step3.svg" type="image/svg+xml"></object>
-            <div>My data will be used for research as described in the study information (<a href="https://parkinsonmpower.org/consent">https://<wbr>parkinsonmpower.<wbr>org/<wbr>consent</a>).</div>
+            <div>My data will be used for research as described in the study information 
+              (<router-link to="/study/consent-review">https://<wbr>parkinsonmpower.<wbr>org/<wbr>consent</router-link>).</div>
           </div>
         </section>
         <section>
@@ -73,7 +74,7 @@
         </section>
       </div>
       <footer>
-        <div class="slider">
+        <form class="slider" onsubmit="return false">
           <div class="slider-element animated" :class="{'slideOutLeft': showSharing}">
             <div class="inner">
               <h1>Please review and sign below if you want to join.</h1>
@@ -99,7 +100,7 @@
               <button class="join-button" :disabled="canSubmit" @click="advance">Accept</button>
             </div>
           </div>
-        </div>
+        </form>
       </footer>
     </section>
   </div>

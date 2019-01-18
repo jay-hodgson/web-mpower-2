@@ -10,7 +10,7 @@
           <a class="join-button" href="mailto:PDApp@sagebionetworks.org">Send us a message</a>
         </p>
 
-        <p>This study is sponsored by Sage Bionetworks, a 501(c)(3) nonprofit research organization located at 1100 Fairview Avenue North, Seattle, WA, 98109.</p>
+        <p>This study is sponsored by Sage Bionetworks, a 501(c)(3) nonprofit research organization located at 2901 3rd Ave, Seattle, WA 98121.</p>
 
         <p>mPower is a research study. The mPower app is a tool for research. The mPower study and the mPower app do not provide medical advice, diagnosis, or treatment of any kind. If you have questions about your health, talk to your healthcare team. Do not use the information provided in the mPower app, email correspondence, or website in place of advice from your healthcare team.</p>
 
