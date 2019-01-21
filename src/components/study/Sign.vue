@@ -385,5 +385,4 @@ footer {
   -webkit-animation-name: slideInRight;
   animation-name: slideInRight;
 }
-
 </style>
