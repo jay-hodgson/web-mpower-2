@@ -1,99 +1,97 @@
 <template>
-  <div>
+  <div class="docked-layout">
     <MainNav/>
-    <div class="container">
+    <section class="smooth-scroller">
       <h2>Who is involved?</h2>
-      <p>A little bit of text about who these people are.A little bit of text about who these people are. A little bit of text about who these people are.</p>
-
-      <div class="team-members">
-        <div class="member">
-            <div class="portrait" style="background-image: url(https://i1.sndcdn.com/artworks-000034202197-02d7d2-t500x500.jpg)"></div>
-            <div class="name">Name</div>
-        </div>
-        <div class="member">
-            <div class="portrait" style="background-image: url(http://somosruidosa.com/wp-content/uploads/2017/05/Le-Butcherettes.png)"></div>
-            <div class="name">Name</div>
-        </div>
-        <div class="member">
-            <div class="portrait" style="background-image: url(https://i1.sndcdn.com/artworks-000034202197-02d7d2-t500x500.jpg)"></div>
-            <div class="name">Name</div>
-        </div>
-        <div class="member">
-            <div class="portrait" style="background-image: url(http://somosruidosa.com/wp-content/uploads/2017/05/Le-Butcherettes.png)"></div>
-            <div class="name">Name</div>
-        </div>
-        <div class="member">
-            <div class="portrait" style="background-image: url(https://i1.sndcdn.com/artworks-000034202197-02d7d2-t500x500.jpg)"></div>
-            <div class="name">Name</div>
-        </div>
-        <div class="member">
-            <div class="portrait" style="background-image: url(http://somosruidosa.com/wp-content/uploads/2017/05/Le-Butcherettes.png)"></div>
-            <div class="name">Name</div>
-        </div>
-      </div>
-    </div>
-
-    <section>
       <div class="image container">
         <div class="image">
-          <img src="/static/images/scientists-icon.png">
+          <div class="portrait" style="background-image: url(/static/images/lara-mangravite.jpg); 
+            background-size: 100%; background-repeat: no-repeat; background-position: 0px -20px"></div>
+          <div class="name">Lara</div>
         </div>
         <div class="text">
-          <h3>Scientists make discoveries</h3>
-          <p>When you use the app you contribute to research on MS. By combining the information from many people who are using the app, researchers expect to find patterns. The information you provide through the elevateMS app gets encrypted on the phone to protect your privacy. As you participate over time, you help create a powerful dataset that may lead to scientific breakthrough and to new ways to help people with MS improve their well being. You do not need to have MS to participate. This study will last about one year. We’d like you to participate for three consecutive months or longer if you can.</p>
+          <p>Lara Mangravite, PhD is President of Sage Bionetworks, a Seattle-based nonprofit research organization that builds open systems to advance biomedical science. She uses technology and policy to improve our understanding of the impact of disease on people during their daily life outside of the research clinic. Dr. Mangravite obtained a BS in Physics from the Pennsylvania State University and a PhD in Pharmaceutical Chemistry from the University of California, San Francisco.</p>
         </div>
       </div>
-    </section>
-
-    <section>
-      <div class="image container">
+      <div class="last image container">
         <div class="image">
-          <img src="/static/images/partner-icon.png">
+          <div class="portrait" style="background-image: url(/static/images/larsson-omberg.png);
+            background-size: 100%; background-repeat: no-repeat"></div>
+          <div class="name">Larsson</div>
         </div>
         <div class="text">
-          <h3>Interested in becoming a partner?</h3>
-          <p>Join the Synapse community. Some text about how you will get the data.</p>
-
-          <p><a href="mailto:" class="join-button">Join Study Team</a></p>
+          <p>Being driven by understanding the diversity of which diseases express themselves and the individual experiences through data, Dr. Omberg has established a research agenda that focuses on two areas—using remote sensors and mobile phones to measure disease; and collaborative genomic research.  As the head of the Systems Biology group at Sage Bionetworks  he has been involved in over two dozen mobile health studies ranging from Chronic Anemia to Multiple Sclerosis.  He currently leads several efforts to study Parkinson’s disease using mobile phones and wearables.</p>
         </div>
       </div>
-    </section>
 
-    <Footer/>
+      <section></section>
+      <section>
+        <div class="image container">
+          <div class="image">
+            <BridgeImage src="/static/images/mpower%20data%20and%20analysis.svg"/>
+          </div>
+          <div class="text">
+            <h3>mPower Data and Analysis</h3>
+            <p>It is the hope of Sage Bionetworks that by participants making their data available to qualified researchers worldwide, that we can seed a community who will work together and share insights into Parkinson symptoms and modulators. Synapse Certified Users with verified profiles may request access to the mPower data resource for research to benefit human health. </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image container">
+          <div class="image">
+            <BridgeImage class="hidden-image" src="/static/images/mpower%20data%20and%20analysis.svg"/>
+          </div>
+          <div class="text">
+            <h3>Learn from the research community</h3>
+            <p>There are now over 150 approved projects leveraging the data shared broadly by mPower study participants. Take a look at what others are proposing to do, and reach out to us or any of the researchers who you may be interested in working with!</p>
+
+            <p><a href="https://synapse.org/" class="join-button">Join Synapse</a></p>
+          </div>
+        </div>
+      </section>
+      <Footer/>
+    </section>
   </div>
 </template>
 
 <script>
 import MainNav from './MainNav.vue';
 import Footer from './Footer.vue';
+import BridgeImage from '../BridgeImage.vue';
 
 export default {
   name: 'Team',
-  components: { MainNav, Footer },
+  components: { MainNav, Footer, BridgeImage },
 }
 </script>
 
 <style scoped>
-.team-members {
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.image.container .image {
+  align-self: flex-start;
+  padding-top: .5rem;
 }
-.member {
-  width: 10rem;
-  margin: 0 auto 2rem auto;
-}
+  .last {
+    margin-bottom: 1rem;
+  }
   .portrait {
-    width: 8rem;
-    height: 8rem;
+    width: 9rem;
+    height: 9rem;
     margin: 0 auto;
     border-radius: 50%;
     background-color: #e5e5e5;
-    background-size: contain;
   }
   .name {
+    margin-top: .25rem;
     text-align: center;
-    font-size: .9rem;
+    font-weight: bold;
   }
+.hidden-image {
+   visibility: hidden;
+}
+@media screen and (max-width: 50em) {
+  .hidden-image {
+    display: none;
+  }
+}
 </style>

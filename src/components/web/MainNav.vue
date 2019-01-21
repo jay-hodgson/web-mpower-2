@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="left">
-      <h1>mPower</h1>
+      <BridgeImage src="/static/images/logo.svg"/>
     </div>
     <div class="center">
       <router-link to="/your-story">Your Story</router-link>
@@ -9,7 +9,7 @@
       <router-link to="/team">Team</router-link>
     </div>
     <div class="right">
-      <router-link class="join-button" to="/study/overview?start=true">Join</router-link>
+      <router-link class="join-button" to="/study/intro">Join</router-link>
     </div>
   </nav>
 </template>
@@ -23,9 +23,10 @@ export default {
 <style scoped>
 nav {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-around;
   box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
+  margin-bottom: 2px;
 }
   nav > div {
     padding: 0.3rem;
@@ -33,6 +34,10 @@ nav {
   .left {
     margin-left: 3vw;
   }
+    .left img {
+       width: 12vw;
+       transform: translateY(2px);
+    }
   .center {
     flex: 1;
     white-space: nowrap;
@@ -44,16 +49,21 @@ nav {
     margin-right: 3vw;
   }
 a.router-link-active {
-  border-bottom: 2px solid #ffda8a;
-  font-weight: bold;
+  border-bottom: 5px solid #B2A5D1;
 }
 @media screen and (max-width: 30em) {
+  a.router-link-active {
+    transform: translateY(1px);
+    border-bottom: 2px solid #B2A5D1;
+  }
   nav {
     display: block;
   }
-  .left {
-    text-align: center;
-  }
+    .left img {
+      display: block;
+      width: 30vw;
+      margin: 0 auto;
+    }
   .center {
     display: flex;
     margin-left: 3vw;

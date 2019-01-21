@@ -1,25 +1,18 @@
 <template>
   <div>
-    <nav>
+    <nav class="basic">
       <div>Eligibility</div>
-      <a href="#/study/help">Need help?</a>
+      <router-link to="/study/help">Need help?</router-link>
     </nav>    
     <div class="container">
       <div class="intro">
         <h2>Sorry, you are not eligible</h2>
         <p>You must be at least 18, live in the US, and be comfortable using a smartphone to participate. </p>
-        <p>You can still help by telling others about the study</p>
-      </div>
-
-      <div class="share-icons">
-        <a href=""><img src="/static/images/Facebook-Circle.svg"></a>
-        <a href=""><img src="/static/images/Twitter-Circle.svg"></a>
-        <a href=""><img src="/static/images/Sms-Circle.svg"></a>
-        <a href=""><img src="/static/images/Email-Circle.svg"></a>
+        <!--<p>You can still help by telling others about the study</p>-->
       </div>
 
       <div class="back-button">
-        <a href="/">Go back</a>
+        <router-link to="/">Go back</router-link>
       </div>
     </div>
   </div>
@@ -35,34 +28,6 @@ export default {
 </script>
 
 <style scoped>
-nav {
-  color: white;
-  background-image: linear-gradient(
-    86deg,
-    #473b7b,
-    #3584a7 76%,
-    hsl(173, 64%, 51%)
-  );
-  background-blend-mode: multiply;
-
-  display: flex;
-  overflow: hidden;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 1rem;
-}
-  nav a {
-    margin: .5rem 2rem;
-    background-color: white;
-    padding: .4rem 1rem;
-    border-radius: 1rem;
-    font-size: .7rem;
-  }
-nav > div {
-  height: 2.2rem;
-  line-height: 2.2rem;
-  padding: 0.25rem 1rem;
-}
 .intro {
   padding: 0 0 1.5rem 0;
 }
@@ -97,9 +62,10 @@ nav > div {
     filter: brightness(103%);
   }
 .back-button {
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-bottom: 3.5rem;
   text-align: center;
+  font-weight: bold;
 }
   .back-button a {
     background-color: white;

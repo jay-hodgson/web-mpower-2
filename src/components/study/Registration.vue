@@ -1,18 +1,19 @@
 <template>
   <div>
-    <MainNav title="Install The App"/>
+    <MainNav title="Install The App" :back-to-overview="true" :show-help="true" :show-steps="true"/>
     <div class="container">
-      <p>Enter your mobile phone number and select your phone type to receive your download link for the app:</p>
+      <p>Thank you! Please enter your mobile phone number <!--and select your phone type--> to receive your download link for the mPower app:</p>
 
-      <p style="text-align: center">
-        <mdc-textfield ref="phoneField" v-model="phone" label="(###) ###-####"/>
+      <p style="text-align: center; margin-top: 2rem">
+        <mdc-textfield ref="phoneField" v-model="phone" label="Enter phone number" type="tel" pattern="[0-9]*"/>
       </p>
+      <p v-if="showAndroid" style="text-align: center; margin-top: 3rem">Pick one depending on your mobile phone:</p>
       <div class="buttons">
         <a @click="apple">
-          <img src="/static/images/AppStoreButton.gif" :style="{opacity: hasNumber}">
+          <BridgeImage src="/static/images/App_Store_Badge.svg" :style="{opacity: hasNumber}"/>
         </a>
-        <a @click="google">
-          <img src="/static/images/PlayStoreButton.gif" :style="{opacity: hasNumber}">
+        <a @click="google" v-if="showAndroid">
+          <BridgeImage src="/static/images/Android_Google_Play.svg" :style="{opacity: hasNumber}"/>
         </a>
       </div>
     </div>
@@ -30,12 +31,10 @@ export default {
   components: { MainNav },
   data() {
     return {
-      phone: ''
+      phone: '',
+      showAndroid: window.queryParams.android === "true"
     }
-  }/*,
-  beforeMount() {
-    this.$store.setCurrentStep(Store.SIGN_DONE)
-  }*/,
+  },
   mounted() {
     var input = this.$refs.phoneField.$refs.input
     input.type = "tel"
@@ -47,24 +46,26 @@ export default {
     }
   },
   methods: {
-    apple: function() {
-      console.log(this);
+    apple: function(event) {
       if (this.hasNumber === 1) {
+        event.target.style.opacity = .6;
         this.post('iPhone OS')
       }
     },
-    google: function() {
+    google: function(event) {
       if (this.hasNumber === 1) {
+        event.target.style.opacity = .6;
         this.post('Android')
       }
     },
     post: function(osName) {
       var snackbar = this.$refs.snackbar
-      
+      var phoneFormatted = this.phone.replace(/[^\d]/g,'')
+
       this.$store.setPhone(this.phone)
       axios.post('https://webservices.sagebridge.org/v3/itp', {
         studyId: 'sage-mpower-2',
-        phone: {number: this.phone, regionCode: 'US'},
+        phone: {number: phoneFormatted, regionCode: 'US'},
         subpopGuid: 'sage-mpower-2',
         osName: osName,
         consentSignature: {
@@ -90,15 +91,12 @@ export default {
   padding-top: 5rem;
 }
 .buttons {
-  width: 15em;
-  margin: 0 auto;
+  margin-top: 1rem;
   display: flex;
   justify-content: space-around;
 }
-.buttons a {
-  cursor: pointer;
-}
 .buttons img {
-  width: 8rem;
+  width: calc(6rem + 2vw);
+  cursor: pointer;
 }
 </style>

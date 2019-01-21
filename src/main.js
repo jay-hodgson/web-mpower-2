@@ -7,6 +7,15 @@ import Store from './components/store'
 
 var store = new Store();
 
+window.queryParams = {};
+if (document.location.search) {
+    document.location.search.substring(1).split("&").forEach(function(pair) {
+        let fragments = pair.split("=");
+        window.queryParams[decodeURIComponent(fragments[0])] = decodeURIComponent(fragments[1]);
+    });
+}
+console.debug("queryParams", queryParams);
+
 // polyfill for smooth scrolling behavior
 window.__forceSmoothScrollPolyfill__ = true;
 require('smoothscroll-polyfill').polyfill();
@@ -25,20 +34,39 @@ Vue.mixin( {
   }
 })
 
+Vue.directive('freeze', {
+  inserted: function (el) {
+    el.addEventListener('touchend', (e) => {
+      e.preventDefault()
+      if (e.target.nodeName === "A" || e.target.nodeName === "BUTTON") {
+        e.target.click()
+      }
+    })
+  }
+})
+
 router.beforeEach((to, from, next) => {
-  if (to.meta.step === undefined) {
-    next()
-  } else if (to.meta.step === store.getCurrentStep()) {
-    next()
+  if (from.path === '/study/overview') {
+    if (to.meta.step === undefined || to.meta.step === store.getCurrentStep()) {
+      next()
+    }
+  } else {
+    next();
   }
 });
+router.afterEach(((to, from) => {
+  ga('set', 'page', to.path);
+  ga('send', 'pageview');
+}));
 
-const SCREENS_W_BGS = ["/study/overview", "/study/retake-quiz", "/study/ineligible", "/study/done"];
+const SCREENS_W_BGS = ["/study/intro", "/study/overview", "/study/retake-quiz", 
+  "/study/ineligible", "/study/done"]
 
 router.beforeEach((to, from, next) => {
-  document.documentElement.classList.toggle("consent", 
-    SCREENS_W_BGS.some((segment) => { return to.path === segment }))
-  next();
+  document.documentElement.classList.toggle("consent", SCREENS_W_BGS.some((segment) => { 
+    return to.path === segment 
+  }))
+  next()
 })
 
 /* eslint-disable no-new */
