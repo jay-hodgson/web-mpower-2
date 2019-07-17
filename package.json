@@ -19,7 +19,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-lodash": "^2.5.0",
     "eslint-plugin-node": "^5.2.1",
-    "fast-deep-equal": "^1.0.0",
+    "fast-deep-equal": "^2.0.1",
     "has-flag": "^2.0.0",
     "json-schema-traverse": "^0.3.1",
     "locate-path": "^2.0.0",
