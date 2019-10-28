@@ -11,6 +11,7 @@ const Uninstalled = () => import(/* webpackChunkName: "primary" */ '@/components
 const SignInHelp = () => import(/* webpackChunkName: "primary" */ '@/components/web/SignInHelp')
 
 const PrivacyPolicy = () => import(/* webpackChunkName: "secondary" */ '@/components/web/PrivacyPolicy')
+const EmbeddedPrivacyPolicy = () => import(/* webpackChunkName: "secondary" */ '@/components/web/EmbeddedPrivacyPolicy')
 const TermsOfService = () => import(/* webpackChunkName: "secondary" */ '@/components/web/TermsOfService')
 const FAQ = () => import(/* webpackChunkName: "secondary" */ '@/components/web/FAQ')
 const Contact = () => import(/* webpackChunkName: "secondary" */ '@/components/web/Contact')
@@ -51,6 +52,7 @@ export default new Router({
 
     // Secondary pages
     {path: '/privacy-policy', component: PrivacyPolicy},
+    {path: '/embedded-privacy-policy', component: EmbeddedPrivacyPolicy},
     {path: '/license', component: TermsOfService},
     {path: '/faq', component: FAQ},
     {path: '/contact', component: Contact},
