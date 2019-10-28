@@ -7,8 +7,7 @@
     <div class="container">
       <div class="intro">
         <h2>Sorry, you are not eligible</h2>
-        <p>You must be at least 18, live in the US, and be comfortable using a smartphone to participate. </p>
-        <!--<p>You can still help by telling others about the study</p>-->
+        <p>You must be at least 18, live in the US or Canada, and be comfortable using a smartphone to participate. </p>
       </div>
 
       <div class="back-button">
