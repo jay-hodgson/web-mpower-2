@@ -46,7 +46,7 @@ import MainNav from './MainNav.vue'
 import Footer from './Footer.vue'
 import Store from '../store';
 
-const STATES = ['Select', "in the United States", "outside of the United States"]
+const STATES = ['Select', "in the United States", "in Canada", "outside of the United States and Canada"]
 const ANDROID_FORM_LINK = 'https://docs.google.com/forms/d/e/1FAIpQLSfq73gWXNqufhDQpkKZv20RjDLAHTQiSmdJVHISVd0Hg-wQ-Q/viewform?usp=sf_link';
 
 export default {
@@ -97,7 +97,7 @@ export default {
           window.location = ANDROID_FORM_LINK;
           return;
       }
-      var validResidence = (this.residence === "in the United States")
+      var validResidence = (this.residence === "in the United States" || this.residence === "in Canada");
       var validComfort = (this.comfort !== 'do not have a')
       var validAge = this.age >= 18;
 
