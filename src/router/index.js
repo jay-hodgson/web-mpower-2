@@ -10,7 +10,6 @@ const Consent = () => import(/* webpackChunkName: "primary" */ '@/components/web
 const Uninstalled = () => import(/* webpackChunkName: "primary" */ '@/components/web/Uninstalled')
 const SignInHelp = () => import(/* webpackChunkName: "primary" */ '@/components/web/SignInHelp')
 
-const PrivacyPolicyContent = () => import(/* webpackChunkName: "secondary" */ '@/components/web/PrivacyPolicyContent')
 const PrivacyPolicy = () => import(/* webpackChunkName: "secondary" */ '@/components/web/PrivacyPolicy')
 const EmbeddedPrivacyPolicy = () => import(/* webpackChunkName: "secondary" */ '@/components/web/EmbeddedPrivacyPolicy')
 const TermsOfService = () => import(/* webpackChunkName: "secondary" */ '@/components/web/TermsOfService')

@@ -12,7 +12,7 @@
 import PrivacyPolicyContent from './PrivacyPolicyContent.vue';
 
 export default {
-  name: 'PrivacyPolicy',
+  name: 'EmbeddedPrivacyPolicy',
   components: { PrivacyPolicyContent },
 }
 </script>
