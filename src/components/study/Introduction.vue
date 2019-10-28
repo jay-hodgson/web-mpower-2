@@ -1,8 +1,6 @@
 <template>
   <div class="docked-layout">
-    <nav class="basic">
-      <div>About mPower</div>
-    </nav>
+    <MainNav title="About mPower" :show-back="true"/>
     <section v-freeze>
       <div class="container">
         <div class="screen" v-show="step === 1">
