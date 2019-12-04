@@ -134,7 +134,7 @@
     <div class="not-medical">
       <h3>Not Medical Care</h3>
       
-      <p>mPower Progression is a research study. The mPower app is not a diagnostic tool. It shouldn’t be used for medical care, diagnosis, or treatment.</p>
+      <p>mPower Progression is a research study. The mPower app is not a diagnostic tool. It shouldn’t be used for medical care, diagnosis, or treatment. Your alternative is to not participate.</p>
       
       <p>The sensor data collected through the app are not yet validated as measurements of PD symptoms. We are analyzing this data to see how accurate and reliable it is. For diagnosis or treatment consult with a medical professional.</p>
       
@@ -176,6 +176,8 @@
     <div class="contact">
       <h3>Contacts</h3>
       
+      <p>Your personal information will be used to confirm your eligibility for this study, to assess the results of this study, and to meet legal and regulatory requirements.</p>
+
       <p>We may reach out to you. We might want to alert you to research events, like webinars. We might want to tell you about other research opportunities.</p>
       
       <p>You can still participate in mPower even if you opt out of these follow-up notifications.</p>

@@ -51,7 +51,7 @@
         <section>
           <div class="unpaid container">
             <object data="/static/images/Step6.svg" type="image/svg+xml"></object>
-            <div>mPower Progression Study is a research study. The mPower app shouldn’t be used for diagnosis or treatment decision.</div>
+            <div>mPower Progression Study is a research study. The mPower app shouldn’t be used for diagnosis or treatment decisions.</div>
           </div>
         </section>
         <section>
