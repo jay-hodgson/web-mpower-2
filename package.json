@@ -20,7 +20,6 @@
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
-    "@intlify/vue-i18n-loader": "^1.0.0",
     "@kazupon/vue-i18n-loader": "^0.5.0",
     "@material/snackbar": "^0.29.0",
     "ajv": "^6.0.0",
