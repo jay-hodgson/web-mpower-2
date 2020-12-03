@@ -5,7 +5,7 @@
       <section></section>
       <section>
         <div class="container">
-          <h2>About the study</h2>
+          <h2>{{ $t('about-screen.title') }}</h2>
 
           <p>mPower is a free, 2 year mobile research study developed by Sage Bionetworks (nonprofit), with the goal of understanding the progression of Parkinson’s Disease that appears to be unique to individuals. </p>
   
