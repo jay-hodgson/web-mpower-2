@@ -3,6 +3,34 @@ import VueI18n from 'vue-i18n'
 
 Vue.use(VueI18n)
 
+function getBrowserLocales(options = {}) {
+  const defaultOptions = {
+    languageCodeOnly: false,
+  };
+
+  const opt = {
+    ...defaultOptions,
+    ...options,
+  };
+
+  const browserLocales =
+    navigator.languages === undefined
+      ? [navigator.language]
+      : navigator.languages;
+
+  if (!browserLocales) {
+    return undefined;
+  }
+
+  return browserLocales.map(locale => {
+    const trimmedLocale = locale.trim();
+
+    return opt.languageCodeOnly
+      ? trimmedLocale.split(/-|_/)[0]
+      : trimmedLocale;
+  })[0]  
+}
+
 function loadLocaleMessages () {
   const locales = require.context('./locales', true, /[A-Za-z0-9-_,\s]+\.json$/i)
   const messages = {}
@@ -17,7 +45,7 @@ function loadLocaleMessages () {
 }
 
 export default new VueI18n({
-  locale: process.env.VUE_APP_I18N_LOCALE || 'en',
-  fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
+  locale: getBrowserLocales({languageCodeOnly: true}) || 'en',
+  fallbackLocale: 'en',
   messages: loadLocaleMessages()
 })
