@@ -5,10 +5,11 @@
   "author": "Alx Dark <alx.dark@sagebase.org>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
     "build": "node build/build.js",
-    "clean": "rm -rf dist/"
+    "clean": "rm -rf dist/",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
+    "start": "npm run dev"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
