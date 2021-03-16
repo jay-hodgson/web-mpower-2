@@ -8,7 +8,7 @@
         <div class="question" v-if="step >= 1">
           <span>{{ $t('eligibility-screen.q1.i-am') }} </span>
           <mdc-textfield @blur="advanceTo(2)" v-model="age" type="tel" label="Age"/>
-          <span>{{ $t('eligibility-screen.q1.years-old') }}.</span>
+          <span>{{ $t('eligibility-screen.q1.years-old') }}</span>
         </div>
 
         <div class="question" v-if="step >= 2">
@@ -32,7 +32,7 @@
             </select>
             <div class="mdc-select__bottom-line"></div>
           </div>
-          <span>{{ $t('eligibility-screen.q3.smart-phone') }}.</span>
+          <span>{{ $t('eligibility-screen.q3.smart-phone') }}</span>
         </div>
       </form>
     </section>

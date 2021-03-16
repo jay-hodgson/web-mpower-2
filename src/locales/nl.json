@@ -3,7 +3,7 @@
     "title": "Laten we kijken of u geschikt bent",
     "q1": {
       "i-am": "Ik ben",
-      "years-old": "jaar oud"
+      "years-old": "jaar oud."
     },
     "q2": {
       "i-live": "Ik woon",
@@ -18,7 +18,7 @@
       "have-apple": " heb een Apple",
       "have-android": " heb een Android",
       "do-not-have": " heb een geen",
-      "smart-phone": "smartphone"
+      "smart-phone": "smartphone."
     }
 
   }

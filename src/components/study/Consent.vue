@@ -12,43 +12,43 @@
         <div v-show="step === 1">
           <div class="header">
             <object data="/static/images/Comprehension.svg" type="image/svg+xml"></object>
-            <h3>What is involved</h3>
+            <h3>{{ $t('consent-screen.step-1.title') }}</h3>
           </div>
-          <p>If you decide to participate in the study, you’ll first need to install the free mPower app to your phone. </p>
+          <p>{{ $t('consent-screen.step-1.install-on-phone') }}</p>
 
-          <p>To understand changes in your health we will ask you to use the app to:</p>
+          <p>{{ $t('consent-screen.step-1.use-app-to') }}:</p>
 
           <ul>
-            <li>Answer a few questions about your health, once when you start the study (5 minutes). </li>
-            <li>Track your symptoms, triggers and medications daily (5 minutes). </li>
-            <li>Complete activities on the app like tapping your fingers or doing a cognitive game daily for 2 weeks (10 minutes). Repeat every 3 months.</li>
+            <li>{{ $t('consent-screen.step-1.answer-health-questions') }} </li>
+            <li>{{ $t('consent-screen.step-1.track-symptoms') }} </li>
+            <li>{{ $t('consent-screen.step-1.complete-activities') }}</li>
           </ul>
 
-          <p>We would like you to participate for 2 years if you can but you can participate as long as you like. </p>
+          <p>{{ $t('consent-screen.step-1.participation-time') }} </p>
         </div>
         <div v-show="step === 2">
           <div class="header">
             <object data="/static/images/Privacy.svg" type="image/svg+xml"></object>
-            <h3>Data Collection, Storage & Privacy</h3>
+            <h3>{{ $t('consent-screen.step-2.title') }}</h3>
           </div>
           <ul>
-            <li>Your data is encrypted on your phone.</li>
-            <li>We collect the encrypted survey responses, activity data, and passive sensor measurements from your phone.</li>
-            <li>We will NOT collect your exact location or what you are typing on your phone (for example text messages, emails, etc.)</li>
-            <li>We replace your name with a unique code (GUID). We will combine your coded study data with data from other volunteers. </li>
-            <li>We store the coded study data on a secure cloud server. </li>
+            <li>{{ $t('consent-screen.step-2.data-encrypted') }}</li>
+            <li>{{ $t('consent-screen.step-2.collect-data') }}</li>
+            <li>{{ $t('consent-screen.step-2.not-location') }}</li>
+            <li>{{ $t('consent-screen.step-2.use-guid') }} </li>
+            <li>{{ $t('consent-screen.step-2.on-cloud') }}</li>
           </ul>
         </div>
         <div v-show="step === 3">
           <div class="header">
             <object data="/static/images/Data%20use%20and%20trends.svg" type="image/svg+xml"></object>
-            <h3>Data Use & Trends</h3>
+            <h3>{{ $t('consent-screen.step-3.title') }}</h3>
           </div>
           <ul>
-            <li>You will be able to view your symptoms, triggers, medication adherence and sensor based activities. </li>
-            <li>You will be able to see your data and can start to see trends in your data. </li>
-            <li>We will use your study data for research. </li>
-            <li>We will use the study data to look for patterns. These patterns may help us better understand the symptoms of PD.</li>
+            <li>{{ $t('consent-screen.step-3.view-activities') }} </li>
+            <li>{{ $t('consent-screen.step-3.see-data') }}</li>
+            <li>{{ $t('consent-screen.step-3.use-for-research') }} </li>
+            <li>{{ $t('consent-screen.step-3.patterns') }}</li>
           </ul>
         </div>
         <div v-show="step === 4">

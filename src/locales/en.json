@@ -3,7 +3,7 @@
     "title": "Let’s find out if you’re eligible",
     "q1": {
       "i-am": "I am",
-      "years-old": "years old"
+      "years-old": "years old."
     },
     "q2": {
       "i-live": "I live",
@@ -18,9 +18,33 @@
       "have-apple": "have an Apple",
       "have-android": "have an Android",
       "do-not-have": "do not have a",
-      "smart-phone": "smart phone"
+      "smart-phone": "smart phone."
     }
-
+  },
+  "consent-screen": {
+    "step-1": {
+      "title": "What is involved",
+      "install-on-phone": "If you decide to participate in the study, you’ll first need to install the free mPower app to your phone.",
+      "use-app-to": "To understand changes in your health we will ask you to use the app to",
+      "answer-health-questions": "Answer a few questions about your health, once when you start the study (5 minutes).",
+      "track-symptoms": "Track your symptoms, triggers and medications daily (5 minutes).",
+      "complete-activities": "Complete activities on the app like tapping your fingers or doing a cognitive game daily for 2 weeks (10 minutes). Repeat every 3 months.",
+      "participation-time": "We would like you to participate for 2 years if you can but you can participate as long as you like."
+    },
+    "step-2": {
+      "title": "Data Collection, Storage & Privacy",
+      "data-encrypted":"Your data is encrypted on your phone.",
+      "collect-data":"We collect the encrypted survey responses, activity data, and passive sensor measurements from your phone.",
+      "not-location":"We will NOT collect your exact location or what you are typing on your phone (for example text messages, emails, etc.)",
+      "use-guid":"We replace your name with a unique code (GUID). We will combine your coded study data with data from other volunteers.",
+      "on-cloud": "We store the coded study data on a secure cloud server. "
+    },
+    "step-3": {
+      "title":"Data Use & Trends",
+      "view-activities": "You will be able to view your symptoms, triggers, medication adherence and sensor based activities.",
+      "see-data": "You will be able to see your data and can start to see trends in your data.",
+      "use-for-research": "We will use your study data for research."
+    }
   }
 
 }
