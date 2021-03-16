@@ -93,5 +93,37 @@
       "reach-out":"We kunnen mogelijk contact met u opnemen.",
       "opt-out":"U kunt u op ieder moment afmelden voor het onderzoek."
     }
+  },
+  "quiz-screen": {
+    "q1": {
+      "q": "Wat is het doel van dit onderzoek?",
+      "a1": "Begrijpen van fluctuaties in de symptomen van de ziekte van Parkinson",
+      "a2": "Medische en behandelingsadviezen geven aan mensen met de ziekte van Parkinson",
+      "a3": "Diagnosticeren van de ziekte van Parkinson bij mensen"
+    },
+    "q2": {
+      "q": "Wat zal worden gebruikt om mijn onderzoeksgegevens te identificeren?",
+      "a1": "Mijn volledige naam",
+      "a2": "Mijn thuisadres",
+      "a3": "Mijn willekeurige code"
+    },
+    "q3": {
+      "q": "Als ik beslis om mijn gegevens te delen met gekwalificeerde onderzoekers en mij dan bedenk, wat gebeurt er dan met mijn reeds verzamelde gegevens?",
+      "a1": "Mijn account en gegevens worden verwijderd",
+      "a2": "Mijn gegevens zullen nog worden gebruikt in onderzoek",
+      "a3": "Mijn gegevens worden verstuurd naar mijn reguliere zorgverlener"
+    },
+    "q4": {
+      "q": "Zijn er risico’s verbonden aan het meedoen aan dit onderzoek?",
+      "a1": "Er zijn geen risico’s verbonden aan het meedoen aan dit onderzoek",
+      "a2": "Er is een risico dat mijn reguliere arts niet meer is toegestaan om mij zorg te verlenen",
+      "a3": "Sommige activiteiten kunnen vermoeiend zijn en het zien van mijn gegevens kan emoties oproepen"
+    },
+    "q5": {
+      "q": "Met de mPower app ben ik in staat om",
+      "a1": "Mijn symptomen bij te houden",
+      "a2": "Een afspraak te maken bij mijn reguliere arts",
+      "a3": "Mij aan te sluiten bij een steungroep voor mensen met de ziekte van Parkinson"
+    }
   }
 }
