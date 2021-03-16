@@ -125,5 +125,8 @@
       "a2": "Schedule an appointment with my regular doctor",
       "a3": "Join a support group for people living with Parkinson's disease"
     }
+  },
+  "ineligible-screen": {
+    "requirements": "You must be at least 18, live in the US or Canada, and be comfortable using a smartphone to participate."
   }
 }

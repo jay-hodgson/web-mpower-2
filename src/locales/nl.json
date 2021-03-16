@@ -125,5 +125,8 @@
       "a2": "Een afspraak te maken bij mijn reguliere arts",
       "a3": "Mij aan te sluiten bij een steungroep voor mensen met de ziekte van Parkinson"
     }
+  },
+  "ineligible-screen": {
+    "requirements": "You must be at least 18, live in the US or the Netherlands, and be comfortable using a smartphone to participate."
   }
 }
