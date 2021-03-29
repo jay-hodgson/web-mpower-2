@@ -26,9 +26,9 @@
       "title": "Wat is erbij betrokken",
       "install-on-phone": "Installeer de mPower app op uw telefoon.",
       "use-app-to": "Om veranderingen in uw gezondheid te begrijpen vragen we u het volgende:",
-      "answer-health-questions": "Bij aanvang van het onderzoek beantwoordt een aantal vragen over uw gezondheid (5 minuten).",
+      "answer-health-questions": "Bij aanvang van het onderzoek beantwoordt u een aantal vragen over uw gezondheid (5 minuten).",
       "track-symptoms": "U kunt uw gezondheid dagelijks bijhouden via uw symptomen en medicatie (5 minuten).",
-      "complete-activities": "Iedere drie maanden wordt u gevraagd om dagelijks een aantal activiteiten op de app te doen gedurende twee weken, zoals tikken met uw vingers (10 minuten).",
+      "complete-activities": "Iedere drie maanden wordt u gevraagd om dagelijks een aantal activiteiten op de app te doen gedurende twee weken, zoals tikken met uw vingers (10 minuten). Iedere drie maanden wordt u gevraagd een fitheidstest te doen, waarbij u gedurende drie minuten op een verhoging stapt met uw telefooon in de hand (3 minuten).",
       "participation-time": "We hopen dat u twee jaar mee wilt doen met het onderzoek, maar u mag meedoen zolang u wilt."
     },
     "step-2": {
@@ -78,7 +78,7 @@
       "data-plan":"De hoeveelheid data die deze app gebruikt, kan wellicht niet passen in uw mobiele abonnement. U kunt instellen dat de app Wi-Fi connecties gebruikt in plaats van mobiele data (zoals 4G).",
       "not-paid":"U wordt niet betaald voor het meedoen aan dit onderzoek. U wordt niet betaald voor het delen van uw gegevens.",
       "no-profit":"U ontvangt geen enkele winst van dit of toekomstig onderzoek.",
-      "injury":"Het risico op blessures is laag in dit onderzoek. U wordt niet gecompenseerd voor blessures/ U krijgt geen vergoeding bij blessures."
+      "injury":"Het risico op het oplopen van blessures is laag in dit onderzoek. U wordt niet gecompenseerd voor eventuele blessures."
     },
     "step-9": {
       "title":"Verlaten van het onderzoek",
