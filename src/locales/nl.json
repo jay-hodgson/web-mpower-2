@@ -15,9 +15,9 @@
     "q3": {
       "i": "Ik",
       "select": "Select",
-      "have-apple": " heb een Apple",
-      "have-android": " heb een Android",
-      "do-not-have": " heb een geen",
+      "have-apple": " heb Apple",
+      "have-android": " heb Android",
+      "do-not-have": " heb geen",
       "smart-phone": "smartphone."
     }
   },
