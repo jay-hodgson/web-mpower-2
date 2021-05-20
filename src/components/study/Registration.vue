@@ -4,9 +4,13 @@
     <div class="container">
       <p>Thank you! Please enter your mobile phone number and select your phone type to receive your download link for the mPower app:</p>
 
-      <p style="text-align: center; margin-top: 2rem">
-        <mdc-textfield ref="phoneField" v-model="phone" label="Enter phone number" type="tel" pattern="[0-9]*"/>
-      </p>
+      <div style="text-align: center; margin-top: 2rem">
+        <vue-tel-input
+          v-model="phoneValue"
+          :defaultCountry="defaultCountry"
+          :onlyCountries="countryCodes"
+          @country-changed="onCountryChange"></vue-tel-input>
+      </div>
       <p style="text-align: center; margin-top: 3rem">Pick one depending on your mobile phone:</p>
       <div class="buttons">
         <a @click="apple">
@@ -25,26 +29,30 @@
 import MainNav from './MainNav.vue'
 import store from '../store'
 import axios from 'axios';
+import { VueTelInput } from 'vue-tel-input'
 
 export default {
   name: 'StudyRegistration',
-  components: { MainNav },
+  components: { MainNav, VueTelInput },
   data() {
     return {
-      phone: ''
+      phoneValue: '',
+      countryCodes: [this.$t('registration-screen.other-region-code'), 'US'],
+      defaultCountry: this.$i18n.locale == 'en' ? 'US' : this.$t('registration-screen.other-region-code'),
+      selectedRegionCode: '',
+      isValidPhoneNumber: false
     }
-  },
-  mounted() {
-    var input = this.$refs.phoneField.$refs.input
-    input.type = "tel"
-    input.pattern = "[0-9]*"
   },
   computed: {
     hasNumber: function() {
-      return this.phone.replace(/\D/g,'').length >= 10 ? 1 : .5
-    }
+      return ( this.phoneValue && this.phoneValue.replace(/\D/g,'').length >= 10 ) ? 1 : .5
+    },
   },
   methods: {
+    onCountryChange: function (countryObject) {
+      this.selectedRegionCode = countryObject.iso2
+    },
+
     apple: function(event) {
       if (this.hasNumber === 1) {
         event.target.style.opacity = .6;
@@ -59,12 +67,11 @@ export default {
     },
     post: function(osName) {
       var snackbar = this.$refs.snackbar
-      var phoneFormatted = this.phone.replace(/[^\d]/g,'')
-      this.$store.setPhone(this.phone)
-      
+      var phoneFormatted = this.phoneValue.replace(/[^\d]/g,'')
+      this.$store.setPhone(this.phoneValue)
       axios.post('https://webservices.sagebridge.org/v3/itp', {
         studyId: 'sage-mpower-2',
-        phone: {number: phoneFormatted, regionCode: 'US'},
+        phone: {number: phoneFormatted, regionCode: this.selectedRegionCode},
         subpopGuid: 'sage-mpower-2',
         osName: osName,
         consentSignature: {
@@ -85,6 +92,7 @@ export default {
 }
 </script>
 
+<style src="vue-tel-input/dist/vue-tel-input.css"></style>
 <style scoped>
 .container {
   padding-top: 5rem;
@@ -98,4 +106,9 @@ export default {
   width: calc(6rem + 2vw);
   cursor: pointer;
 }
+.vue-tel-input {
+  height: 2rem;
+  font: 400 16px 'Lato';
+}
+
 </style>

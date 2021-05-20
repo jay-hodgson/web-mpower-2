@@ -128,5 +128,8 @@
   },
   "ineligible-screen": {
     "requirements": "You must be at least 18, live in the US or Canada, and be comfortable using a smartphone to participate."
+  },
+  "registration-screen": {
+    "other-region-code": "CA"
   }
 }
