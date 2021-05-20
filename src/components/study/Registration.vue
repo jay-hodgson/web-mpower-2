@@ -60,8 +60,8 @@ export default {
     post: function(osName) {
       var snackbar = this.$refs.snackbar
       var phoneFormatted = this.phone.replace(/[^\d]/g,'')
-
       this.$store.setPhone(this.phone)
+      
       axios.post('https://webservices.sagebridge.org/v3/itp', {
         studyId: 'sage-mpower-2',
         phone: {number: phoneFormatted, regionCode: 'US'},
@@ -73,6 +73,11 @@ export default {
         }
       }).then(() => {
         this.$router.push("/study/done")
+        if (osName === 'Android') {
+          window.open(this.$t('registration-screen.googleLink'),'_blank', 'noopener noreferrer')
+        } else {
+          window.open(this.$t('registration-screen.appleLink'),'_blank', 'noopener noreferrer')
+        }
       }).catch(function(error) {
         if (error.response && error.response.data && error.response.data.message) {
           snackbar.show(error.response.data)

@@ -128,5 +128,9 @@
   },
   "ineligible-screen": {
     "requirements": "You must be at least 18, live in the US or Canada, and be comfortable using a smartphone to participate."
+  },
+  "registration-screen": {
+    "appleLink": "https://itunes.apple.com/us/app/parkinson-mpower-2/id1375781575?ls=1&mt=8",
+    "googleLink": "https://play.google.com/store/apps/details?id=org.sagebionetworks.research.mpower"
   }
 }
