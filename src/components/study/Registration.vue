@@ -66,13 +66,18 @@ export default {
         studyId: 'sage-mpower-2',
         phone: {number: phoneFormatted, regionCode: 'US'},
         subpopGuid: 'sage-mpower-2',
-        osName: `${osName}${this.$t('registration-screen.osNameSuffix')}`,
+        osName: osName,
         consentSignature: {
           name: this.$store.getName(),
           scope: this.$store.getSharingScope()
         }
       }).then(() => {
         this.$router.push("/study/done")
+        if (osName === 'Android') {
+          window.open(this.$t('registration-screen.googleLink'),'_blank', 'noopener noreferrer')
+        } else {
+          window.open(this.$t('registration-screen.appleLink'),'_blank', 'noopener noreferrer')
+        }
       }).catch(function(error) {
         if (error.response && error.response.data && error.response.data.message) {
           snackbar.show(error.response.data)
