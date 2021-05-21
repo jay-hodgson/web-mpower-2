@@ -40,7 +40,6 @@ export default {
       countryCodes: [this.$t('registration-screen.other-region-code'), 'US'],
       defaultCountry: this.$i18n.locale == 'en' ? 'US' : this.$t('registration-screen.other-region-code'),
       selectedRegionCode: '',
-      isValidPhoneNumber: false
     }
   },
   computed: {
