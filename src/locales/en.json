@@ -9,8 +9,9 @@
       "i-live": "I live",
       "select": "Select",
       "in-US": "in the United States",
-      "in-other": "in Canada",
-      "outside-eligible-area": "outside of the United States and Canada"
+      "in-Canada": "in Canada",
+      "in-Netherlands": "in the Netherlands",
+      "outside-eligible-area": "elsewhere"
     },
     "q3": {
       "i": "I",
@@ -130,6 +131,6 @@
     "requirements": "You must be at least 18, live in the US or Canada, and be comfortable using a smartphone to participate."
   },
   "registration-screen": {
-    "other-region-code": "CA"
+    "default-region-code": "US"
   }
 }

@@ -37,8 +37,8 @@ export default {
   data() {
     return {
       phoneValue: '',
-      countryCodes: [this.$t('registration-screen.other-region-code'), 'US'],
-      defaultCountry: this.$i18n.locale == 'en' ? 'US' : this.$t('registration-screen.other-region-code'),
+      countryCodes: ['CA','US','NL'],
+      defaultCountry: this.$t('registration-screen.default-region-code'),
       selectedRegionCode: '',
     }
   },

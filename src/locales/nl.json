@@ -9,8 +9,9 @@
       "i-live": "Ik woon",
       "select": "Select",
       "in-US": "in de Verenigde Staten",
-      "in-other": "in Nederland",
-      "outside-eligible-area": "niet in de Verenigde Staten of Nederland"
+      "in-Canada": "in Canada",
+      "in-Netherlands": "in Nederland",
+      "outside-eligible-area": "ergens anders"
     },
     "q3": {
       "i": "Ik",
@@ -130,6 +131,6 @@
     "requirements": "You must be at least 18, live in the US or the Netherlands, and be comfortable using a smartphone to participate."
   },
   "registration-screen": {
-    "other-region-code": "NL"
+    "default-region-code": "NL"
   }
 }
